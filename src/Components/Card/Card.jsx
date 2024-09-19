@@ -3,7 +3,7 @@ import { FaLocationDot } from "react-icons/fa6";
 function Card({ img, text }) {
     return (
         <>
-            <div className="h-[55vh] w-80 hover:scale-105 duration-300 rounded-lg relative mt-3 cursor-pointer bg-black border-none">
+            <div className="h-[55vh] w-80 min-w-80 hover:scale-105 duration-300 rounded-lg relative mt-3 cursor-pointer bg-black border-none">
                 
                 <div
                     className="absolute inset-0 bg-cover bg-center rounded-lg"
