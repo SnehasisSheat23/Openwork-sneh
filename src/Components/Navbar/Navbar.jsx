@@ -3,7 +3,7 @@ import { RiArrowDropDownLine } from "react-icons/ri";
 function Navbar() {
     return (
         <>
-            <div className="w-[100vw] px-20 h-[12vh] flex items-center fixed backdrop-blur-md z-10 bg-black/30">
+            <div className="w-full px-20 h-[12vh] flex items-center fixed backdrop-blur-md z-10 bg-black/30">
                 <div className="text-2xl text-white font-bold">Manpasand</div>
 
                 {

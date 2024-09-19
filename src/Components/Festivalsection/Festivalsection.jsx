@@ -4,7 +4,7 @@ import Card from "../Card/Card";
 
 function Festivalsection() {
     return (
-        <div className="relative h-[85vh] w-full bg-gradient-to-b from-black via-[#1a0e0e] to-[#3d2c2c]">
+        <div className="relative h-[85vh] w-full bg-gradient-to-b from-black via-[#1a0e0e] to-[#3d2c2c] overflow-x-auto">
             
             <div className="w-full h-[50vh] flex flex-col">
                 <div className="heading w-full h-14 flex justify-between items-center px-24">
