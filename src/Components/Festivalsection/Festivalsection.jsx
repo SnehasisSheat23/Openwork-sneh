@@ -21,7 +21,7 @@ function Festivalsection() {
                 </div>
 
 
-                <div className="w-full px-20 flex gap-[2vw] box-border justify-between mt-[10vh] overflow-x-auto overflow-y-hidden">
+                <div className="w-full px-20 flex gap-[2vw] box-border justify-between bg-red-500 mt-[10vh] overflow-x-auto overflow-y-hidden">
                     <Card img={"https://prismic-assets-cdn.tomorrowland.com/Zi98lN3JpQ5PTPLa_Zeb4NeXgT-BdbvEx_Brasil.jpg?crop=6991%2C5243%2C435%2C0&width=352&height=264"} text={"Gaeba Dhammal Canada"} />
                     <Card img={"https://prismic-assets-cdn.tomorrowland.com/ZrIItkaF0TcGItrp_AFTERLIFE_AMS___06_1920x1080.jpg?crop=1440%2C1080%2C240%2C0&width=352&height=264"} text={"India fest live in schamburg"} />
                     <Card img={"https://prismic-assets-cdn.tomorrowland.com/Zg5XLzskWekewC1C_OS24_001_OURSTORY_XXYEARS_KEYVISUAL_EYE_WEBSITE_HEADER.jpg?crop=2133%2C1600%2C133%2C0&width=352&height=264"} text={"Chicago Garba Fest Renaissance"} />
