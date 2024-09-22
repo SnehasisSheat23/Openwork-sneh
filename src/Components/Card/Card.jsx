@@ -1,6 +1,6 @@
 import { FaLocationDot } from "react-icons/fa6";
 
-function Card({ img, text }) {
+function Card({ img, text  , place , date}) {
     return (
         <>
             <div className="h-[360px] w-72 min-w-72 hover:scale-105 duration-300 rounded-lg relative mt-3 cursor-pointer bg-black border-none shadow-lg">
@@ -13,15 +13,15 @@ function Card({ img, text }) {
                     <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-[#1a0e0e]/20 to-[#3d2c2c]/90 rounded-lg"></div>
                 </div>
 
-                <div className="relative z-10 top-[55%] w-full px-6">
+                <div className="relative z-10 top-[51%] w-full px-6">
                     <h1 className="text-white font-semibold leading-none text-xl">{text}</h1>
                     <p className="text-white text-opacity-75 font-bold mt-3 tracking-tighter text-lg">
-                        Wednesdays Summer 2024
+                        {date}
                     </p>
                     <div className="flex items-center text-white gap-2">
                         <FaLocationDot size={15} />
                         <p className="text-white text-opacity-75 tracking-tighter text-lg">
-                            Ibiza, Spain
+                            {place}
                         </p>
                     </div>
                 </div>

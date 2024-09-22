@@ -2,6 +2,9 @@ import { MdKeyboardArrowLeft } from "react-icons/md";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import Card from "../Card/Card";
 import Marquee from "react-fast-marquee";
+import krinjaldave from '../../assets/Artist3.png'
+import purvamantri from '../../assets/Artist2.png'
+import  getambeetantava from '../../assets/Artist1.png'
 
 function Festivalsection() {
     return (
@@ -23,11 +26,15 @@ function Festivalsection() {
 
                 <div className="w-full h-[480px]  px-10 md:px-10 sm:px-1 flex gap-[2vw] box-border justify-between items-center mt-[6vh] ">
                     <div className="w-full h-[400px] flex gap-[2vw] overflow-x-auto ">
-                        <Card img={"https://prismic-assets-cdn.tomorrowland.com/Zi98lN3JpQ5PTPLa_Zeb4NeXgT-BdbvEx_Brasil.jpg?crop=6991%2C5243%2C435%2C0&width=352&height=264"} text={"Gaeba Dhammal Canada"} />
-                        <Card img={"https://prismic-assets-cdn.tomorrowland.com/ZrIItkaF0TcGItrp_AFTERLIFE_AMS___06_1920x1080.jpg?crop=1440%2C1080%2C240%2C0&width=352&height=264"} text={"India fest live in schamburg"} />
-                        <Card img={"https://prismic-assets-cdn.tomorrowland.com/Zg5XLzskWekewC1C_OS24_001_OURSTORY_XXYEARS_KEYVISUAL_EYE_WEBSITE_HEADER.jpg?crop=2133%2C1600%2C133%2C0&width=352&height=264"} text={"Chicago Garba Fest Renaissance"} />
-                        <Card img={"https://prismic-assets-cdn.tomorrowland.com/ZfLCV0mNsf2sHkp6_mailing_header_fulllineupfade_e9j.webp?crop=1067%2C800%2C87%2C0&width=352&height=264"} text={"Garba booking 2024"} />
-                        <Card />
+                        <Card img={krinjaldave} place={"Pittsburgh, PA, USA"} date={"27 Sep, Friday"}  text={"Garba Queen Kinjal Dave"} />
+                        <Card img={getambeetantava} place={"Houston, TX, USA"} date={"27 Sep, Friday"}  text={"Kutch Ni Koyal Geetaben Ravai - Live"} />
+                        <Card img={purvamantri} place={"Edison, NJ, USA"} date={"27 Sep, Friday"} text={"Garba Dhamaal with Purva Mantri"} />
+                        <Card img={krinjaldave} place={"Edison, NJ, USA"} date={"28 Sep, Saturday"}  text={"Garba Queen Kinjal Dave - Live"} />
+                        <Card img={getambeetantava} place={"Dallas, TX, USA"} date={"28 Sep, Saturday"} text={"Kutch Ni koyal Geetaben Ravai - Live"} />
+                        <Card img={purvamantri} place={"Boston, MA, USA"} date={"28 Sep, Saturday"} text={"Garba Dhamaal with Purva Mantri - Live in Boston"} />
+                        <Card img={getambeetantava} place={"Kansas City, MO, USA"} date={"29 Sep, Friday"} text={"Kutch Ni koyal Geetaben Ravai - Live"} />
+                        <Card img={purvamantri} place={"Seattle, WA, USA"} date={"29 Sep, Friday"} text={"Garba Dhamaal with Purva Mantri - Live"} />
+                        <Card img={krinjaldave} place={"Boston, MA, USA"} date={"18 Sep, Friday"} text={"Garba Queen Kinjal Dave - Live"} />
                     </div>
                 </div>
             </div>
