@@ -1,6 +1,11 @@
 import { FaLocationDot } from "react-icons/fa6";
+import { useNavigate } from "react-router-dom";
 
-function Card({ img, text  , place , date}) {
+function Card({name, img, text  , place , date}) {
+    const navigate = useNavigate()
+    function Handler(){
+        navigate(`/info/${name}`)
+    }
     return (
         <>
             <div className="h-[360px] w-72 min-w-72 hover:scale-105 duration-300 rounded-lg relative mt-3 cursor-pointer bg-black border-none shadow-lg">
@@ -27,7 +32,7 @@ function Card({ img, text  , place , date}) {
                 </div>
 
                 <div className="absolute z-10 bottom-3 w-full flex gap-3 px-5">
-                    <button className="bg-transparent border border-white text-white text-sm px-4 py-1 rounded-full hover:bg-white hover:text-black transition duration-300">
+                    <button onClick={Handler} className="bg-transparent border border-white text-white text-sm px-4 py-1 rounded-full hover:bg-white hover:text-black transition duration-300">
                         Info
                     </button>
                     <button className="bg-transparent border border-white text-white text-sm px-4 py-1 rounded-full hover:bg-white hover:text-black transition duration-300">
