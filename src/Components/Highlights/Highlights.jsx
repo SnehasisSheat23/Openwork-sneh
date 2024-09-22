@@ -2,7 +2,7 @@ function Highlights() {
     return (
         <>
             <div className="w-full h-auto flex flex-col bg-[#3d2c2c] py-8">
-                <div className="w-full h-[80px] box-border flex justify-between px-6 lg:px-20 items-center">
+                <div className="w-full h-[80px] box-border flex justify-between px-6 xl:px-36 lg:px-20 items-center">
                     <div className="text-white text-3xl lg:text-5xl">Highlights</div>
                     <div className="h-[40px] cursor-pointer w-40 lg:w-52 bg-[#09187e] rounded-2xl flex justify-center items-center text-white tracking-tighter text-sm lg:text-base">
                         VISIT ONE WORLD RADIO
@@ -11,7 +11,7 @@ function Highlights() {
 
 
                 {/* section 1 */}
-                <div className="w-full flex flex-col lg:flex-row gap-6 px-6 lg:px-20 items-center justify-between mt-6 cursor-pointer">
+                <div className="w-full flex flex-col lg:flex-row gap-6 px-6 lg:px-20 items-center lg:justify-center mt-6 cursor-pointer">
                     <div className="h-[320px] lg:h-[370px] w-full lg:w-[570px] bg-black flex flex-col lg:flex-row rounded-2xl hover:scale-105 duration-300">
                         <div className="h-1/2 lg:h-full w-full lg:w-1/2">
                             <img
@@ -51,7 +51,7 @@ function Highlights() {
 
 
                 {/* section 2 */}
-                <div className="w-full flex flex-col lg:flex-row gap-6 px-6 lg:px-20 items-center justify-between mt-6 cursor-pointer">
+                <div className="w-full flex flex-col lg:flex-row gap-6 px-6 lg:px-20 items-center lg:justify-center mt-6 cursor-pointer">
                     <div className="h-[300px] lg:h-[350px] w-full lg:w-72 bg-black rounded-2xl bg-[url('https://prismic-assets-cdn.tomorrowland.com/ZfG0EEmNsf2sHjRV_TimmyTrumpet!.png?crop=2048%2C1536%2C0%2C256&width=1440&height=1080')] bg-cover bg-center hover:scale-105 duration-300"></div>
 
                     <div className="h-[320px] lg:h-[370px] w-full lg:w-[570px] bg-black flex flex-col lg:flex-row rounded-2xl hover:scale-105 duration-300">
