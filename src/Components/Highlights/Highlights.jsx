@@ -2,7 +2,7 @@ function Highlights() {
     return (
         <>
             <div className="w-full h-auto flex flex-col bg-[#3d2c2c] py-8">
-                <div className="w-full h-[80px] box-border flex justify-between px-6 xl:px-36 lg:px-20 items-center">
+                <div className="w-full h-[80px] box-border flex justify-between px-6 xl:px-32 lg:px-20 items-center">
                     <div className="text-white text-3xl lg:text-5xl">Highlights</div>
                     <div className="h-[40px] cursor-pointer w-40 lg:w-52 bg-[#09187e] rounded-2xl flex justify-center items-center text-white tracking-tighter text-sm lg:text-base">
                         VISIT ONE WORLD RADIO
