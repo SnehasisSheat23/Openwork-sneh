@@ -6,7 +6,7 @@ function Navbar() {
 
     return (
         <>
-            <div className="w-full px-5 md:px-10 lg:px-20 h-[10vh] flex items-center justify-between fixed backdrop-blur-md z-10 bg-black/30 box-border">
+            <div className="w-full px-5 md:px-10 lg:px-20 h-[8vh] flex items-center justify-between fixed backdrop-blur-md z-10 bg-black/30 box-border">
                 <div className="text-xl md:text-2xl text-white font-bold">
                     Manpasand
                 </div>
