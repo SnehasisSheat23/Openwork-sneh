@@ -3,8 +3,8 @@ function Highlights() {
         <>
             <div className="w-full h-auto flex flex-col bg-[#3d2c2c] py-8">
                 <div className="w-full h-[80px] box-border flex justify-between px-6 xl:px-32 lg:px-20 items-center">
-                    <div className="text-white text-3xl lg:text-5xl">Highlights</div>
-                    <div className="h-[40px] cursor-pointer w-32 lg:w-28 bg-[#09187e] rounded-2xl flex justify-center items-center text-white tracking-tighter text-sm lg:text-base">
+                    <div className="text-white font-bold text-xl lg:text-3xl">Highlights</div>
+                    <div className="h-[40px] cursor-pointer text-black w-32 lg:w-28 bg-white rounded-2xl flex justify-center items-center tracking-tighter text-sm lg:text-base">
                         GALARY
                     </div>
                 </div>

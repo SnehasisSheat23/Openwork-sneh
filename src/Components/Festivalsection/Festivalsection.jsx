@@ -11,7 +11,7 @@ function Festivalsection() {
         <div className="relative  w-full bg-gradient-to-b from-black via-[#1a0e0e] to-[#3d2c2c]">
             <div className="w-full flex flex-col">
                 <div className="heading w-full  h-14 flex justify-between items-center px-6 md:px-24">
-                    <h1 className="text-white font-bold text-xl md:text-3xl text-center md:text-left w-full md:w-auto">Festival & Events</h1>
+                    <h1 className="text-white font-bold text-xl md:text-3xl text-center md:text-left w-full md:w-auto">Upcoming events</h1>
                     <div className="hidden md:flex h-full items-center gap-4">
                         <div className="h-7 w-7 bg-white rounded-full flex justify-center items-center">
                             <MdKeyboardArrowLeft />
