@@ -1,6 +1,6 @@
-import krinjaldave from '../../Assets/Artist/Artist1.png'
-import GeetabenRavai from '../../Assets/Artist/Artist2.png'
-import PurvaMantri from '../../Assets/Artist/Artist3.png'
+import krinjaldave from '../../assets/Artist/Artist1.png'
+import GeetabenRavai from '../../assets/Artist/Artist2.png'
+import PurvaMantri from '../../assets/Artist/Artist3.png'
 import Card from '../Card/Card'
 
 function Artist() {
