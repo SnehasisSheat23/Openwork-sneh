@@ -2,9 +2,15 @@ import { MdKeyboardArrowLeft } from "react-icons/md";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import Card from "../Card/Card";
 import Marquee from "react-fast-marquee";
-import krinjaldave from '../../assets/Artist3.png'
-import purvamantri from '../../assets/Artist2.png'
-import  getambeetantava from '../../assets/Artist1.png'
+import event1 from '../../assets/Upcommingevents/Card1.png'
+import event2 from '../../assets/Upcommingevents/Card2.png'
+import event3 from '../../assets/Upcommingevents/Card3.png'
+import event4 from '../../assets/Upcommingevents/Card4.png' 
+import event5 from '../../assets/Upcommingevents/Card5.png'
+import event6 from '../../assets/Upcommingevents/Card6.png'
+import event7 from '../../assets/Upcommingevents/Card7.png'
+import event8 from '../../assets/Upcommingevents/Card8.png'
+import event9 from '../../assets/Upcommingevents/Card9.png'
 
 function Festivalsection() {
     return (
@@ -26,15 +32,15 @@ function Festivalsection() {
 
                 <div className="w-full h-[480px]  px-10 md:px-10 sm:px-1 flex gap-[2vw] box-border justify-between items-center lg:mt-[6vh] ">
                     <div className="w-full h-[400px] flex gap-[2vw] overflow-x-auto ">
-                        <Card img={krinjaldave} name={"krinjaldave"} place={"Pittsburgh, PA, USA"} date={"27 Sep, Friday"}  text={"Garba Queen Kinjal Dave"} />
-                        <Card img={getambeetantava} name={"GeetabenRavai"} place={"Houston, TX, USA"} date={"27 Sep, Friday"}  text={"Kutch Ni Koyal Geetaben Ravai - Live"} />
-                        <Card img={purvamantri} name={"PurvaMantri"} place={"Edison, NJ, USA"} date={"27 Sep, Friday"} text={"Garba Dhamaal with Purva Mantri"} />
-                        <Card img={krinjaldave} name={"krinjaldave"} place={"Edison, NJ, USA"} date={"28 Sep, Saturday"}  text={"Garba Queen Kinjal Dave - Live"} />
-                        <Card img={getambeetantava} name={"GeetabenRavai"} place={"Dallas, TX, USA"} date={"28 Sep, Saturday"} text={"Kutch Ni koyal Geetaben Ravai - Live"} />
-                        <Card img={purvamantri} name={"PurvaMantri"} place={"Boston, MA, USA"} date={"28 Sep, Saturday"} text={"Garba Dhamaal with Purva Mantri - Live in Boston"} />
-                        <Card img={getambeetantava} name={"GeetabenRavai"} place={"Kansas City, MO, USA"} date={"29 Sep, Friday"} text={"Kutch Ni koyal Geetaben Ravai - Live"} />
-                        <Card img={purvamantri} name={"PurvaMantri"} place={"Seattle, WA, USA"} date={"29 Sep, Friday"} text={"Garba Dhamaal with Purva Mantri - Live"} />
-                        <Card img={krinjaldave} name={"krinjaldave"} place={"Boston, MA, USA"} date={"18 Sep, Friday"} text={"Garba Queen Kinjal Dave - Live"} />
+                        <Card img={event1} name={"krinjaldave"} place={"Pittsburgh, PA, USA"} date={"27 Sep, Friday"}  text={"Garba Queen Kinjal Dave"} />
+                        <Card img={event2} name={"GeetabenRavai"} place={"Houston, TX, USA"} date={"27 Sep, Friday"}  text={"Kutch Ni Koyal Geetaben Ravai - Live"} />
+                        <Card img={event3} name={"PurvaMantri"} place={"Edison, NJ, USA"} date={"27 Sep, Friday"} text={"Garba Dhamaal with Purva Mantri"} />
+                        <Card img={event4} name={"krinjaldave"} place={"Edison, NJ, USA"} date={"28 Sep, Saturday"}  text={"Garba Queen Kinjal Dave - Live"} />
+                        <Card img={event5} name={"GeetabenRavai"} place={"Dallas, TX, USA"} date={"28 Sep, Saturday"} text={"Kutch Ni koyal Geetaben Ravai - Live"} />
+                        <Card img={event6} name={"PurvaMantri"} place={"Boston, MA, USA"} date={"28 Sep, Saturday"} text={"Garba Dhamaal with Purva Mantri - Live in Boston"} />
+                        <Card img={event7} name={"GeetabenRavai"} place={"Kansas City, MO, USA"} date={"29 Sep, Friday"} text={"Kutch Ni koyal Geetaben Ravai - Live"} />
+                        <Card img={event8} name={"PurvaMantri"} place={"Seattle, WA, USA"} date={"29 Sep, Friday"} text={"Garba Dhamaal with Purva Mantri - Live"} />
+                        <Card img={event9} name={"krinjaldave"} place={"Boston, MA, USA"} date={"18 Sep, Friday"} text={"Garba Queen Kinjal Dave - Live"} />
                     </div>
                 </div>
             </div>
