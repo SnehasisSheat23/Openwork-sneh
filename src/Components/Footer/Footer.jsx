@@ -3,7 +3,7 @@ import profile from '../../assets/ManpasandLogo.svg'
 
 const Footer = () => {
     return (
-        <footer className="bg-[#3d2c2c] text-white  w-full box-border py-20">
+        <footer className="bg-[#3d2c2c] text-white  w-full box-border py-5">
             <div className="container mx-auto px-4 flex flex-col">
                 <div className='flex flex-col items-center'>
                     <img src={profile} alt="" className="w-52 h-52" />
