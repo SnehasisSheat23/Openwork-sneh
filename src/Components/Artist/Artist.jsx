@@ -12,6 +12,7 @@ function Artist() {
                 </div>
 
 
+
                 <div className="w-full h-[480px] px-10   lg:px-48 md:px-10 sm:px-1 flex box-border justify-between items-center ">
                     <div className="w-full h-[400px]  flex gap-3 justify-between overflow-x-auto ">
                         <Card img={krinjaldave}  />
