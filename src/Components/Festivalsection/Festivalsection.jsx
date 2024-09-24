@@ -11,7 +11,7 @@ function Festivalsection() {
         <div className="relative  w-full bg-gradient-to-b from-black via-[#1a0e0e] to-[#3d2c2c]">
             <div className="w-full flex flex-col">
                 <div className="heading w-full  h-14 flex justify-between items-center px-6 md:px-24">
-                    <h1 className="text-white font-bold text-xl md:text-3xl text-center md:text-left w-full md:w-auto">Upcoming events</h1>
+                    <h1 className="text-white font-bold text-2xl md:text-3xl text-center md:text-left w-full md:w-auto">Upcoming events</h1>
                     <div className="hidden md:flex h-full items-center gap-4">
                         <div className="h-7 w-7 bg-white rounded-full flex justify-center items-center">
                             <MdKeyboardArrowLeft />
@@ -24,7 +24,7 @@ function Festivalsection() {
                 </div>
 
 
-                <div className="w-full h-[480px]  px-10 md:px-10 sm:px-1 flex gap-[2vw] box-border justify-between items-center mt-[6vh] ">
+                <div className="w-full h-[480px]  px-10 md:px-10 sm:px-1 flex gap-[2vw] box-border justify-between items-center lg:mt-[6vh] ">
                     <div className="w-full h-[400px] flex gap-[2vw] overflow-x-auto ">
                         <Card img={krinjaldave} name={"krinjaldave"} place={"Pittsburgh, PA, USA"} date={"27 Sep, Friday"}  text={"Garba Queen Kinjal Dave"} />
                         <Card img={getambeetantava} name={"GeetabenRavai"} place={"Houston, TX, USA"} date={"27 Sep, Friday"}  text={"Kutch Ni Koyal Geetaben Ravai - Live"} />
