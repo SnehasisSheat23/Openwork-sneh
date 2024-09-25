@@ -2,7 +2,7 @@ function Highlights() {
     return (
         <>
             <div className="w-full h-auto flex flex-col bg-[#3d2c2c] py-8">
-                <div className="w-full max-w-screen-xl h-[80px] box-border flex justify-between px-6 xl:px-32 lg:px-20 items-center mx-auto">
+                <div className="w-full max-w-screen-2xl h-[80px] box-border flex justify-between px-6 xl:px-32 lg:px-20 items-center mx-auto">
                     <div className="text-white font-bold text-2xl lg:text-3xl">Highlights</div>
                     <div className="h-[40px] hover:scale-105 duration-300 cursor-pointer text-black w-32 lg:w-28 bg-white rounded-2xl flex justify-center items-center tracking-tighter text-sm lg:text-base">
                         GALARY
@@ -12,7 +12,7 @@ function Highlights() {
 
 
                 {/* section 1 */}
-                <div className="w-full flex flex-col lg:flex-row gap-6 px-6 lg:px-20 items-center lg:justify-center mt-6 cursor-pointer">
+                <div className="w-full flex flex-col lg:flex-row gap-7 px-6 lg:px-20 items-center lg:justify-center mt-6 cursor-pointer">
                     <div className="h-[320px] lg:h-[370px] w-full lg:w-[570px] bg-black flex flex-col lg:flex-row rounded-2xl hover:scale-105 duration-300">
                         <div className="h-1/2 lg:h-full w-full lg:w-1/2">
                             <img

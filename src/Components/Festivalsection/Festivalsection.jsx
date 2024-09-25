@@ -1,15 +1,15 @@
 import { MdKeyboardArrowLeft } from "react-icons/md";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import Card from "../Card/Card";
-import event1 from '../../assets/Upcommingevents/Card1.png'
-import event2 from '../../assets/Upcommingevents/Card2.png'
-import event3 from '../../assets/Upcommingevents/Card3.png'
-import event4 from '../../assets/Upcommingevents/Card4.png'
-import event5 from '../../assets/Upcommingevents/Card5.png'
-import event6 from '../../assets/Upcommingevents/Card6.png'
-import event7 from '../../assets/Upcommingevents/Card7.png'
-import event8 from '../../assets/Upcommingevents/Card8.png'
-import event9 from '../../assets/Upcommingevents/Card9.png'
+import event1 from '../../assets/Upcommingevents/Card1.png';
+import event2 from '../../assets/Upcommingevents/Card2.png';
+import event3 from '../../assets/Upcommingevents/Card3.png';
+import event4 from '../../assets/Upcommingevents/Card4.png';
+import event5 from '../../assets/Upcommingevents/Card5.png';
+import event6 from '../../assets/Upcommingevents/Card6.png';
+import event7 from '../../assets/Upcommingevents/Card7.png';
+import event8 from '../../assets/Upcommingevents/Card8.png';
+import event9 from '../../assets/Upcommingevents/Card9.png';
 import { useRef } from "react";
 
 function Festivalsection() {
@@ -24,8 +24,8 @@ function Festivalsection() {
     };
 
     return (
-        <div className="relative w-full bg-gradient-to-b from-black via-[#1a0e0e] to-[#3d2c2c]">
-            <div className="w-full flex flex-col">
+        <div className="relative w-full bg-gradient-to-b from-black via-[#1a0e0e] to-[#3d2c2c] flex justify-center">
+            <div className="w-full max-w-[1440px] flex flex-col">
                 <div className="heading w-full h-14 flex justify-between items-center px-6 md:px-24">
                     <h1 className="text-white font-bold text-2xl md:text-3xl text-center md:text-left w-full md:w-auto">Upcoming events</h1>
                     <div className="hidden md:flex h-full items-center gap-4">
