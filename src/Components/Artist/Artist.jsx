@@ -7,9 +7,9 @@ import Card from '../Card/Card'
 function Artist() {
     return (
         <>
-            <div className="relative  w-full bg-[#3d2c2c]">
+            <div className="relative  w-full  bg-[#3d2c2c]">
                 <div className="w-full flex justify-center text-white">
-                    <h1 className="text-white font-bold text-2xl md:text-3xl text-center md:text-left w-full md:w-auto">Our Artists</h1>
+                    <h1 className="text-white font-bold text-2xl md:text-3xl text-center md:text-left w-full md:w-auto pt-8">Our Artists</h1>
                 </div>
 
 

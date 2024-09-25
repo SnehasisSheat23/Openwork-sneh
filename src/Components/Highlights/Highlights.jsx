@@ -1,51 +1,52 @@
 function Highlights() {
     return (
         <>
-            <div className="w-full h-auto flex flex-col bg-[#3d2c2c] py-8">
+            <div className="w-full h-auto flex flex-col bg-[#3d2c2c] py-8 ">
                 <div className="w-full max-w-screen-2xl h-[80px] box-border flex justify-between px-6 xl:px-32 lg:px-20 items-center mx-auto">
-                    <div className="text-white font-bold text-2xl lg:text-3xl">Highlights</div>
-                    <div className="h-[40px] hover:scale-105 duration-300 cursor-pointer text-black w-32 lg:w-28 bg-white rounded-2xl flex justify-center items-center tracking-tighter text-sm lg:text-base">
-                        GALARY
-                    </div>
+                    <div className="text-white font-bold text-4xl lg:text-3xl ml-9">Highlights</div>
+                    <div className="h-[40px] cursor-pointer font-light text-white border-[2px] hover:bg-white hover:text-black border-white flex justify-center items-center w-32 lg:w-28 rounded-3xl transform hover:scale-105 duration-300 tracking-tighter text-sm lg:text-base">
+    Gallery
+</div>
+
                 </div>
 
 
 
                 {/* section 1 */}
                 <div className="w-full flex flex-col lg:flex-row gap-7 px-6 lg:px-20 items-center lg:justify-center mt-6 cursor-pointer">
-                    <div className="h-[320px] lg:h-[370px] w-full lg:w-[570px] bg-black flex flex-col lg:flex-row rounded-2xl hover:scale-105 duration-300">
-                        <div className="h-1/2 lg:h-full w-full lg:w-1/2">
+                    <div className="h-[320px] lg:h-[370px] w-full lg:w-[570px] bg-black flex flex-col lg:flex-row rounded-2xl  hover:scale-105 duration-300 ">
+                        <div className="h-1/2 lg:h-full w-full lg:w-1/2 shadow-lg">
                             <img
-                                src="https://prismic-assets-cdn.tomorrowland.com/ZtgSFbzzk9ZrW88D_IMAGEALT.png?crop=750%2C1000%2C375%2C0&width=600&height=800"
+                                src="https://www.gujarattourism.com/content/dam/gujrattourism/images/home_page/Navratri.jpg"
                                 alt=""
                                 className="w-full h-full rounded-2xl object-cover"
                             />
                         </div>
 
-                        <div className="h-1/2 lg:h-full w-full lg:w-1/2 flex flex-col justify-center">
+                        <div className="h-1/2 lg:h-full w-full lg:w-1/2 flex flex-col justify-center ">
                             <div className="text-white px-4 lg:px-6 text-lg lg:text-xl font-bold leading-1">
-                                Relive the summer Anthems Top 100
+                                The most hyped Navratri celebrations
                             </div>
                             <div className="text-white px-4 lg:px-6 tracking-tight leading-5 mt-3">
-                                The most defining tracks of your festival summer.
+                                Check out our socials for the details.
                             </div>
                         </div>
                     </div>
 
-                    <div className="h-[300px] lg:h-[350px] w-full lg:w-72 bg-black rounded-2xl bg-[url('https://prismic-assets-cdn.tomorrowland.com/ZfG0EEmNsf2sHjRV_TimmyTrumpet!.png?crop=2048%2C1536%2C0%2C256&width=1440&height=1080')] bg-cover bg-center hover:scale-105 duration-300"></div>
+                    <div className="h-[300px] lg:h-[350px] w-full lg:w-72 bg-black rounded-2xl shadow-lg mb-5 bg-[url('https://cdn.britannica.com/40/147140-050-63A7ED5B/dancing-Garba-festival-Navratri-Ahmadabad-India-Gujarat.jpg')] bg-cover bg-center hover:scale-105 duration-300"></div>
 
-                    <div className="h-[300px] lg:h-[350px] w-full lg:w-72 bg-black rounded-lg overflow-hidden shadow-lg hover:scale-105 duration-300">
+                    <div className="h-[300px] lg:h-[350px] w-full lg:w-72 bg-black rounded-2xl overflow-hidden shadow-lg hover:scale-105 duration-300">
                         <div className="h-1/2">
                             <img
-                                src="https://prismic-assets-cdn.tomorrowland.com/ZfL5YrTwE6aM1Jp3_cae4a20a-8d25-4535-afa8-191704ff1ad7_220717%2B-%2B190021%2B-%2BTML2022%2B-%2BIMGR6485%2B-%2BTC.jpg?crop=4000%2C2133%2C0%2C267&width=600&height=320"
+                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNrc8Uh7LtFYmNZkneeMELQM9U9VryQ-_bIw&s"
                                 alt="DAB+ Radio"
                                 className="h-full w-full object-cover"
                             />
                         </div>
                         <div className="h-1/2 p-4 text-white">
-                            <h3 className="text-lg font-bold">Listen on DAB+ and FM from your country</h3>
+                            <h3 className="text-lg font-bold">Listen the new release from sunny jadhav</h3>
                             <p className="mt-2 text-sm">
-                                Find out how you can tune in to Tomorrowland's radio station. One World Radio is on DAB+ and FM in Belgium, The Netherlands...
+                                Find out the latest song on major music platfrom like spotify, apple music, youtube and many more...
                             </p>
                         </div>
                     </div>
@@ -54,38 +55,38 @@ function Highlights() {
 
                 {/* section 2 */}
                 <div className="w-full flex flex-col lg:flex-row gap-6 px-6 lg:px-20 items-center lg:justify-center mt-6 cursor-pointer">
-                    <div className="h-[300px] lg:h-[350px] w-full lg:w-72 bg-black rounded-2xl bg-[url('https://prismic-assets-cdn.tomorrowland.com/ZfG0EEmNsf2sHjRV_TimmyTrumpet!.png?crop=2048%2C1536%2C0%2C256&width=1440&height=1080')] bg-cover bg-center hover:scale-105 duration-300"></div>
+                    <div className="h-[300px] lg:h-[350px] w-full lg:w-72 bg-black rounded-2xl bg-[url('https://scontent.fccu18-1.fna.fbcdn.net/v/t39.30808-6/424585509_914261147377604_414227692603225998_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_ohc=2Q7l7RGVZa4Q7kNvgF1L0lT&_nc_ht=scontent.fccu18-1.fna&_nc_gid=Ak1yTz5Es4E3QBUo5WddTSa&oh=00_AYDD7JUE_Vj8Kbf1L-Nkqgk2FpcCFCLKJJYsomEraW1jew&oe=66FA28FA')] bg-cover bg-center hover:scale-105 duration-300"></div>
 
                     <div className="h-[320px] lg:h-[370px] w-full lg:w-[570px] bg-black flex flex-col lg:flex-row rounded-2xl hover:scale-105 duration-300">
                         <div className="h-1/2 lg:h-full w-full lg:w-1/2">
                             <img
-                                src="https://prismic-assets-cdn.tomorrowland.com/ZtgSFbzzk9ZrW88D_IMAGEALT.png?crop=750%2C1000%2C375%2C0&width=600&height=800"
+                                src="https://sohampaithani.com/wp-content/uploads/2023/12/saree-colours-of-navratri.webp"
                                 alt=""
                                 className="w-full h-full rounded-2xl object-cover"
                             />
                         </div>
                         <div className="h-1/2 lg:h-full w-full lg:w-1/2 flex flex-col justify-center">
                             <div className="text-white px-4 lg:px-6 text-lg lg:text-xl font-bold leading-1">
-                                Relive the summer Anthems Top 100
+                                Relive this navratri with us
                             </div>
                             <div className="text-white px-4 lg:px-6 tracking-tight leading-5 mt-3">
-                                The most defining tracks of your festival summer.
+                                The most awaited event of the year is here and we are ready to make it memorable for you.
                             </div>
                         </div>
                     </div>
 
-                    <div className="h-[300px] lg:h-[350px] w-full lg:w-72 bg-black rounded-lg overflow-hidden shadow-lg hover:scale-105 duration-300">
+                    <div className="h-[300px] lg:h-[350px] w-full lg:w-72 bg-black rounded-2xl overflow-hidden shadow-lg hover:scale-105 duration-300">
                         <div className="h-1/2">
                             <img
-                                src="https://prismic-assets-cdn.tomorrowland.com/ZfL5YrTwE6aM1Jp3_cae4a20a-8d25-4535-afa8-191704ff1ad7_220717%2B-%2B190021%2B-%2BTML2022%2B-%2BIMGR6485%2B-%2BTC.jpg?crop=4000%2C2133%2C0%2C267&width=600&height=320"
+                                src="https://static.wanderon.in/wp-content/uploads/2024/09/festivals-in-gujarat.jpg"
                                 alt="DAB+ Radio"
                                 className="h-full w-full object-cover"
                             />
                         </div>
                         <div className="h-1/2 p-4 text-white">
-                            <h3 className="text-lg font-bold">Listen on DAB+ and FM from your country</h3>
+                            <h3 className="text-lg font-bold">Tickets are selling like hot cakes</h3>
                             <p className="mt-2 text-sm">
-                                Find out how you can tune in to Tomorrowland's radio station. One World Radio is on DAB+ and FM in Belgium, The Netherlands...
+                                Book tickets from major ticketing platforms like bookmyshow, sulekha, eventbrite for this season navratri...
                             </p>
                         </div>
                     </div>

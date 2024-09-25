@@ -35,14 +35,16 @@ function Festivalsection() {
                         <div className="h-7 w-7 bg-white rounded-full flex justify-center items-center cursor-pointer" onClick={scrollRight}>
                             <MdOutlineKeyboardArrowRight />
                         </div>
-                        <button className="text-sm font-semibold h-10 hover:scale-105 duration-300 w-28 rounded-3xl bg-white"><p>CALANDER</p></button>
+                        <button className="h-10 cursor-pointer font-light text-white border-[2px] hover:bg-white hover:text-black border-white flex justify-center items-center w-28 sm:w-32 rounded-3xl transform hover:scale-105 duration-300">
+    <p>Calender</p>
+</button>
                     </div>
                 </div>
 
                 <div className="w-full h-[480px] px-10 md:px-10 sm:px-1 flex gap-[2vw] box-border justify-between items-center lg:mt-[6vh]">
                     <div ref={scrollRef} className="w-full h-[400px] flex gap-[2vw] overflow-x-auto scroll-smooth">
-                        <Card img={event1} name={"krinjaldave"} place={"Pittsburgh, PA, USA"} date={"27 Sep, Friday"} text={"Garba Queen Kinjal Dave"} />
-                        <Card img={event2} name={"GeetabenRavai"} place={"Houston, TX, USA"} date={"27 Sep, Friday"} text={"Kutch Ni Koyal Geetaben Ravai - Live"} />
+                        <Card img={event1} name={"krinjaldave"} place={"Pittsburgh, PA, USA"} date={"27 Sep, Friday"} text={"Garba Queen Kinjal Dave"} link={'https://events.sulekha.com/garba-glamour-in-pittsburgh-with-kinjal-dave_event-in_cheswick-pa_377067'}/>
+                        <Card img={event2} name={"GeetabenRavai"} place={"Houston, TX, USA"} date={"27 Sep, Friday"} text={"Kutch Ni Koyal Geetaben Ravai - Live"}  />
                         <Card img={event3} name={"PurvaMantri"} place={"Edison, NJ, USA"} date={"27 Sep, Friday"} text={"Garba Dhamaal with Purva Mantri"} />
                         <Card img={event4} name={"krinjaldave"} place={"Edison, NJ, USA"} date={"28 Sep, Saturday"} text={"Garba Queen Kinjal Dave - Live"} />
                         <Card img={event5} name={"GeetabenRavai"} place={"Dallas, TX, USA"} date={"28 Sep, Saturday"} text={"Kutch Ni koyal Geetaben Ravai - Live"} />

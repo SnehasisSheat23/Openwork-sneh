@@ -6,7 +6,7 @@ function Navbar() {
 
     return (
         <>
-            <div className="w-full px-5 md:px-10 lg:px-20 h-[8vh] flex items-center justify-between fixed backdrop-blur-md z-20 bg-black/30 box-border">
+            <div className="w-full px-5 md:px-10 lg:px-20 h-[7vh] flex items-center justify-between fixed backdrop-blur-md z-20 bg-black/30 box-border">
                 <div className="text-xl md:text-2xl text-white font-bold">
                     Manpasand
                 </div>
@@ -14,7 +14,7 @@ function Navbar() {
                 <div className="hidden md:flex space-x-5 lg:space-x-10 text-sm lg:text-lg">
                     {["FESTIVALS & EVENTS", "EXPERIENCE", "TOUR", "MORE"].map((v, i) => (
                         <div
-                            className={`cursor-pointer font-semibold flex items-center text-white ${i === 0 ? "ml-[5vw]" : ""
+                            className={`cursor-pointer font-light flex items-center text-white ${i === 0 ? "ml-[5vw]" : ""
                                 }`}
                             key={i}
                         >

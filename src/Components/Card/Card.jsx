@@ -1,11 +1,15 @@
 import { FaLocationDot } from "react-icons/fa6";
 import { useNavigate } from "react-router-dom";
 
-function Card({ name, img, text, place, date }) {
+function Card({ name, img, text, place, date, link }) {
     const navigate = useNavigate();
 
     function Handler() {
         navigate(`/info/${name}`);
+    }
+
+    function Handler2() {
+        window.open(link);
     }
 
     return (
@@ -36,7 +40,9 @@ function Card({ name, img, text, place, date }) {
                     <button onClick={Handler} className="bg-transparent border border-white text-white text-sm px-4 py-1 rounded-full hover:bg-white hover:text-black transition duration-300">
                         Info
                     </button>
-                    <button className="bg-transparent border border-white text-white text-sm px-4 py-1 rounded-full hover:bg-white hover:text-black transition duration-300">
+                    
+                    
+                    <button  onClick={Handler2} className="bg-transparent border border-white text-white text-sm px-4 py-1 rounded-full hover:bg-white hover:text-black transition duration-300">
                         Tickets
                     </button>
                 </div>
