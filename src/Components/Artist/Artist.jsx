@@ -1,6 +1,7 @@
 import krinjaldave from '../../assets/Artist/Artist1.png'
 import GeetabenRavai from '../../assets/Artist/Artist2.png'
 import PurvaMantri from '../../assets/Artist/Artist3.png'
+import Artistcard from '../Artistcard/Artistcard'
 import Card from '../Card/Card'
 
 function Artist() {
@@ -13,11 +14,11 @@ function Artist() {
 
 
 
-                <div className="w-full h-[480px] px-10   lg:px-48 md:px-10 sm:px-1 flex box-border justify-between items-center ">
-                    <div className="w-full h-[400px]  flex gap-3 justify-between overflow-x-auto ">
-                        <Card img={krinjaldave}  />
-                        <Card img={GeetabenRavai}  />
-                        <Card img={PurvaMantri} />
+                <div className="w-full h-[480px] px-10   lg:px-48 md:px-10 sm:px-1 flex box-border justify-center items-center ">
+                    <div className="w-full h-[400px]  flex gap-3 justify-center overflow-x-auto ">
+                        <Artistcard img={krinjaldave} name={"krinjaldave"}  />
+                        <Artistcard img={GeetabenRavai} name={"GeetabenRavai"}  />
+                        <Artistcard img={PurvaMantri} name={"PurvaMantri"} />
                     </div>
                 </div>
 

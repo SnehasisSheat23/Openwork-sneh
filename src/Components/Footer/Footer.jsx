@@ -23,7 +23,7 @@ const Footer = () => {
                 <hr className="border-gray-600 mb-8" />
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div>
-                        <h3 className="text-lg font-semibold mb-4">Manpasand Belgium</h3>
+                        <h3 className="text-lg font-semibold mb-4">Manpasand US</h3>
                         <ul>
                             <li><a href="#" className="hover:underline">About</a></li>
                             <li><a href="#" className="hover:underline">Line-up</a></li>
@@ -49,7 +49,7 @@ const Footer = () => {
                     </div>
                 </div>
                 <div className="mt-8 text-center">
-                    <p>&copy; {new Date().getFullYear()} Tomorrowland. All rights reserved.</p>
+                    <p>&copy; {new Date().getFullYear()} Manpasand. All rights reserved.</p>
                 </div>
             </div>
         </footer>

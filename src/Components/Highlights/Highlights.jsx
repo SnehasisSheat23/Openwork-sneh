@@ -4,7 +4,7 @@ function Highlights() {
             <div className="w-full h-auto flex flex-col bg-[#3d2c2c] py-8">
                 <div className="w-full h-[80px] box-border flex justify-between px-6 xl:px-32 lg:px-20 items-center">
                     <div className="text-white font-bold text-2xl lg:text-3xl">Highlights</div>
-                    <div className="h-[40px] cursor-pointer text-black w-32 lg:w-28 bg-white rounded-2xl flex justify-center items-center tracking-tighter text-sm lg:text-base">
+                    <div className="h-[40px] hover:scale-105 duration-300 cursor-pointer text-black w-32 lg:w-28 bg-white rounded-2xl flex justify-center items-center tracking-tighter text-sm lg:text-base">
                         GALARY
                     </div>
                 </div>
@@ -17,9 +17,10 @@ function Highlights() {
                             <img
                                 src="https://prismic-assets-cdn.tomorrowland.com/ZtgSFbzzk9ZrW88D_IMAGEALT.png?crop=750%2C1000%2C375%2C0&width=600&height=800"
                                 alt=""
-                                className="w-full h-full rounded-2xl"
+                                className="w-full h-full rounded-2xl object-cover"
                             />
                         </div>
+
                         <div className="h-1/2 lg:h-full w-full lg:w-1/2 flex flex-col justify-center">
                             <div className="text-white px-4 lg:px-6 text-lg lg:text-xl font-bold leading-1">
                                 Relive the summer Anthems Top 100
@@ -59,7 +60,7 @@ function Highlights() {
                             <img
                                 src="https://prismic-assets-cdn.tomorrowland.com/ZtgSFbzzk9ZrW88D_IMAGEALT.png?crop=750%2C1000%2C375%2C0&width=600&height=800"
                                 alt=""
-                                className="w-full h-full rounded-2xl"
+                                className="w-full h-full rounded-2xl object-cover"
                             />
                         </div>
                         <div className="h-1/2 lg:h-full w-full lg:w-1/2 flex flex-col justify-center">
