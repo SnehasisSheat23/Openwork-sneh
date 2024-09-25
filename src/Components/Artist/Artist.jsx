@@ -14,13 +14,20 @@ function Artist() {
 
 
 
-                <div className="w-full h-[480px] px-10   lg:px-48 md:px-10 sm:px-1 flex box-border justify-center items-center ">
-                    <div className="w-full h-[400px]  flex gap-3 justify-center overflow-x-auto ">
-                        <Artistcard img={krinjaldave} name={"krinjaldave"}  />
-                        <Artistcard img={GeetabenRavai} name={"GeetabenRavai"}  />
-                        <Artistcard img={PurvaMantri} name={"PurvaMantri"} />
+                <div className="w-full h-[480px] px-10 lg:px-48 md:px-10 sm:px-1 flex box-border lg:justify-center items-center">
+                    <div className="w-full h-[400px] flex gap-3 overflow-x-auto">
+                        <div className="flex-shrink-0">
+                            <Artistcard img={krinjaldave} name={"krinjaldave"} />
+                        </div>
+                        <div className="flex-shrink-0">
+                            <Artistcard img={GeetabenRavai} name={"GeetabenRavai"} />
+                        </div>
+                        <div className="flex-shrink-0">
+                            <Artistcard img={PurvaMantri} name={"PurvaMantri"} />
+                        </div>
                     </div>
                 </div>
+
 
 
             </div>
