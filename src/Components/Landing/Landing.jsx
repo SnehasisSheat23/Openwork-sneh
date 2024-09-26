@@ -3,7 +3,7 @@ function Landing() {
         <>
             <div
                 className="relative flex justify-center items-end h-[90vh] w-full bg-no-repeat bg-cover"
-                style={{ backgroundImage: `url("https://s3.india.com/travel/wp-content/uploads/2015/10/navratri-111.jpg")` }}
+                style={{ backgroundImage: `url("https://images.hindustantimes.com/img/2022/09/26/1600x900/20220924-KPT-SK-MN-54-0_1664180820199_1664180820199_1664180981399_1664180981399.JPG")` }}
             >
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent"></div>
 
