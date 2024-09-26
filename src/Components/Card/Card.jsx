@@ -14,7 +14,7 @@ function Card({ name, img, text, place, date, link }) {
 
     return (
         <>
-            <div className="h-[360px] w-72 min-w-72 hover:scale-105 duration-300 rounded-lg relative mt-3 cursor-pointer bg-black border-none shadow-lg">
+            <div onClick={Handler2} className="h-[360px] w-72 min-w-72 hover:scale-105 duration-300 rounded-lg relative mt-3 cursor-pointer bg-black border-none shadow-lg">
 
                 <div
                     className="absolute inset-0 bg-cover bg-center rounded-lg"
