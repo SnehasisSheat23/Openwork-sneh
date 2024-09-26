@@ -12,12 +12,14 @@ function Landing() {
                         Navratri Tour 2024
                     </h1>
                     <div className="text-white font-light tracking-tight text-xs sm:text-sm md:text-lg lg:text-xl ">
-                        <p>Prepare for a new adventure and secure your tickets now.</p>
-                        <p>Tomorrowland Brasil - October 11 - 13, 2024.</p>
+                        <p>Prepare for a new new Garba experience secure your tickets now.</p>
+                        <p>Garba event Chicago - October 11 - 13, 2024.</p>
                     </div>
-                    <div className="-10 h-10  cursor-pointer font-light text-white border-[2px] hover:bg-white hover:text-black border-white flex justify-center items-center w-28 sm:w-32 rounded-3xl mb-20 transform hover:scale-105 duration-300">
-                        <div>Timetable</div>
-                    </div>
+                    <div className="mt-8"> {/* Adjust this margin for desired spacing */}
+    <div className="h-10 cursor-pointer font-light text-white border-[2px] hover:bg-white hover:text-black border-white flex justify-center items-center w-28 sm:w-32 rounded-3xl mb-20 transform hover:scale-105 duration-300">
+        <div>Timetable</div>
+    </div>
+</div>
 
 
 
