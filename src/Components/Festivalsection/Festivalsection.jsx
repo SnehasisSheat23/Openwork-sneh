@@ -43,15 +43,15 @@ function Festivalsection() {
 
                 <div className="w-full h-[480px] px-10 md:px-10 sm:px-1 flex gap-[2vw] box-border justify-between items-center lg:mt-[3vh]">
                     <div ref={scrollRef} className="w-full h-[400px] flex gap-[2vw] overflow-x-auto scroll-smooth">
-                        <Card img={event1} name={"krinjaldave"} place={"Pittsburgh, PA, USA"} date={"27 Sep, Friday"} text={"Garba Queen Kinjal Dave"} link={'https://events.sulekha.com/garba-glamour-in-pittsburgh-with-kinjal-dave_event-in_cheswick-pa_377067'}/>
-                        <Card img={event2} name={"GeetabenRavai"} place={"Houston, TX, USA"} date={"27 Sep, Friday"} text={"Kutch Ni Koyal Geetaben Ravai - Live"}  />
-                        <Card img={event3} name={"PurvaMantri"} place={"Edison, NJ, USA"} date={"27 Sep, Friday"} text={"Garba Dhamaal with Purva Mantri"} />
-                        <Card img={event4} name={"krinjaldave"} place={"Edison, NJ, USA"} date={"28 Sep, Saturday"} text={"Garba Queen Kinjal Dave - Live"} />
-                        <Card img={event5} name={"GeetabenRavai"} place={"Dallas, TX, USA"} date={"28 Sep, Saturday"} text={"Kutch Ni koyal Geetaben Ravai - Live"} />
-                        <Card img={event6} name={"PurvaMantri"} place={"Boston, MA, USA"} date={"28 Sep, Saturday"} text={"Garba Dhamaal with Purva Mantri - Live in Boston"} />
-                        <Card img={event7} name={"GeetabenRavai"} place={"Kansas City, MO, USA"} date={"29 Sep, Friday"} text={"Kutch Ni koyal Geetaben Ravai - Live"} />
-                        <Card img={event8} name={"PurvaMantri"} place={"Seattle, WA, USA"} date={"29 Sep, Friday"} text={"Garba Dhamaal with Purva Mantri - Live"} />
-                        <Card img={event9} name={"krinjaldave"} place={"Boston, MA, USA"} date={"18 Sep, Friday"} text={"Garba Queen Kinjal Dave - Live"} />
+                        
+                        <Card img={event7} name={"GeetabenRavai"} place={"Kansas City, MO, USA"} date={"29 Sep, Friday"} text={"Kutch Ni koyal Geeta Ravai - Live"} link={''} />
+                        <Card img={event6} name={"PurvaMantri"} place={"Seattle, WA, USA"} date={"29 Sep, Friday"} text={"Garba Dhamaal with Purva Mantri - Live"} link={''} />
+                        <Card img={event4} name={"krinjaldave"} place={"Boston, MA, USA"} date={"18 Oct, Friday"} text={"Garba Queen Kinjal Dave - Live"} link={''} />
+                        <Card img={event2} name={"GeetabenRavai"} place={"Scranton, PA, USA"} date={"19 Oct, Friday"} text={"Kutch Ni koyal Geeta Ravai - Live"} link={''} />
+                        <Card img={event1} name={"krinjaldave"} place={"London, ON, Canada"} date={"19 Oct, Friday"} text={"Kutch Ni koyal Geeta Ravai - Live"} link={''} />
+                        <Card img={event7} name={"GeetabenRavai"} place={"Chicago, IL, USA"} date={"27 Oct, Sunday"} text={"Kutch Ni koyal Geeta Ravai - Live"} link={''} />
+                        <Card img={event9} name={"krinjaldave"} place={"Elkhart, IN, USA"} date={"27 Oct, Sunday"} text={"Kutch Ni koyal Geeta Ravai - Live"} link={''} />
+                        
                     </div>
                 </div>
             </div>

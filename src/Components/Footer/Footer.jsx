@@ -1,21 +1,41 @@
 import React from 'react';
-import profile from '../../assets/ManpasandLogo.svg'
+import profile from '../../assets/image.svg'
+
+
+const link1 = "https://www.facebook.com/manpasandinc"; 
+const link2 = "https://www.instagram.com/manpasand_inc/?hl=en";
+const link3 = "https://www.linkedin.com/company/manpasand-inc/about/";
+
+function Handler3() {
+    event.preventDefault();
+    window.open(link1);
+}
+
+function Handler4() {
+    event.preventDefault();
+    window.open(link2);
+}
+
+function Handler5() {
+    event.preventDefault();
+    window.open(link3);
+}
 
 const Footer = () => {
     return (
-        <footer className="bg-[#3d2c2c] text-white  w-full box-border py-5">
+        <footer className="bg-[#3d2c2c] text-white  w-full box-border py-2">
             <div className="container mx-auto px-4 flex flex-col">
                 <div className='flex flex-col items-center'>
-                    <img src={profile} alt="" className="w-52 h-52 mb-6" />
+                    <img src={profile} alt="" className="w-52 h-52 mb-5" />
 
                     <div className="flex justify-center space-x-6 mb-8">
                         <a href="#" className="text-white">
-                            <i className="fab fa-facebook text-2xl"></i>
+                            <i onClick={Handler3}className="fab fa-facebook text-2xl"></i>
                         </a>
-                        <a href="#" className="text-white">
+                        <a href="#"onClick={Handler4}className="text-white">
                             <i className="fab fa-instagram text-2xl"></i>
                         </a>
-                        <a href="#" className="text-white">
+                        <a href="#" onClick={Handler5}className="text-white">
                             <i class="fa-brands fa-linkedin text-2xl"></i>
                         </a>
                     </div>
@@ -49,7 +69,7 @@ const Footer = () => {
                     </div>
                 </div>
                 <div className="mt-8 text-center">
-                    <p>&copy; {new Date().getFullYear()} Manpasand. All rights reserved.</p>
+                    {/* <p>&copy; {new Date().getFullYear()} Manpasand. All rights reserved.</p> */}
                 </div>
             </div>
         </footer>
