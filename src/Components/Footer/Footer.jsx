@@ -1,21 +1,41 @@
 import React from 'react';
-import profile from '../../assets/ManpasandLogo.svg'
+import profile from '../../assets/image.svg'
+
+
+const link1 = "https://www.facebook.com/manpasandinc"; 
+const link2 = "https://www.instagram.com/manpasand_inc/?hl=en";
+const link3 = "https://www.linkedin.com/company/manpasand-inc/about/";
+
+function Handler3() {
+    event.preventDefault();
+    window.open(link1);
+}
+
+function Handler4() {
+    event.preventDefault();
+    window.open(link2);
+}
+
+function Handler5() {
+    event.preventDefault();
+    window.open(link3);
+}
 
 const Footer = () => {
     return (
-        <footer className="bg-[#3d2c2c] text-white  w-full box-border py-5">
+        <footer className="bg-[#3d2c2c] text-white  w-full box-border py-2">
             <div className="container mx-auto px-4 flex flex-col">
                 <div className='flex flex-col items-center'>
-                    <img src={profile} alt="" className="w-52 h-52" />
+                    <img src={profile} alt="" className="w-52 h-52 mb-5" />
 
                     <div className="flex justify-center space-x-6 mb-8">
                         <a href="#" className="text-white">
-                            <i className="fab fa-facebook text-2xl"></i>
+                            <i onClick={Handler3}className="fab fa-facebook text-2xl"></i>
                         </a>
-                        <a href="#" className="text-white">
+                        <a href="#"onClick={Handler4}className="text-white">
                             <i className="fab fa-instagram text-2xl"></i>
                         </a>
-                        <a href="#" className="text-white">
+                        <a href="#" onClick={Handler5}className="text-white">
                             <i class="fa-brands fa-linkedin text-2xl"></i>
                         </a>
                     </div>
@@ -25,31 +45,31 @@ const Footer = () => {
                     <div>
                         <h3 className="text-lg font-semibold mb-4">Manpasand US</h3>
                         <ul>
-                            <li><a href="#" className="hover:underline">About</a></li>
-                            <li><a href="#" className="hover:underline">Line-up</a></li>
-                            <li><a href="#" className="hover:underline">Tickets</a></li>
-                            <li><a href="#" className="hover:underline">FAQ</a></li>
+                            <li><a href="#" className="hover:underline font-light">About</a></li>
+                            <li><a href="#" className="hover:underline font-light">Line-up</a></li>
+                            <li><a href="#" className="hover:underline font-light">Tickets</a></li>
+                            <li><a href="#" className="hover:underline font-light">FAQ</a></li>
                         </ul>
                     </div>
                     <div>
                         <h3 className="text-lg font-semibold mb-4">Media</h3>
                         <ul>
-                            <li><a href="#" className="hover:underline">Photos</a></li>
-                            <li><a href="#" className="hover:underline">Videos</a></li>
-                            <li><a href="#" className="hover:underline">Live Streams</a></li>
+                            <li><a href="#" className="hover:underline font-light">Photos</a></li>
+                            <li><a href="#" className="hover:underline font-light">Videos</a></li>
+                            <li><a href="#" className="hover:underline font-light">Live Streams</a></li>
                         </ul>
                     </div>
                     <div>
                         <h3 className="text-lg font-semibold mb-4">Legal</h3>
                         <ul>
-                            <li><a href="#" className="hover:underline">Privacy Policy</a></li>
-                            <li><a href="#" className="hover:underline">Terms of Service</a></li>
-                            <li><a href="#" className="hover:underline">Cookies</a></li>
+                            <li><a href="#" className="hover:underline font-light">Privacy Policy</a></li>
+                            <li><a href="#" className="hover:underline font-light">Terms of Service</a></li>
+                            <li><a href="#" className="hover:underline font-light">Cookies</a></li>
                         </ul>
                     </div>
                 </div>
                 <div className="mt-8 text-center">
-                    <p>&copy; {new Date().getFullYear()} Manpasand. All rights reserved.</p>
+                    {/* <p>&copy; {new Date().getFullYear()} Manpasand. All rights reserved.</p> */}
                 </div>
             </div>
         </footer>
