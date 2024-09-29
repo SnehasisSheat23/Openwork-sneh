@@ -23,7 +23,7 @@ function Handler5() {
 
 const Footer = () => {
     return (
-        <footer className="bg-[#3d2c2c] text-white  w-full box-border py-2">
+        <footer className="bg-[#3d2c2c] text-white  w-full box-border py-1">
             <div className="container mx-auto px-4 flex flex-col">
                 <div className='flex flex-col items-center'>
                     <img src={profile} alt="" className="w-52 h-52 mb-5" />
@@ -47,7 +47,7 @@ const Footer = () => {
                         <ul>
                             <li><a href="#" className="hover:underline font-light">About</a></li>
                             <li><a href="#" className="hover:underline font-light">Line-up</a></li>
-                            <li><a href="#" className="hover:underline font-light">Tickets</a></li>
+                            <li><a href="#" className="hover:underline font-light">Contact Us</a></li>
                             <li><a href="#" className="hover:underline font-light">FAQ</a></li>
                         </ul>
                     </div>
@@ -56,7 +56,7 @@ const Footer = () => {
                         <ul>
                             <li><a href="#" className="hover:underline font-light">Photos</a></li>
                             <li><a href="#" className="hover:underline font-light">Videos</a></li>
-                            <li><a href="#" className="hover:underline font-light">Live Streams</a></li>
+                            
                         </ul>
                     </div>
                     <div>
