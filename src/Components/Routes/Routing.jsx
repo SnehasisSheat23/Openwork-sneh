@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom"
 import Home from "../pages/Home"
-import Timeline from "../pages/Infopage"
+import Timeline from "../pages/Infopage/Infopage"
 
 
 function Routing(){
