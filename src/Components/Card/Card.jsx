@@ -1,8 +1,11 @@
 import { FaLocationDot } from "react-icons/fa6";
 import { useNavigate } from "react-router-dom";
+import React, { useEffect, useRef } from 'react';
 
 function Card({ name, img, text, place, date, link }) {
     const navigate = useNavigate();
+    const cardRef = useRef(null);
+    
 
     function Handler() {
         navigate(`/info/${name}`);
@@ -12,9 +15,46 @@ function Card({ name, img, text, place, date, link }) {
         window.open(link);
     }
 
+    useEffect(() => {
+        const handleIntersection = (entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
+                    const nextCard = cardRef.current.nextElementSibling;
+                    const prevCard = cardRef.current.previousElementSibling;
+                    if (nextCard) {
+                        nextCard.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+                    } else if (prevCard) {
+                        prevCard.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+                    }
+                }
+            });
+        };
+        const observer = new IntersectionObserver(handleIntersection, {
+            root: null, 
+            rootMargin: '0px',
+            threshold: 0.5 
+        });
+
+        const mediaQuery = window.matchMedia('(max-width: 768px)');
+        if (mediaQuery.matches && cardRef.current) {
+            observer.observe(cardRef.current);
+        }
+
+        if (cardRef.current) {
+            observer.unobserve(cardRef.current);
+        }
+
+        return () => {
+            if (cardRef.current) {
+                observer.unobserve(cardRef.current);
+            }
+        };
+    }, [name]);
+
+
     return (
         <>
-            <div onClick={Handler2} className="h-[360px] w-72 min-w-72 hover:scale-105 duration-300 rounded-lg relative mt-3 cursor-pointer bg-black border-none shadow-lg">
+            <div ref={cardRef} onClick={Handler2} className="h-[360px] w-72 min-w-72 hover:scale-105 duration-300 rounded-lg relative mt-3 cursor-pointer bg-black border-none shadow-lg">
 
                 <div
                     className="absolute inset-0 bg-cover bg-center rounded-lg"

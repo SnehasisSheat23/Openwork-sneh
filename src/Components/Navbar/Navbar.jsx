@@ -1,5 +1,6 @@
 import { RiArrowDropDownLine, RiMenu3Fill, RiCloseLine } from "react-icons/ri";
 import { useState } from "react";
+import { RxHamburgerMenu } from "react-icons/rx";
 
 function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
@@ -37,7 +38,7 @@ function Navbar() {
 
                 <div className="md:hidden flex items-center mr-6">
                     <button onClick={() => setIsOpen(!isOpen)} className="text-white">
-                        {isOpen ? <RiCloseLine size={30} /> : <RiMenu3Fill size={30} />}
+                        {isOpen ? <RiCloseLine size={30} /> : <RxHamburgerMenu size={30} />}
                     </button>
                 </div>
             </div>
