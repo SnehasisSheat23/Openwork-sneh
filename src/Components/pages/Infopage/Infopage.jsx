@@ -71,15 +71,20 @@ const Timeline = () => {
 
         
         <>
-            <div className='bg-[#3d2c2c]'>
-                <div>
+            <div className='bg-black'>
+                <div className="relative flex justify-center">
                     {/* Fullscreen image with object-contain to prevent cutting */}
                     <img
                         src={artistImage}
                         alt={artist}
-                        className="w-screen h-screen object-contain"
+                        className="h-[500px] object-contain w-4/5" // Increased width to 4/5
                     />
+
+                    {/* Gradient overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
                 </div>
+
+
 
 
                 <div className="container mx-auto p-8 relative">
