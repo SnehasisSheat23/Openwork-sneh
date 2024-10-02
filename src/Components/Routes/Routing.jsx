@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom"
 import Home from "../pages/Home"
-import Infopage from "../pages/Infopage"
+import Timeline from "../pages/Infopage"
 
 
 function Routing(){
@@ -8,8 +8,7 @@ function Routing(){
         <>
             <Routes>
                 <Route path="/"  element={<Home/>}></Route>
-                <Route path="/info/:artist" element={<Infopage/>}></Route>
-                
+                <Route path="/info/:artist" element={<Timeline/>}></Route>
             </Routes>
         </>
     )
