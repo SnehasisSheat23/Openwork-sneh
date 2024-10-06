@@ -1,6 +1,7 @@
 import { RiArrowDropDownLine, RiMenu3Fill, RiCloseLine } from "react-icons/ri";
 import { useState } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
+import { Link } from 'react-router-dom';
 
 function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
@@ -21,9 +22,11 @@ function Navbar() {
     return (
         <>
             <div className="w-full px-5 md:px-10 lg:px-20 h-[7vh] flex items-center justify-between fixed backdrop-blur-md z-20 bg-black/30 box-border">
-                <div className="text-xl md:text-2xl text-white font-bold">
-                    Manpasand
-                </div>
+            <Link to="/">
+  <div className="text-xl md:text-2xl text-white font-bold">
+    Manpasand
+  </div>
+</Link>
 
                 <div className="hidden md:flex space-x-5 lg:space-x-10 text-sm lg:text-lg">
                     {["FESTIVALS & EVENTS", "EXPERIENCE", "TOUR", "MORE"].map((v, i) => (

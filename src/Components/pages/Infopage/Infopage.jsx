@@ -1,15 +1,16 @@
 import React, { useEffect } from 'react';
 import GeetabenRavai from '../../../assets/Artist/Artist1.png'
-import PurvaMantri from '../../../assets/Artist/Artist2.png'
+import PurvaMantri from '../../../assets/InfoPurvaMantri.jpg'
 import krinjaldave from '../../../assets/Artist/Artist3.png'
 import { useParams } from 'react-router-dom';
+
 
 const timelineData = [
     {
         title: 'Title of section 1',
         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit...',
         date: 'Jan 14',
-        icon: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-picture.svg',
+        icon: 'https://www.svgrepo.com/show/530621/cocktail.svg',
     },
     {
         title: 'Title of section 2',
@@ -62,6 +63,8 @@ const Timeline = () => {
 
         handleScroll();
         window.addEventListener('scroll', handleScroll);
+
+        handleScroll();
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
@@ -72,12 +75,12 @@ const Timeline = () => {
         
         <>
             <div className='bg-black'>
-                <div className="relative flex justify-center">
+                <div className="relative flex justify-centre w-full items-end bg-no-repeat bg-cover bg-center">
                     {/* Fullscreen image with object-contain to prevent cutting */}
                     <img
                         src={artistImage}
                         alt={artist}
-                        className="h-[500px] object-contain w-4/5" // Increased width to 4/5
+                        className="h-[500px] object-cover w-full" // Increased width to 4/5
                     />
 
                     {/* Gradient overlay */}
@@ -87,12 +90,12 @@ const Timeline = () => {
 
 
 
-                <div className="container mx-auto p-8 relative">
+                <div className="container mx-auto p-8 relative ">
 
 
                     <section className="relative">
                         {/* Central vertical timeline line */}
-                        <div className="absolute left-1/2 transform -translate-x-1/2 top-0 h-full w-1 bg-[#eeaa6b]"></div>
+                        <div className="absolute left-1/2 transform -translate-x-1/2 top-0 h-full w-1 bg-[#eeaa6b] bg-gradient-to-b from-black via-black/10 to-transparent"></div>
 
                         {timelineData.map((item, index) => (
                             <div
@@ -106,12 +109,13 @@ const Timeline = () => {
                                 </div>
 
                                 {/* Card content */}
-                                <div className="w-5/12 p-6 bg-[#eeaa6b] rounded-lg shadow-md">
+                                <div className="w-5/12 p-6 bg-[#ffffff] rounded-3xl lg shadow-md">
                                     <h2 className="text-2xl font-semibold mb-2 text-[#3d2c2c]">{item.title}</h2>
                                     <p className="text-[#534848] mb-4">{item.description}</p>
-                                    <a href="#0" className="text-[#6d582f] font-medium hover:underline">
-                                        Read more
-                                    </a>
+                                    <div 
+                                    className="h-9 cursor-pointer font-light text-[#6d582f] border-[2px] hover:bg-[#6d582f] hover:text-white border-[#6d582f] flex justify-center items-center w-20 sm:w-25 rounded-3xl transform hover:scale-105 duration-300">
+                                    <div>Tickets</div>
+                                </div>
                                     <span className="block text-sm text-[#241f1f] mt-2">{item.date}</span>
                                 </div>
 

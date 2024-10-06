@@ -1,6 +1,6 @@
 import React from 'react';
 import profile from '../../assets/image.svg'
-
+import { Link } from 'react-router-dom';
 
 const link1 = "https://www.facebook.com/manpasandinc"; 
 const link2 = "https://www.instagram.com/manpasand_inc/?hl=en";
@@ -45,7 +45,7 @@ const Footer = () => {
                     <div>
                         <h3 className="text-lg font-semibold mb-4">Manpasand US</h3>
                         <ul>
-                            <li><a href="#" className="hover:underline font-light">About</a></li>
+                            <li><Link to="/about" className="hover:underline font-light">About</Link></li>
                             <li><a href="#" className="hover:underline font-light">Line-up</a></li>
                             <li><a href="#" className="hover:underline font-light">Contact Us</a></li>
                             <li><a href="#" className="hover:underline font-light">FAQ</a></li>
@@ -54,7 +54,7 @@ const Footer = () => {
                     <div>
                         <h3 className="text-lg font-semibold mb-4">Media</h3>
                         <ul>
-                            <li><a href="#" className="hover:underline font-light">Photos</a></li>
+                            <li><Link to="/Gallery" className="hover:underline font-light">Photos</Link></li>
                             <li><a href="#" className="hover:underline font-light">Videos</a></li>
                             
                         </ul>
