@@ -58,7 +58,7 @@ function Card({ name, img, text, place, date, link }) {
                 ref={cardRef} 
                 onClick={Handler2} 
                 className="h-[360px] w-72 min-w-72 duration-300 rounded-lg relative mt-3 cursor-pointer bg-black border-none shadow-lg 
-                hover:scale-105 md:hover:scale-105 lg:hover:scale-105"
+                 md:hover:scale-105 lg:hover:scale-105"
             >
                 <div
                     className="absolute inset-0 bg-cover bg-center rounded-lg"
