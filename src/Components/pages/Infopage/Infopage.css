@@ -8,3 +8,190 @@
     opacity: 1;
     transform: translateY(0);
 }
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.slide-up {
+    animation: slideUp 0.5s ease-out forwards;
+}
+
+/* Scrollbar styling for Webkit browsers */
+.highlight-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.highlight-container::-webkit-scrollbar-track {
+    background: #2D3748;
+}
+
+.highlight-container::-webkit-scrollbar-thumb {
+    background-color: #4A5568;
+    border-radius: 4px;
+}
+
+/* Scrollbar styling for Firefox */
+.highlight-container {
+    scrollbar-width: thin;
+    scrollbar-color: #4A5568 #2D3748;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(10deg); }
+}
+
+.animate-float-1 { animation: float 8s ease-in-out infinite; }
+.animate-float-2 { animation: float 10s ease-in-out infinite 1s; }
+.animate-float-3 { animation: float 7s ease-in-out infinite 2s; }
+.animate-float-4 { animation: float 9s ease-in-out infinite 3s; }
+
+@keyframes scroll {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+.scrolling-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  padding: 8px;
+  animation: scroll 20s linear infinite;
+}
+
+.scrolling-grid::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 10%, rgba(0,0,0,0) 90%, rgba(0,0,0,0.8) 100%);
+  pointer-events: none;
+}
+
+.scrolling-grid:hover {
+  animation-play-state: paused;
+}
+
+.custom-datepicker {
+  width: 100% !important;
+}
+
+.responsive-calendar {
+  font-family: 'Arial', sans-serif;
+  background: transparent !important;
+  border: none !important;
+  width: 100% !important;
+}
+
+.react-datepicker {
+  width: 100% !important;
+  background-color: transparent !important;
+  border: none !important;
+}
+
+.react-datepicker__month-container {
+  float: none !important;
+  width: 100% !important;
+}
+
+.react-datepicker__header {
+  background-color: transparent !important;
+  border-bottom: none !important;
+  padding-top: 0.5em !important;
+}
+
+.react-datepicker__day-names, .react-datepicker__week {
+  display: flex !important;
+  justify-content: space-between !important;
+  padding: 0 2% !important;
+}
+
+.react-datepicker__day-name, .react-datepicker__day {
+  color: white !important;
+  margin: 0 !important;
+  padding: 0.5em 0 !important;
+  width: 14% !important;
+  max-width: 40px !important;
+  height: auto !important;
+  line-height: 1 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  aspect-ratio: 1 / 1 !important;
+  border-radius: 50% !important;
+  transition: all 0.3s ease !important;
+}
+
+.react-datepicker__day:hover {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.highlighted-date {
+  background-color: rgba(255, 255, 255, 0.3) !important;
+  position: relative !important;
+}
+
+.highlighted-date::after {
+  content: '★';
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 0.6em;
+  color: #FFD700;
+}
+
+.custom-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5em 2%;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.custom-header button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1em;
+  cursor: pointer;
+  padding: 0.5em;
+  transition: all 0.3s ease;
+}
+
+.custom-header button:hover {
+  transform: scale(1.1);
+}
+
+.custom-header .month-year {
+  font-weight: bold;
+  color: white;
+  font-size: 0.9em;
+}
+
+@media (max-width: 640px) {
+  .react-datepicker__day-name, .react-datepicker__day {
+    font-size: 0.7em !important;
+  }
+  
+  .custom-header .month-year {
+    font-size: 0.8em;
+  }
+  
+  .custom-header button {
+    font-size: 0.9em;
+  }
+}

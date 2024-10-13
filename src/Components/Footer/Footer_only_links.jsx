@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
-        <footer className="bg-[#3d2c2c] text-white  w-full box-border py-1">
+        <footer className="bg-transparent text-white  w-full box-border py-1">
             <div className="container mx-auto px-4 flex flex-col">
                 <div className='flex flex-col items-center'>
                     
@@ -19,9 +19,9 @@ const Footer = () => {
                         <h3 className="text-lg font-semibold mb-4">Manpasand US</h3>
                         <ul>
                             <li><Link to="/about" className="hover:underline font-light">About</Link></li>
-                            <li><a href="#" className="hover:underline font-light">Line-up</a></li>
-                            <li><a href="#" className="hover:underline font-light">Contact Us</a></li>
-                            <li><a href="#" className="hover:underline font-light">FAQ</a></li>
+                            
+                            <li><Link to="/ContactUs" className="hover:underline font-light">Contact Us</Link></li>
+                            <li><Link to="/FAQ" className="hover:underline font-light">FAQ</Link></li>
                         </ul>
                     </div>
                     <div>
@@ -35,9 +35,9 @@ const Footer = () => {
                     <div>
                         <h3 className="text-lg font-semibold mb-4">Legal</h3>
                         <ul>
-                            <li><a href="#" className="hover:underline font-light">Privacy Policy</a></li>
-                            <li><a href="#" className="hover:underline font-light">Terms of Service</a></li>
-                            <li><a href="#" className="hover:underline font-light">Cookies</a></li>
+                            <li><Link to="/PrivatePolicies" className="hover:underline font-light">Privacy Policy</Link></li>
+                            <li><Link to="/TermOfService" className="hover:underline font-light">Terms of Service</Link></li>
+                            <li><Link to="/Cookies" className="hover:underline font-light">Cookies</Link></li>
                         </ul>
                     </div>
                 </div>

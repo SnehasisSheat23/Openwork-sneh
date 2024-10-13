@@ -22,6 +22,9 @@ const PhotoGallery = () => {
   const [visiblePhotos, setVisiblePhotos] = useState([]);
 
   useEffect(() => {
+    // Scroll to the top of the page when the component mounts
+    window.scrollTo(0, 0);
+
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -31,7 +34,7 @@ const PhotoGallery = () => {
           ]);
         }
       });
-    }, { threshold: 0.5 });
+    }, { threshold: 0.1 }); // Reduced threshold for earlier animation trigger
 
     const elements = document.querySelectorAll('.photo-container');
     elements.forEach((element) => observer.observe(element));
@@ -42,10 +45,10 @@ const PhotoGallery = () => {
   }, []);
 
   return (
-    <>
-    <Navbar />
+    <div className="min-h-screen bg-[#3d2c2c]">
+      <Navbar />
       <div
-                className="relative flex justify-center items-end h-[50vh] w-full bg-no-repeat bg-cover bg-center"
+                className="relative flex justify-center items-end h-[30vh] sm:h-[25vh] md:h-[40vh] lg:h-[50vh] w-full bg-no-repeat bg-cover bg-center"
                 style={{ backgroundImage: `url("https://images.hindustantimes.com/img/2022/09/26/1600x900/20220924-KPT-SK-MN-54-0_1664180820199_1664180820199_1664180981399_1664180981399.JPG")` }}
             >
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent"></div>
@@ -66,17 +69,17 @@ const PhotoGallery = () => {
 
                 </div>
             </div>
-    <div className="  bg-gradient-to-b from-black via-[#1a0e0e] to-[#3d2c2c] ">
+      <div className="bg-gradient-to-b from-black via-[#1a0e0e] to-[#3d2c2c] ">
     <div className="max-w-7xl mx-auto p-4 ">
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {photos.map((photo) => (
           <div
             key={photo.id}
             id={photo.id.toString()}
-            className={`photo-container aspect-square rounded-xl shadow-lg overflow-hidden ${
+            className={`photo-container aspect-square rounded-xl shadow-lg overflow-hidden transition-all duration-500 ease-out ${
               visiblePhotos.includes(photo.id.toString())
-                ? 'animate-fade-in'
-                : 'opacity-0'
+                ? 'opacity-100 transform translate-y-0'
+                : 'opacity-0 transform translate-y-16'
             }`}
           >
             <img
@@ -90,7 +93,7 @@ const PhotoGallery = () => {
     </div>
     </div>
     <Footer_only_links/>
-    </>
+    </div>
   );
 };
 

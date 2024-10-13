@@ -1,7 +1,32 @@
 import { useNavigate } from "react-router-dom";
+import { useState, useEffect, useRef } from "react";
 
-function Artistcard({ img, name, description }) {
+function Artistcard({ img, name, description, delay = 0 }) {
     const navigate = useNavigate();
+    const [isVisible, setIsVisible] = useState(false);
+    const cardRef = useRef(null);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => setIsVisible(true), delay);
+                    observer.unobserve(entry.target);
+                }
+            },
+            { threshold: 0.1 }
+        );
+
+        if (cardRef.current) {
+            observer.observe(cardRef.current);
+        }
+
+        return () => {
+            if (cardRef.current) {
+                observer.unobserve(cardRef.current);
+            }
+        };
+    }, [delay]);
 
     function Handler() {
         navigate(`/info/${name}`);
@@ -9,7 +34,10 @@ function Artistcard({ img, name, description }) {
 
     return (
         <>
-            <div className="h-[360px] w-72 min-w-72 hover:scale-105 duration-300 rounded-lg relative mt-3 cursor-pointer bg-black border-none shadow-lg">
+            <div 
+                ref={cardRef}
+                className={`h-[360px] w-72 min-w-72 hover:scale-105 duration-300 rounded-lg relative mt-3 cursor-pointer bg-black border-none shadow-lg transition-all ease-in-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+            >
                 <div
                     className="absolute inset-0 bg-cover bg-center rounded-lg"
                     style={{ backgroundImage: `url(${img})`, backgroundPosition: 'top' }}

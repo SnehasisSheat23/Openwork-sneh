@@ -1,128 +1,567 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
+import DatePicker from 'react-datepicker';
+import "react-datepicker/dist/react-datepicker.css";
 import GeetabenRavai from '../../../assets/Artist/Artist1.png'
 import PurvaMantri from '../../../assets/InfoPurvaMantri.jpg'
 import krinjaldave from '../../../assets/Artist/Artist3.png'
-import { useParams } from 'react-router-dom';
-
+import { useParams, Link } from 'react-router-dom';
+import { FaSave, FaBell, FaShareAlt, FaCalendarAlt, FaPlay, FaSpotify, FaMusic, FaDrum, FaGuitar, FaMicrophone, FaStar } from 'react-icons/fa';
+import Footer_only_links from "../../Footer/Footer_only_links";
+import Navbar from "../../Navbar/Navbar";
+import './Infopage.css';
 
 const timelineData = [
     {
-        title: 'Title of section 1',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit...',
-        date: 'Jan 14',
-        icon: 'https://www.svgrepo.com/show/530621/cocktail.svg',
+        date: 'October 12, 2023',
+        events: [
+            {
+                title: 'Countdown to LIVE',
+                description: 'A new chapter awaits...',
+                time: '00:00 - 01:05',
+                isToday: true,
+            },
+            {
+                title: 'DJ Nebula',
+                description: 'MainStage',
+                time: '01:05 - 02:10',
+            },
+            {
+                title: 'Electro Pulse',
+                description: 'MainStage',
+                time: '02:10 - 03:10',
+            },
+            {
+                title: 'Sonic Waves',
+                description: 'MainStage',
+                time: '03:10 - 04:15',
+            },
+            {
+                title: 'Beat Maestro',
+                description: 'MainStage',
+                time: '04:15 - 05:20',
+            },
+        ]
     },
     {
-        title: 'Title of section 2',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit...',
-        date: 'Jan 18',
-        icon: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-movie.svg',
+        date: 'October 13, 2023',
+        events: [
+            {
+                title: 'Rhythm Rogue',
+                description: 'MainStage',
+                time: '00:00 - 01:30',
+            },
+            {
+                title: 'Synth Siren',
+                description: 'MainStage',
+                time: '01:30 - 03:00',
+            },
+            {
+                title: 'Bass Bandit',
+                description: 'MainStage',
+                time: '03:00 - 04:30',
+            },
+        ]
     },
     {
-        title: 'Title of section 3',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit...',
-        date: 'Jan 24',
-        icon: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-picture.svg',
-    },
-    {
-        title: 'Title of section 4',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit...',
-        date: 'Feb 14',
-        icon: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-location.svg',
-    },
-    {
-        title: 'Final Section',
-        description: 'This is the content of the last section.',
-        date: 'Feb 26',
-        icon: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-movie.svg',
+        date: 'October 14, 2023',
+        events: [
+            {
+                title: 'Tempo Titan',
+                description: 'MainStage',
+                time: '00:00 - 01:30',
+            },
+            {
+                title: 'Groove Galaxy',
+                description: 'MainStage',
+                time: '01:30 - 03:00',
+            },
+            {
+                title: 'Decibel Duo',
+                description: 'MainStage',
+                time: '03:00 - 04:30',
+            },
+        ]
     },
 ];
 
+const features = [
+  {
+    type: "spotifyPlayer",
+    name: "Save your files",
+    description: "We automatically save your files as you type.",
+    className: "col-span-1 h-[300px]",
+    song: {
+      title: "Autosave",
+      artist: "The Coders",
+      album: "Developer's Playlist",
+      coverUrl: "https://via.placeholder.com/400x400.png?text=Autosave+Cover",
+      spotifyUrl: "https://open.spotify.com/track/example",
+    },
+  },
+  {
+    type: "notification",
+    name: "Latest Events",
+    events: [
+      { icon: FaMusic, text: "New album released!", color: "text-purple-400" },
+      { icon: FaDrum, text: "Drum workshop tomorrow", color: "text-yellow-400" },
+      { icon: FaGuitar, text: "Guitar strings sale!", color: "text-green-400" },
+      { icon: FaMicrophone, text: "Open mic night tonight", color: "text-red-400" },
+    ],
+    className: "col-span-1 sm:col-span-2 h-[300px]",
+  },
+  {
+    type: "integrations",
+    name: "Gallery",
+    className: "col-span-1 sm:col-span-2 h-[300px]",
+    photos: [
+      { id: 1, url: 'https://picsum.photos/200/300' },
+      { id: 2, url: 'https://picsum.photos/200/301' },
+      { id: 3, url: 'https://picsum.photos/200/302' },
+      { id: 4, url: 'https://picsum.photos/200/303' },
+      { id: 5, url: 'https://picsum.photos/200/304' },
+      { id: 6, url: 'https://picsum.photos/200/305' },
+    ],
+  },
+  {
+    type: "calendar",
+    name: "Event Calendar",
+    description: "Check out our upcoming events!",
+    className: "col-span-1 h-[300px]",
+    events: [
+      { date: new Date(2023, 5, 15), title: "Music Festival" },
+      { date: new Date(2023, 5, 22), title: "Album Launch" },
+      { date: new Date(2023, 6, 3), title: "Open Mic Night" },
+      { date: new Date(2023, 6, 17), title: "Concert in the Park" },
+    ],
+  },
+];
+
+const SpotifyPlayer = ({ song, name, description }) => (
+  <div 
+    className="flex flex-col h-full bg-gradient-to-br from-blue-400 to-blue-600 p-4 rounded-xl cursor-pointer transition-transform duration-300 sm:hover:scale-105" 
+    onClick={() => window.open(song.spotifyUrl, '_blank')}
+  >
+    <div className="flex items-center mb-4">
+      <img src={song.coverUrl} alt={`${song.album} cover`} className="w-16 h-16 sm:w-20 sm:h-20 rounded-lg shadow-lg mr-4" />
+      <div>
+        <h3 className="text-lg sm:text-xl font-bold text-white">{song.title}</h3>
+        <p className="text-xs sm:text-sm text-white/80">{song.artist}</p>
+      </div>
+    </div>
+    <div className="flex-grow">
+      <h4 className="text-base sm:text-lg font-semibold text-white mb-2">{name}</h4>
+      <p className="text-xs sm:text-sm text-white/90">{description}</p>
+    </div>
+    <div className="flex items-center justify-between mt-4">
+      <div className="flex items-center">
+        <FaSpotify className="w-4 h-4 sm:w-5 sm:h-5 text-white mr-2" />
+        <p className="text-xs text-white/80">{song.album}</p>
+      </div>
+      <div className="flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 bg-white rounded-full shadow-lg">
+        <FaPlay className="w-3 h-3 sm:w-4 sm:h-4 text-blue-500" />
+      </div>
+    </div>
+  </div>
+);
+
+const NotificationCard = ({ name, events, className }) => (
+  <div className={`bg-gradient-to-br from-purple-500 to-pink-500 p-4 rounded-xl shadow-lg ${className} flex flex-col`}>
+    <h3 className="text-lg sm:text-xl font-bold text-white mb-4">{name}</h3>
+    <div className="flex-grow overflow-y-auto">
+      {events.map((event, index) => (
+        <div key={index} className="flex items-center mb-4 bg-white/10 p-3 rounded-lg">
+          <event.icon className={`w-6 h-6 mr-3 ${event.color}`} />
+          <p className="text-sm text-white">{event.text}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+);
+
+const CalendarCard = ({ name, description, events, className }) => {
+  const [selectedDate, setSelectedDate] = useState(null);
+
+  const highlightWithRanges = [
+    {
+      "react-datepicker__day--highlighted-custom-1": events.map(event => event.date),
+    },
+  ];
+
+  return (
+    <div className={`bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 p-4 rounded-xl shadow-lg ${className} flex flex-col`}>
+      <div className="flex items-center mb-2">
+        <FaCalendarAlt className="text-white w-5 h-5 mr-2" />
+        <h3 className="text-base sm:text-lg font-bold text-white">{name}</h3>
+      </div>
+      <p className="text-xs text-white/90 mb-2">{description}</p>
+      <div className="flex-grow flex justify-center items-center overflow-hidden">
+        <DatePicker
+          selected={selectedDate}
+          onChange={(date) => setSelectedDate(date)}
+          inline
+          highlightDates={highlightWithRanges}
+          className="custom-datepicker"
+          calendarClassName="responsive-calendar"
+          dayClassName={date => 
+            events.some(event => 
+              date.getTime() === event.date.getTime()
+            ) ? "highlighted-date" : undefined
+          }
+          renderCustomHeader={({
+            date,
+            decreaseMonth,
+            increaseMonth,
+            prevMonthButtonDisabled,
+            nextMonthButtonDisabled,
+          }) => (
+            <div className="custom-header">
+              <button onClick={decreaseMonth} disabled={prevMonthButtonDisabled}>
+                {"<"}
+              </button>
+              <div className="month-year">
+                {date.toLocaleString('default', { month: 'long', year: 'numeric' })}
+              </div>
+              <button onClick={increaseMonth} disabled={nextMonthButtonDisabled}>
+                {">"}
+              </button>
+            </div>
+          )}
+        />
+      </div>
+    </div>
+  );
+};
+
+const GalleryCard = ({ name, photos, className }) => (
+  <div className={`bg-white/10 backdrop-blur-md p-4 rounded-xl shadow-lg ${className} flex flex-col`}>
+    <h3 className="text-lg sm:text-xl font-bold text-white mb-2">{name}</h3>
+    <div className="flex-grow overflow-hidden">
+      <div className="h-full grid grid-cols-3 gap-2">
+        {photos.slice(0, 6).map((photo) => (
+          <div key={photo.id} className="relative aspect-square overflow-hidden rounded-lg">
+            <img 
+              src={photo.url} 
+              alt={`Gallery image ${photo.id}`}
+              className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+);
+
+const BentoCard = (props) => {
+  if (props.type === "spotifyPlayer") {
+    return <SpotifyPlayer {...props} />;
+  }
+  if (props.type === "notification") {
+    return <NotificationCard {...props} />;
+  }
+  if (props.type === "calendar") {
+    return <CalendarCard {...props} />;
+  }
+  if (props.type === "integrations") {
+    return <GalleryCard {...props} />;
+  }
+
+  const { Icon, name, description, className } = props;
+  return (
+    <div className={`bg-white/10 backdrop-blur-md p-4 rounded-xl shadow-lg ${className} flex flex-col justify-between relative overflow-hidden`}>
+      <div className="relative z-10">
+        <Icon className="w-6 h-6 sm:w-8 sm:h-8 mb-4 text-white" />
+        <h3 className="text-lg sm:text-xl font-bold text-white mb-2">{name}</h3>
+        <p className="text-sm sm:text-base text-gray-300">{description}</p>
+      </div>
+      <div className="mt-4 relative z-10">
+        <button className="text-sm sm:text-base text-white hover:underline">Learn more</button>
+      </div>
+    </div>
+  );
+};
+
+const BentoGrid = ({ children }) => (
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 px-4 sm:px-0">
+    {children}
+  </div>
+);
+
 const Timeline = () => {
-    let { artist } = useParams()
+    let { artist } = useParams();
     const artistImages = {
         krinjaldave: krinjaldave,
         geetabenravai: GeetabenRavai,
         purvamantri: PurvaMantri,
-    }
+    };
 
-    const artistImage = artistImages[artist.toLowerCase()] || ''
+    const artistImage = artistImages[artist.toLowerCase()] || '';
 
+    const [currentDate, setCurrentDate] = useState(timelineData[0].date);
+    const timelineRef = useRef(null);
+    const scrollbarRef = useRef(null);
+    const thumbRef = useRef(null);
+    const [visibleItems, setVisibleItems] = useState([]);
+
+    const isLargeScreen = window.matchMedia("(min-width: 1024px)").matches;
+
+    const containerRef = useRef(null);
+
+    const timelineContainerRef = useRef(null);
+
+    const highlightRefs = useRef([]);
 
     useEffect(() => {
-        const handleScroll = () => {
-            const blocks = document.querySelectorAll('.timeline-block');
-            blocks.forEach((block) => {
-                const blockTop = block.getBoundingClientRect().top;
-                const windowHeight = window.innerHeight;
-                if (blockTop <= windowHeight * 0.75) {
-                    block.classList.add('show');
+        const handleScroll = (e) => {
+            const { scrollTop, scrollHeight, clientHeight } = timelineRef.current;
+            const isAtBottom = scrollTop + clientHeight >= scrollHeight - 1;
+            const isAtTop = scrollTop === 0;
+
+            // Check if the mouse is over the timeline container
+            const rect = timelineContainerRef.current.getBoundingClientRect();
+            const isOverTimeline = 
+                e.clientX >= rect.left && 
+                e.clientX <= rect.right && 
+                e.clientY >= rect.top && 
+                e.clientY <= rect.bottom;
+
+            if (isOverTimeline) {
+                // Prevent default scrolling and scroll the timeline
+                e.preventDefault();
+                timelineRef.current.scrollTop += e.deltaY;
+
+                // If at the bottom of the timeline and scrolling down, or at the top and scrolling up, allow page scroll
+                if ((isAtBottom && e.deltaY > 0) || (isAtTop && e.deltaY < 0)) {
+                    window.scrollBy(0, e.deltaY);
                 }
-            });
+            }
+            // If not over the timeline, allow normal page scrolling
+
+            updateScrollbarThumb();
         };
 
-        handleScroll();
-        window.addEventListener('scroll', handleScroll);
+        const updateScrollbarThumb = () => {
+            const { scrollTop, scrollHeight, clientHeight } = timelineRef.current;
+            const scrollPercentage = (scrollTop / (scrollHeight - clientHeight)) * 100;
+            const thumbHeight = (clientHeight / scrollHeight) * 100;
+            thumbRef.current.style.height = `${thumbHeight}%`;
+            thumbRef.current.style.top = `${scrollPercentage}%`;
+        };
 
-        handleScroll();
+        const handleScrollbarDrag = (e) => {
+            const { top, height } = scrollbarRef.current.getBoundingClientRect();
+            const y = Math.max(0, Math.min(e.clientY - top, height));
+            const scrollPercentage = y / height;
+            timelineRef.current.scrollTop = scrollPercentage * (timelineRef.current.scrollHeight - timelineRef.current.clientHeight);
+        };
+
+        const timelineContainer = timelineRef.current;
+        const scrollbarThumb = thumbRef.current;
+
+        if (timelineContainer && scrollbarThumb) {
+            // Attach the wheel event listener to the document
+            document.addEventListener('wheel', handleScroll, { passive: false });
+            timelineContainer.addEventListener('scroll', updateScrollbarThumb);
+            scrollbarThumb.addEventListener('mousedown', (e) => {
+                e.preventDefault();
+                document.addEventListener('mousemove', handleScrollbarDrag);
+                document.addEventListener('mouseup', () => {
+                    document.removeEventListener('mousemove', handleScrollbarDrag);
+                }, { once: true });
+            });
+
+            // Initial update of scrollbar thumb
+            updateScrollbarThumb();
+        }
+
+        const observerOptions = {
+            root: timelineRef.current,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                setVisibleItems(prev => {
+                    if (entry.isIntersecting) {
+                        return [...prev, entry.target.dataset.index];
+                    } else {
+                        return prev.filter(item => item !== entry.target.dataset.index);
+                    }
+                });
+            });
+        }, observerOptions);
+
+        const items = timelineRef.current.querySelectorAll('.timeline-item');
+        items.forEach(item => observer.observe(item));
+
+        const highlightObserver = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('slide-up');
+                    }
+                });
+            },
+            { threshold: 0.1 }
+        );
+
+        highlightRefs.current.forEach((ref) => {
+            if (ref) {
+                ref.style.opacity = '0';
+                ref.style.transform = 'translateY(50px)';
+                ref.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+                highlightObserver.observe(ref);
+            }
+        });
+
+        // Prevent main scroll when scrolling in timeline
+        const preventScroll = (e) => {
+            e.stopPropagation();
+        };
+
+        const timelineElement = timelineRef.current;
+        timelineElement.addEventListener('wheel', preventScroll, { passive: false });
+
         return () => {
-            window.removeEventListener('scroll', handleScroll);
+            document.removeEventListener('wheel', handleScroll);
+            if (timelineContainer) {
+                timelineContainer.removeEventListener('scroll', updateScrollbarThumb);
+            }
+            items.forEach(item => observer.unobserve(item));
+            highlightRefs.current.forEach((ref) => {
+                if (ref) {
+                    highlightObserver.unobserve(ref);
+                }
+            });
+            timelineElement.removeEventListener('wheel', preventScroll);
         };
     }, []);
 
     return (
-
-        
         <>
-            <div className='bg-black'>
-                <div className="relative flex justify-centre w-full items-end bg-no-repeat bg-cover bg-center">
-                    {/* Fullscreen image with object-contain to prevent cutting */}
-                    <img
-                        src={artistImage}
-                        alt={artist}
-                        className="h-[500px] object-cover w-full" // Increased width to 4/5
-                    />
-
-                    {/* Gradient overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
+            <Navbar />
+            <div className='min-h-screen'>
+                <div className="w-full h-auto min-h-[450px] bg-no-repeat bg-cover bg-center relative overflow-hidden flex flex-col lg:flex-row items-center justify-center lg:justify-between p-8 lg:p-16">
+                    {/* Dark live gradient background */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-gray-900 via-purple-900 to-violet-950 animate-gradient-x"></div>
+                    
+                    {/* Gradient overlay for smooth transition to black */}
+                    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black"></div>
+                    
+                    {/* Artist image */}
+                    <div className="relative z-10 mb-8 lg:mb-0 lg:order-2">
+                        <div className="w-48 h-48 lg:w-64 lg:h-64 rounded-full overflow-hidden border-4 border-black shadow-lg">
+                            <img
+                                src={artistImage}
+                                alt={artist}
+                                className="w-full h-full object-cover transition-all duration-300 ease-in-out transform hover:scale-105"
+                            />
+                        </div>
+                    </div>
+                    
+                    {/* Artist name and social icons */}
+                    <div className="relative z-10 text-center lg:text-left lg:order-1">
+                        <h1 className="text-4xl sm:text-5xl lg:text-7xl xl:text-8xl font-bold text-white uppercase tracking-wider mb-4">{artist}</h1>
+                        <div className="flex justify-center lg:justify-start space-x-8 mt-4 lg:mt-8 sm:mt-9">
+                            <a href="#" className="text-white">
+                                <i className="fab fa-facebook text-3xl lg:text-4xl sm:text-2xl"></i>
+                            </a>
+                            <a href="#" className="text-white">
+                                <i className="fab fa-instagram text-3xl lg:text-4xl sm:text-2xl"></i>
+                            </a>
+                            <a href="#" className="text-white">
+                                <i className="fab fa-youtube text-3xl lg:text-4xl sm:text-2xl"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
 
+                <div className="bg-black w-full relative">
+                    <div className="container mx-auto p-4 sm:p-8 relative">
+                        <div className="flex flex-col lg:flex-row">
+                            {/* Timeline */}
+                            <div className="w-full lg:w-1/3 lg:sticky lg:top-0 lg:h-[calc(80vh-80px)] mb-8 lg:mb-0">
+                                <div ref={timelineContainerRef} className="h-[400px] lg:h-full flex flex-col  rounded-lg p-4">
+                                    {/* Date display card */}
+                                    <div className="bg-white/10 backdrop-blur-md text-white p-4 rounded-lg shadow-md mb-4">
+                                        <h2 className="text-2xl font-bold">{currentDate}</h2>
+                                    </div>
 
-
-
-                <div className="container mx-auto p-8 relative ">
-
-
-                    <section className="relative">
-                        {/* Central vertical timeline line */}
-                        <div className="absolute left-1/2 transform -translate-x-1/2 top-0 h-full w-1 bg-[#eeaa6b] bg-gradient-to-b from-black via-black/10 to-transparent"></div>
-
-                        {timelineData.map((item, index) => (
-                            <div
-                                key={index}
-                                className={`timeline-block flex items-center mb-8 transition-all duration-700 ease-in-out ${index % 2 === 0 ? 'justify-start' : 'justify-end'
-                                    }`}
-                            >
-                                {/* Icon centered on the vertical line */}
-                                <div className="timeline-icon absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-gray-300 rounded-full flex items-center justify-center">
-                                    <img src={item.icon} alt="Icon" className="w-10 h-10" />
-                                </div>
-
-                                {/* Card content */}
-                                <div className="w-5/12 p-6 bg-[#ffffff] rounded-3xl lg shadow-md">
-                                    <h2 className="text-2xl font-semibold mb-2 text-[#3d2c2c]">{item.title}</h2>
-                                    <p className="text-[#534848] mb-4">{item.description}</p>
+                                    {/* Scrollable timeline */}
                                     <div 
-                                    className="h-9 cursor-pointer font-light text-[#6d582f] border-[2px] hover:bg-[#6d582f] hover:text-white border-[#6d582f] flex justify-center items-center w-20 sm:w-25 rounded-3xl transform hover:scale-105 duration-300">
-                                    <div>Tickets</div>
-                                </div>
-                                    <span className="block text-sm text-[#241f1f] mt-2">{item.date}</span>
-                                </div>
+                                        ref={timelineRef}
+                                        className="flex-grow overflow-y-auto pr-4"
+                                        style={{
+                                            maxHeight: 'calc(100% - 80px)', // Adjust this value as needed
+                                            overflowY: 'auto',
+                                            overflowX: 'hidden',
+                                        }}
+                                    >
+                                        <section className="relative">
+                                            <div className="absolute left-4 top-0 h-full w-0.5 bg-gray-300"></div>
 
+                                            {timelineData.map((dateGroup, dateIndex) => (
+                                                <div key={dateIndex} className="date-section mb-8" data-date={dateGroup.date}>
+                                                    {dateGroup.events.map((item, index) => (
+                                                        <div 
+                                                            key={index} 
+                                                            className={`relative mb-8 flex items-center timeline-item transition-opacity duration-500 ${visibleItems.includes(`${dateIndex}-${index}`) ? 'opacity-100' : 'opacity-0'}`}
+                                                            data-index={`${dateIndex}-${index}`}
+                                                        >
+                                                            <div className="absolute left-4 w-4 h-4 bg-white border-2 border-gray-300 rounded-full z-10 transform -translate-x-1/2"></div>
+                                                            
+                                                            <div className="ml-12 bg-white/10 backdrop-blur-md text-white p-4 rounded-lg shadow-md w-full">
+                                                                <span className="text-sm text-green-400 mb-1 block">
+                                                                    {item.isToday ? 'Today' : 'Previously'}
+                                                                </span>
+                                                                <h2 className="text-xl font-semibold mb-1">{item.title}</h2>
+                                                                <p className="text-sm mb-1">{item.description}</p>
+                                                                <span className="text-sm">{item.time}</span>
+                                                            </div>
+                                                        </div>
+                                                    ))}
+                                                </div>
+                                            ))}
+                                        </section>
+                                    </div>
+
+                                    {/* Custom scrollbar */}
+                                    <div 
+                                        ref={scrollbarRef}
+                                        className="absolute right-0 top-0 w-2 bg-gray-300 rounded"
+                                        style={{ top: '80px', height: 'calc(100% - 80px)' }}
+                                    >
+                                        <div 
+                                            ref={thumbRef}
+                                            className="w-full bg-gray-600 rounded"
+                                            style={{ cursor: 'pointer' }}
+                                        ></div>
+                                    </div>
+                                </div>
                             </div>
-                        ))}
-                    </section>
+
+                            {/* Bento Grid Highlights */}
+                            <div className="w-full lg:w-2/3 lg:ml-8">
+                                <div className="flex justify-between items-center mb-6 px-4 sm:px-0">
+                                    <h2 className="text-2xl sm:text-3xl font-bold text-white">Highlights</h2>
+                                    <Link to="/gallery">
+                                        <div className="h-8 sm:h-10 cursor-pointer font-light text-white border-2 hover:bg-white hover:text-black border-white flex justify-center items-center w-24 sm:w-28 lg:w-32 rounded-3xl transform hover:scale-105 duration-300">
+                                            <p className="text-sm sm:text-base">Gallery</p>
+                                        </div>
+                                    </Link>
+                                </div>
+                                <BentoGrid>
+                                    {features.map((feature, idx) => (
+                                        <BentoCard key={idx} {...feature} />
+                                    ))}
+                                </BentoGrid>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+            </div>
+            <div className="bg-black">
+                <Footer_only_links/>
             </div>
         </>
     );

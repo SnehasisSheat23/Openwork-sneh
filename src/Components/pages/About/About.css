@@ -23,3 +23,80 @@
 .transition-transform {
     transition: transform 0.3s ease;
 }
+
+/* Updated transition for the modal */
+.transition-all {
+    transition: all 0.3s ease;
+}
+
+/* Fade in and pop animation */
+.scale-95.opacity-0 {
+    transform: scale(0.95);
+    opacity: 0;
+}
+
+.scale-100.opacity-100 {
+    transform: scale(1);
+    opacity: 1;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-up-animation {
+    animation: fadeUp 1s ease-out forwards;
+    opacity: 0;
+}
+
+@keyframes fadeInSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInSlideRight {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.fade-in-slide-up {
+    animation: fadeInSlideUp 0.5s ease-out forwards;
+}
+
+.fade-in-slide-right {
+    animation: fadeInSlideRight 0.5s ease-out forwards;
+}
+
+.fade-in-scale {
+    animation: fadeInScale 0.5s ease-out forwards;
+}
