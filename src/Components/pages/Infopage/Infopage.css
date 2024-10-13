@@ -86,19 +86,18 @@
   animation-play-state: paused;
 }
 
-.custom-datepicker {
+.responsive-calendar {
   width: 100% !important;
+  max-width: 100% !important;
 }
 
-.responsive-calendar {
-  font-family: 'Arial', sans-serif;
-  background: transparent !important;
-  border: none !important;
+.custom-datepicker {
   width: 100% !important;
 }
 
 .react-datepicker {
   width: 100% !important;
+  font-size: 0.9rem !important;
   background-color: transparent !important;
   border: none !important;
 }
@@ -111,29 +110,18 @@
 .react-datepicker__header {
   background-color: transparent !important;
   border-bottom: none !important;
-  padding-top: 0.5em !important;
 }
 
 .react-datepicker__day-names, .react-datepicker__week {
   display: flex !important;
   justify-content: space-between !important;
-  padding: 0 2% !important;
 }
 
 .react-datepicker__day-name, .react-datepicker__day {
-  color: white !important;
   margin: 0 !important;
-  padding: 0.5em 0 !important;
-  width: 14% !important;
-  max-width: 40px !important;
-  height: auto !important;
-  line-height: 1 !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  aspect-ratio: 1 / 1 !important;
-  border-radius: 50% !important;
-  transition: all 0.3s ease !important;
+  width: 14.28% !important;
+  line-height: 2.7rem !important;
+  color: white !important;
 }
 
 .react-datepicker__day:hover {
@@ -142,44 +130,27 @@
 
 .highlighted-date {
   background-color: rgba(255, 255, 255, 0.3) !important;
-  position: relative !important;
-}
-
-.highlighted-date::after {
-  content: '★';
-  position: absolute;
-  top: 0;
-  right: 0;
-  font-size: 0.6em;
-  color: #FFD700;
+  border-radius: 50% !important;
 }
 
 .custom-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.5em 2%;
-  background-color: rgba(0, 0, 0, 0.1);
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  padding: 0.5rem !important;
+  color: white !important;
 }
 
 .custom-header button {
-  background: none;
-  border: none;
-  color: white;
-  font-size: 1em;
-  cursor: pointer;
-  padding: 0.5em;
-  transition: all 0.3s ease;
+  background: none !important;
+  border: none !important;
+  color: white !important;
+  font-size: 1.2rem !important;
+  cursor: pointer !important;
 }
 
-.custom-header button:hover {
-  transform: scale(1.1);
-}
-
-.custom-header .month-year {
-  font-weight: bold;
-  color: white;
-  font-size: 0.9em;
+.month-year {
+  font-weight: bold !important;
 }
 
 @media (max-width: 640px) {

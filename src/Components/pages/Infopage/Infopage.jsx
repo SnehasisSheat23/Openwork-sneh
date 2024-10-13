@@ -5,7 +5,7 @@ import GeetabenRavai from '../../../assets/Artist/Artist1.png'
 import PurvaMantri from '../../../assets/InfoPurvaMantri.jpg'
 import krinjaldave from '../../../assets/Artist/Artist3.png'
 import { useParams, Link } from 'react-router-dom';
-import { FaSave, FaBell, FaShareAlt, FaCalendarAlt, FaPlay, FaSpotify, FaMusic, FaDrum, FaGuitar, FaMicrophone, FaStar } from 'react-icons/fa';
+import {  FaCalendarAlt, FaPlay, FaSpotify, FaMusic, FaDrum, FaGuitar, FaMicrophone } from 'react-icons/fa';
 import Footer_only_links from "../../Footer/Footer_only_links";
 import Navbar from "../../Navbar/Navbar";
 import './Infopage.css';
@@ -125,10 +125,10 @@ const features = [
   {
     type: "calendar",
     name: "Event Calendar",
-    description: "Check out our upcoming events!",
+    description: "",
     className: "col-span-1 h-[300px]",
     events: [
-      { date: new Date(2023, 5, 15), title: "Music Festival" },
+      { date: new Date(2023, 1, 15), title: "Music Festival" },
       { date: new Date(2023, 5, 22), title: "Album Launch" },
       { date: new Date(2023, 6, 3), title: "Open Mic Night" },
       { date: new Date(2023, 6, 17), title: "Concert in the Park" },
@@ -138,7 +138,7 @@ const features = [
 
 const SpotifyPlayer = ({ song, name, description }) => (
   <div 
-    className="flex flex-col h-full bg-gradient-to-br from-blue-400 to-blue-600 p-4 rounded-xl cursor-pointer transition-transform duration-300 sm:hover:scale-105" 
+    className="flex flex-col h-full bg-gradient-to-br from-blue-400 to-blue-600 p-4 rounded-xl " 
     onClick={() => window.open(song.spotifyUrl, '_blank')}
   >
     <div className="flex items-center mb-4">
@@ -237,12 +237,12 @@ const GalleryCard = ({ name, photos, className }) => (
     <h3 className="text-lg sm:text-xl font-bold text-white mb-2">{name}</h3>
     <div className="flex-grow overflow-hidden">
       <div className="h-full grid grid-cols-3 gap-2">
-        {photos.slice(0, 6).map((photo) => (
-          <div key={photo.id} className="relative aspect-square overflow-hidden rounded-lg">
+        {photos.slice(0, 9).map((photo) => (
+          <div key={photo.id} className="relative overflow-hidden rounded-lg">
             <img 
               src={photo.url} 
               alt={`Gallery image ${photo.id}`}
-              className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+              className="absolute w-full h-full object-cover object-center"
             />
           </div>
         ))}

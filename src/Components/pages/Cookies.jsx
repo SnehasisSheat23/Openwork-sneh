@@ -57,7 +57,7 @@ function Cookies() {
             <Navbar />
             <div
                 className="relative flex justify-center items-end h-[30vh] sm:h-[25vh] md:h-[40vh] lg:h-[50vh] w-full bg-no-repeat bg-cover bg-center"
-                style={{ backgroundImage: `url("https://images.unsplash.com/photo-1558961363-fa8fdf82db35?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2065&q=80")` }}
+                style={{ backgroundImage: `url("https://t4.ftcdn.net/jpg/03/16/49/45/360_F_316494556_zSy5wKaJgXnpQsSvf63uTz9wJN4xjQ0Y.jpg")` }}
             >
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent"></div>
 
