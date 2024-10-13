@@ -73,7 +73,7 @@ function Festivalsection() {
                 <div className="w-full h-[480px] px-10 md:px-10 sm:px-1 flex gap-[2vw] box-border justify-between items-center lg:mt-[3vh]">
                     <div 
                         ref={scrollRef} 
-                        className="w-full h-[400px] flex gap-[2vw] overflow-x-auto scroll-smooth snap-x snap-mandatory"
+                        className="w-full h-[400px] flex gap-[2vw] lg:gap-4 overflow-x-auto scroll-smooth snap-x snap-mandatory"
                         style={{ scrollSnapType: 'x mandatory' }}
                     >
                         <Card img={event7} name={"GeetabenRavai"} place={"Kansas City, MO, USA"} date={"29 Sep, Friday"} text={"Kutch Ni koyal Geeta Ravai - Live"} link={''} />

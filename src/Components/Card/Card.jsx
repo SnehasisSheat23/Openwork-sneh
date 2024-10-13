@@ -27,7 +27,7 @@ function Card({ name, img, text, place, date, link }) {
         const observer = new IntersectionObserver(handleIntersection, {
             root: null,
             rootMargin: '0px',
-            threshold: 0.1 // Reduced threshold for faster triggering
+            threshold: 0.1
         });
 
         if (cardRef.current) {
@@ -44,13 +44,15 @@ function Card({ name, img, text, place, date, link }) {
     return (
         <div 
             ref={cardRef} 
-            className={`h-[360px] w-72 min-w-72 rounded-lg relative mt-3 cursor-pointer bg-black border-none shadow-md
+            className={`h-[360px] w-72 min-w-72 rounded-lg relative mt-3 cursor-pointer bg-black border-none
              transition-all duration-200 ease-in-out
-             md:hover:scale-105 md:hover:shadow-xl
+             shadow-md
+             md:hover:shadow-xl
+             md:overflow-hidden
              snap-start ${isVisible ? 'opacity-100' : 'opacity-0'}`}
         >
             <div
-                className="absolute inset-0 bg-cover bg-center rounded-lg"
+                className="absolute inset-0 bg-cover bg-center rounded-lg md:hover:scale-110 md:transition-transform md:duration-300"
                 style={{ backgroundImage: `url(${img})`, backgroundPosition: 'top' }}
             >
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/50 to-black rounded-lg"></div>

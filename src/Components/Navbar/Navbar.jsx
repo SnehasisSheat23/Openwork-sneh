@@ -1,14 +1,53 @@
-import { RiArrowDropDownLine, RiMenu3Fill, RiCloseLine } from "react-icons/ri";
-import { useState } from "react";
+import { RiArrowDropDownLine, RiCloseLine } from "react-icons/ri";
+import { useState, useRef, useEffect } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { Link } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
 
 function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
+    const [activeMenu, setActiveMenu] = useState(null);
+    const [activeMobileMenu, setActiveMobileMenu] = useState(null);
+    const menuRef = useRef(null);
 
     const toggleMenu = () => {
         setIsOpen(!isOpen);
+        setActiveMobileMenu(null);
     };
+
+    const menuItems = {
+        "FESTIVALS & EVENTS": [
+            { name: "Navratri 2024", link: "/Calendar" },
+            { name: "Kinjal Dave in Chicago", link: "/Calendar" },
+            { name: "Purva Mantri Canada Tour", link: "/Calendar" }
+        ],
+        "ARTISTS": [
+            { name: "Purva Mantri", link: "/info/purvamantri" },
+            { name: "Kinjal Dave", link: "/info/krinjaldave" },
+            { name: "Geeta Rabari", link: "/info/GeetabenRavai" }
+        ],
+        "TOUR": [
+            { name: "Navratri Tour 2024", link: "/Calendar" }
+        ],
+        "MORE": [
+            { name: "About Us", link: "/About" },
+            { name: "Contact", link: "/ContactUs" },
+            { name: "FAQ", link: "/FAQ" }
+        ]
+    };
+
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (menuRef.current && !menuRef.current.contains(event.target)) {
+                setActiveMenu(null);
+            }
+        };
+
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, []);
 
     return (
         <>
@@ -22,13 +61,45 @@ function Navbar() {
                     </div>
                 </Link>
 
-                <div className="hidden md:flex space-x-5 lg:space-x-10 text-sm lg:text-lg">
-                    {["FESTIVALS & EVENTS", "EXPERIENCE", "TOUR", "MORE"].map((v, i) => (
+                <div className="hidden md:flex space-x-5 lg:space-x-10 text-sm lg:text-lg" ref={menuRef}>
+                    {Object.keys(menuItems).map((item, index) => (
                         <div
-                            className={`cursor-pointer font-light flex items-center text-white ${i === 0 ? "ml-[5vw]" : ""}`}
-                            key={i}
+                            className={`cursor-pointer font-light flex items-center text-white ${index === 0 ? "ml-[5vw]" : ""}`}
+                            key={index}
+                            onMouseEnter={() => setActiveMenu(item)}
+                            onMouseLeave={() => setActiveMenu(null)}
                         >
-                            {v} <RiArrowDropDownLine size={24} />
+                            {item} <RiArrowDropDownLine size={24} />
+                            <AnimatePresence>
+                                {activeMenu === item && (
+                                    <motion.div
+                                        initial={{ opacity: 0, height: 0 }}
+                                        animate={{ opacity: 1, height: "auto" }}
+                                        exit={{ opacity: 0, height: 0 }}
+                                        transition={{ duration: 0.3 }}
+                                        className="absolute top-full left-0 w-full bg-black/25 backdrop-blur-md overflow-hidden"
+                                    >
+                                        <div className="container mx-auto px-4 py-4">
+                                            {menuItems[item].map((subItem, subIndex) => (
+                                                <motion.div
+                                                    key={subIndex}
+                                                    initial={{ opacity: 0, y: 10 }}
+                                                    animate={{ opacity: 1, y: 0 }}
+                                                    transition={{ delay: subIndex * 0.1 }}
+                                                    className="text-white py-2 hover:bg-white/10 transition-colors duration-300"
+                                                >
+                                                    <Link 
+                                                        to={subItem.link}
+                                                        className="block w-full h-full"
+                                                    >
+                                                        {subItem.name}
+                                                    </Link>
+                                                </motion.div>
+                                            ))}
+                                        </div>
+                                    </motion.div>
+                                )}
+                            </AnimatePresence>
                         </div>
                     ))}
                 </div>
@@ -41,26 +112,73 @@ function Navbar() {
             </div>
 
             {/* Mobile menu */}
-            <div
-                className={`md:hidden fixed inset-0 bg-black/60 backdrop-blur-lg z-40 transition-opacity duration-300 ease-in-out ${isOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}
-            >
-                <div
-                    className={`fixed top-[10vh] right-4 w-[90%] bg-black/80 backdrop-blur-md rounded-2xl transform transition-transform duration-500 ease-in-out ${
-                        isOpen ? 'translate-y-0 opacity-100' : '-translate-y-10 opacity-0'
-                    }`}
-                >
-                    <div className="flex flex-col items-center space-y-5 py-5">
-                        {["FESTIVALS & EVENTS", "EXPERIENCE", "TOUR", "MORE"].map((v, i) => (
-                            <div
-                                className="cursor-pointer font-semibold text-white text-lg flex items-center"
-                                key={i}
-                            >
-                                {v} <RiArrowDropDownLine size={24} />
+            <AnimatePresence>
+                {isOpen && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="md:hidden fixed inset-0 backdrop-blur-lg z-40 flex items-center justify-center"
+                    >
+                        <motion.div
+                            initial={{ scale: 0.9, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            exit={{ scale: 0.9, opacity: 0 }}
+                            transition={{ type: "spring", duration: 0.5 }}
+                            className="w-[90%] max-h-[80vh] bg-black/30 backdrop-blur-md overflow-y-auto rounded-lg"
+                        >
+                            <div className="flex flex-col items-start space-y-5 py-5 px-6">
+                                {Object.keys(menuItems).map((item, index) => (
+                                    <div key={index} className="w-full">
+                                        <div
+                                            className="cursor-pointer font-semibold text-white text-lg flex items-center justify-between w-full"
+                                            onClick={() => setActiveMobileMenu(activeMobileMenu === item ? null : item)}
+                                        >
+                                            {item}
+                                            <RiArrowDropDownLine
+                                                size={24}
+                                                className={`transform transition-transform duration-300 ${
+                                                    activeMobileMenu === item ? 'rotate-180' : ''
+                                                }`}
+                                            />
+                                        </div>
+                                        <AnimatePresence>
+                                            {activeMobileMenu === item && (
+                                                <motion.div
+                                                    initial={{ opacity: 0, height: 0 }}
+                                                    animate={{ opacity: 1, height: "auto" }}
+                                                    exit={{ opacity: 0, height: 0 }}
+                                                    transition={{ duration: 0.3 }}
+                                                    className="mt-2 ml-4 space-y-2"
+                                                >
+                                                    {menuItems[item].map((subItem, subIndex) => (
+                                                        <motion.div
+                                                            key={subIndex}
+                                                            initial={{ opacity: 0, x: -10 }}
+                                                            animate={{ opacity: 1, x: 0 }}
+                                                            transition={{ delay: subIndex * 0.1 }}
+                                                            className="text-white py-1"
+                                                        >
+                                                            <Link
+                                                                to={subItem.link}
+                                                                onClick={toggleMenu}
+                                                                className="block w-full h-full"
+                                                            >
+                                                                {subItem.name}
+                                                            </Link>
+                                                        </motion.div>
+                                                    ))}
+                                                </motion.div>
+                                            )}
+                                        </AnimatePresence>
+                                    </div>
+                                ))}
                             </div>
-                        ))}
-                    </div>
-                </div>
-            </div>
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </>
     );
 }
