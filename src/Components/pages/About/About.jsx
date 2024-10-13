@@ -30,6 +30,11 @@ function About() {
         }
     }, [isModalOpen]);
 
+    useEffect(() => {
+        // Scroll to the top of the page when the component mounts
+        window.scrollTo(0, 0);
+    }, []);
+
     const renderTabContent = () => {
         switch(activeTab) {
             case 'mission':
@@ -99,14 +104,14 @@ function About() {
             >
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent"></div>
 
-                <div className="relative flex flex-col items-center text-center gap-4 px-4 py-10">
+                <div className="relative flex flex-col items-center text-center gap-2 px-4 py-6">
                     <h1 className="text-white text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold animate-fade-in-down">
                         About Us
                     </h1>
                     <div className="text-white font-light tracking-tight text-xs sm:text-sm md:text-lg lg:text-xl animate-fade-in-up">
                         <p>Manpasand Inc. Your Gateway to Indian Entertainment</p>
                     </div>
-                    <div className="mt-8 animate-fade-in" style={{animationDelay: '0.5s'}}>
+                    <div className="mt-4 animate-fade-in" style={{animationDelay: '0.5s'}}>
                         <button 
                             className="h-10 cursor-pointer font-light text-white border-[2px] hover:bg-white hover:text-black border-white flex justify-center items-center w-28 sm:w-32 rounded-3xl transform hover:scale-105 duration-300"
                             onClick={openModal}

@@ -58,11 +58,11 @@ function Festivalsection() {
                 <div className="heading w-full h-10 flex justify-between items-center px-6 md:px-18">
                     <h1 className="text-white font-bold text-3xl md:text-4xl text-center md:text-left w-full md:w-auto">Upcoming events</h1>
                     <div className="hidden md:flex h-full items-center gap-5">
-                        <div className="h-9 w-9 bg-white rounded-full flex justify-center items-center cursor-pointer" onClick={scrollLeft}>
-                            <MdKeyboardArrowLeft />
+                        <div className="h-9 w-9 bg-transparent border-[2px] border-white rounded-full flex justify-center items-center cursor-pointer" onClick={scrollLeft}>
+                            <MdKeyboardArrowLeft className="text-white text-2xl " />
                         </div>
-                        <div className="h-9 w-9 bg-white rounded-full flex justify-center items-center cursor-pointer" onClick={scrollRight}>
-                            <MdOutlineKeyboardArrowRight />
+                        <div className="h-9 w-9 bg-transparent border-[2px] border-white rounded-full flex justify-center items-center cursor-pointer" onClick={scrollRight}>
+                            <MdOutlineKeyboardArrowRight className="text-white text-2xl " />
                         </div>
                         <button className="h-10 cursor-pointer font-light text-white border-[2px] hover:bg-white hover:text-black border-white flex justify-center items-center w-28 lg:w-32 rounded-3xl transform hover:scale-105 duration-300">
     <p>Calender</p>

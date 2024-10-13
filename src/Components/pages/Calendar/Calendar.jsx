@@ -4,18 +4,18 @@ import Navbar from "../../Navbar/Navbar";
 
 const EventCalendar = () => {
   const days = [
-    { date: 9, day: 'Mon', events: [{ title: 'Securities Regulation', time: '2 PM - 5 PM', start: 'start-2', end: 'end-5', class: 'bg-green-100' }] },
+    { date: 9, day: 'Mon', events: [{ title: 'Gitaravai show', time: '2 PM - 5 PM', start: 'start-2', end: 'end-5', class: 'bg-green-100' }] },
     { date: 10, day: 'Tues', events: [
-      { title: 'Corporate Finance', time: '10 AM - 12 PM', start: 'start-10', end: 'end-12', class: 'bg-red-100' },
-      { title: 'Entertainment Law', time: '1PM - 4PM', start: 'start-1', end: 'end-4', class: 'bg-yellow-100' }
+      { title: 'Kinjal Dave show', time: '10 AM - 12 PM', start: 'start-10', end: 'end-12', class: 'bg-red-100' },
+      { title: 'Gitaravai show', time: '1PM - 4PM', start: 'start-1', end: 'end-4', class: 'bg-yellow-100' }
     ]},
     { date: 11, day: 'Wed', events: [
-      { title: 'Writing Seminar', time: '11 AM - 12 PM', start: 'start-12', end: 'end-1', class: 'bg-blue-100' },
-      { title: 'Securities Regulation', time: '2 PM - 5 PM', start: 'start-2', end: 'end-5', class: 'bg-green-100' }
+      { title: 'Purva mantri show', time: '11 AM - 12 PM', start: 'start-12', end: 'end-1', class: 'bg-blue-100' },
+      { title: 'Kinjal Dave show', time: '2 PM - 5 PM', start: 'start-2', end: 'end-5', class: 'bg-green-100' }
     ]},
     { date: 12, day: 'Thurs', events: [
-      { title: 'Corporate Finance', time: '10 AM - 12 PM', start: 'start-10', end: 'end-12', class: 'bg-red-100' },
-      { title: 'Entertainment Law', time: '1PM - 4PM', start: 'start-1', end: 'end-4', class: 'bg-yellow-100' }
+      { title: 'Kinjal Dave show', time: '10 AM - 12 PM', start: 'start-10', end: 'end-12', class: 'bg-red-100' },
+      { title: 'Purva mantri show', time: '1PM - 4PM', start: 'start-1', end: 'end-4', class: 'bg-yellow-100' }
     ]},
     { date: 13, day: 'Fri', events: [] },
   ];

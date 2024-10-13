@@ -55,7 +55,7 @@ const Footer = () => {
                         <h3 className="text-lg font-semibold mb-4">Media</h3>
                         <ul>
                             <li><Link to="/Gallery" className="hover:underline font-light">Photos</Link></li>
-                            <li><a href="#" className="hover:underline font-light">Videos</a></li>
+                            <li><Link to="/Gallery" className="hover:underline font-light">Videos</Link></li>
                             
                         </ul>
                     </div>
