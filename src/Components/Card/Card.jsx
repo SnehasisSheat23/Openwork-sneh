@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 function Card({ name, img, text, place, date, link }) {
     const navigate = useNavigate();
     const cardRef = useRef(null);
-    const [opacity, setOpacity] = useState(0);
+    const [isVisible, setIsVisible] = useState(false);
 
     function Handler7() {
         navigate(`/info/${name}`);
@@ -18,15 +18,16 @@ function Card({ name, img, text, place, date, link }) {
     useEffect(() => {
         const handleIntersection = (entries) => {
             entries.forEach(entry => {
-                // Update opacity based on intersection ratio
-                setOpacity(entry.intersectionRatio);
+                if (entry.isIntersecting) {
+                    setIsVisible(true);
+                }
             });
         };
 
         const observer = new IntersectionObserver(handleIntersection, {
             root: null,
             rootMargin: '0px',
-            threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+            threshold: 0.1 // Reduced threshold for faster triggering
         });
 
         if (cardRef.current) {
@@ -43,12 +44,10 @@ function Card({ name, img, text, place, date, link }) {
     return (
         <div 
             ref={cardRef} 
-            
-            className="h-[360px] w-72 min-w-72 rounded-lg relative mt-3 cursor-pointer bg-black border-none shadow-md
-             transition-all duration-300 ease-in-out
+            className={`h-[360px] w-72 min-w-72 rounded-lg relative mt-3 cursor-pointer bg-black border-none shadow-md
+             transition-all duration-200 ease-in-out
              md:hover:scale-105 md:hover:shadow-xl
-             snap-start"
-            style={{ opacity: opacity }}
+             snap-start ${isVisible ? 'opacity-100' : 'opacity-0'}`}
         >
             <div
                 className="absolute inset-0 bg-cover bg-center rounded-lg"
