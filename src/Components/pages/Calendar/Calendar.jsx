@@ -62,7 +62,7 @@ const EventCalendar = () => {
       const newOpacities = [...opacities];
       entries.forEach(entry => {
         const index = parseInt(entry.target.dataset.index);
-        newOpacities[index] = entry.intersectionRatio;
+        newOpacities[index] = entry.intersectionRatio > 0.3 ? 1 : entry.intersectionRatio;
       });
       setOpacities(newOpacities);
     };
@@ -70,7 +70,7 @@ const EventCalendar = () => {
     const observer = new IntersectionObserver(handleIntersection, {
       root: container,
       rootMargin: '0px',
-      threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+      threshold: [0, 0.3, 0.6, 1]
     });
 
     const setupListeners = () => {
@@ -133,7 +133,7 @@ const EventCalendar = () => {
                     style={{ 
                       width: '260px', 
                       opacity: opacities[dayIndex], 
-                      transition: 'opacity 0.2s ease-in-out'
+                      transition: 'opacity 0.15s ease-out'
                     }}
                   >
                     <div className="flex gap-4 h-[60px] text-white p-4 bg-transparent">
