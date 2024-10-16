@@ -1,7 +1,7 @@
 import React from 'react';
 import profile from '../../assets/image.svg'
 import { Link } from 'react-router-dom';
-import './Footer.css'; 
+
 
 const link1 = "https://www.facebook.com/manpasandinc"; 
 const link2 = "https://www.instagram.com/manpasand_inc/?hl=en";
