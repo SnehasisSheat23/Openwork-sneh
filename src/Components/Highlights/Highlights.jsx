@@ -59,7 +59,7 @@ function Highlights() {
                             <img
                                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFmUAW9KE39wQ9Lz7jlL3anoJoVxSlEoTycw&s"
                                 alt=""
-                                className="w-full h-full rounded-2xl object-cover md:hover:scale-110 md:transition-transform md:duration-300"
+                                className="w-full h-full  object-cover md:hover:scale-110 md:transition-transform md:duration-300"
                             />
                         </div>
 
@@ -117,7 +117,7 @@ function Highlights() {
                             <img
                                 src="https://sohampaithani.com/wp-content/uploads/2023/12/saree-colours-of-navratri.webp"
                                 alt=""
-                                className="w-full h-full rounded-2xl object-cover md:hover:scale-110 md:transition-transform md:duration-300"
+                                className="w-full h-full  object-cover md:hover:scale-110 md:transition-transform md:duration-300"
                             />
                         </div>
                         <div className="  h-1/2 lg:h-full w-full lg:w-1/2 flex flex-col justify-center">
