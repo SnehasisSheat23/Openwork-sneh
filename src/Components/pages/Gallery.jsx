@@ -1,22 +1,21 @@
 import { useState, useEffect } from 'react';
 import Footer_only_links from "../Footer/Footer_only_links";
 import Navbar from "../Navbar/Navbar";
+import { artists } from '../../../Database/database';
 
+// Function to get random items from an array
+const getRandomItems = (array, count) => {
+  const shuffled = array.sort(() => 0.5 - Math.random());
+  return shuffled.slice(0, count);
+};
 
-const photos = [
-  { id: 1, url: 'https://picsum.photos/200/300' },
-  { id: 2, url: 'https://picsum.photos/200/301' },
-  { id: 3, url: 'https://picsum.photos/200/302' },
-  { id: 4, url: 'https://picsum.photos/200/303' },
-  { id: 5, url: 'https://picsum.photos/200/304' },
-  { id: 6, url: 'https://picsum.photos/200/305' },
-  { id: 7, url: 'https://picsum.photos/200/306' },
-  { id: 8, url: 'https://picsum.photos/200/307' },
-  { id: 9, url: 'https://picsum.photos/200/308' },
-  { id: 10, url: 'https://picsum.photos/200/309' },
-  { id: 11, url: 'https://picsum.photos/200/310' },
-  { id: 12, url: 'https://picsum.photos/200/311' },
-];
+// Collect all Instagram images from all artists
+const allInstagramImages = artists.flatMap(artist => 
+  artist.instagramImages.map(url => ({ id: Math.random(), url, artist: artist.name }))
+);
+
+// Select 12 random images
+const photos = getRandomItems(allInstagramImages, 12);
 
 const PhotoGallery = () => {
   const [visiblePhotos, setVisiblePhotos] = useState([]);
@@ -84,7 +83,7 @@ const PhotoGallery = () => {
           >
             <img
               src={photo.url}
-              alt={`Photo ${photo.id}`}
+              alt={`Photo by ${photo.artist}`}
               className="w-full h-full object-cover"
             />
           </div>

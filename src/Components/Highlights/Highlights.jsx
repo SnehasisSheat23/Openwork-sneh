@@ -37,22 +37,21 @@ function Highlights() {
 
     return (
         <>
+            {/* Header Section */}
             <div className="w-full h-auto flex flex-col bg-transparent py-8 ">
                 <div className="w-full max-w-screen-2xl h-[80px] box-border flex justify-between px-6 xl:px-32 lg:px-20 items-center mx-auto">
                     <div className="text-white font-bold text-3xl lg:text-4xl  ">Highlights</div>
                     <div className="flex-grow"></div>
                     <Link to="/gallery">
-  <div className="h-10 cursor-pointer font-light text-white border-[2px] hover:bg-white hover:text-black border-white flex justify-center items-center w-28 lg:w-32 rounded-3xl transform hover:scale-105 duration-300">
-    <p>Gallery</p>
-  </div>
-</Link>
-
+                        <div className="h-10 cursor-pointer font-light text-white border-[2px] hover:bg-white hover:text-black border-white flex justify-center items-center w-28 lg:w-32 rounded-3xl transform hover:scale-105 duration-300">
+                            <p>Gallery</p>
+                        </div>
+                    </Link>
                 </div>
 
-
-
-                {/* section 1 */}
+                {/* First Row of Highlights */}
                 <div className="w-full flex flex-col lg:flex-row gap-7 px-6 lg:px-20 items-center lg:justify-center mt-6 cursor-pointer">
+                    {/* Main Highlight */}
                     <div className="h-[360px] lg:h-[370px] w-full lg:w-[570px] bg-black flex flex-col lg:flex-row rounded-xl hover:scale-105 duration-300 overflow-hidden"
                     ref={(el) => (highlightRefs.current[0] = el)}
                     >
@@ -74,12 +73,14 @@ function Highlights() {
                         </div>
                     </div>
 
+                    {/* Secondary Highlight - Image Only */}
                     <div className="h-[360px] lg:h-[365px] w-full lg:w-72 bg-black rounded-2xl shadow-lg hover:scale-105 duration-300 overflow-hidden"
                     ref={(el) => (highlightRefs.current[1] = el)}
                     >
                         <div className="w-full h-full md:hover:scale-110 md:transition-transform md:duration-300 bg-[url('https://cdn.britannica.com/40/147140-050-63A7ED5B/dancing-Garba-festival-Navratri-Ahmadabad-India-Gujarat.jpg')] bg-cover bg-center"></div>
                     </div>
 
+                    {/* Secondary Highlight - Image and Text */}
                     <div className="h-[360px] lg:h-[370px] w-full lg:w-72 bg-black rounded-2xl overflow-hidden shadow-lg hover:scale-105 duration-300"
                     ref={(el) => (highlightRefs.current[2] = el)}
                     >
@@ -99,15 +100,16 @@ function Highlights() {
                     </div>
                 </div>
 
-
-                {/* section 2 */}
+                {/* Second Row of Highlights */}
                 <div className="w-full flex flex-col lg:flex-row gap-6 px-6 lg:px-20 items-center lg:justify-center mt-9 cursor-pointer">
+                    {/* Secondary Highlight - Image Only */}
                     <div className="h-[360px] lg:h-[370px] w-full lg:w-72 bg-black rounded-2xl shadow-lg hover:scale-105 duration-300 overflow-hidden"
                     ref={(el) => (highlightRefs.current[3] = el)}
                     >
                         <div className="w-full h-full md:hover:scale-110 md:transition-transform md:duration-300 bg-[url('https://i.pinimg.com/736x/a0/c6/94/a0c694ad09050f6df1e946972ebe3115.jpg')] bg-cover bg-center"></div>
                     </div>
 
+                    {/* Main Highlight */}
                     <div className="h-[360px] lg:h-[370px] w-full lg:w-[570px] bg-black flex flex-col lg:flex-row rounded-2xl shadow-lg hover:scale-105 duration-300 overflow-hidden"
                     ref={(el) => (highlightRefs.current[4] = el)}
                     >
@@ -128,6 +130,7 @@ function Highlights() {
                         </div>
                     </div>
 
+                    {/* Secondary Highlight - Image and Text */}
                     <div className="h-[360px] lg:h-[370px] w-full lg:w-72 bg-black rounded-2xl overflow-hidden shadow-lg hover:scale-105 duration-300"
                     ref={(el) => (highlightRefs.current[5] = el)}
                     >

@@ -45,9 +45,12 @@ function Home() {
 
     return (
         <div style={{ 
-            background: gradient,
+            backgroundImage: gradient,
+            backgroundAttachment: 'fixed',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: 'cover',
             minHeight: '100vh',
-            backgroundAttachment: 'fixed'
         }}>
             <Navbar />
             <Landing />

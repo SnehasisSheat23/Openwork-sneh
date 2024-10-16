@@ -1,15 +1,12 @@
 import React, { useRef, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { MdKeyboardArrowLeft, MdOutlineKeyboardArrowRight } from "react-icons/md";
 import Card from "../Card/Card";
-import event1 from '../../assets/Upcommingevents/Card1.png';
-import event2 from '../../assets/Upcommingevents/Card2.png';
-import event4 from '../../assets/Upcommingevents/Card4.png';
-import event6 from '../../assets/Upcommingevents/Card6.png';
-import event7 from '../../assets/Upcommingevents/Card7.png';
-import event9 from '../../assets/Upcommingevents/Card9.png';
+import { getUpcomingEvents, getEventLink } from '../../../Database/database';
 
 function Festivalsection() {
     const scrollRef = useRef(null);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const container = scrollRef.current;
@@ -52,6 +49,12 @@ function Festivalsection() {
         scrollRef.current.scrollBy({ left: 288, behavior: 'smooth' });
     };
 
+    const upcomingEvents = getUpcomingEvents(11); //  11 upcoming events
+
+    const navigateToCalendar = () => {
+        navigate('/calendar');
+    };
+
     return (
         <div className="relative w-full bg-gradient-to-b from-black via-black/50 to-transparent flex justify-center">
             <div className="w-full max-w-[1440px] flex flex-col">
@@ -64,9 +67,12 @@ function Festivalsection() {
                         <div className="h-9 w-9 bg-transparent border-[2px] border-white rounded-full flex justify-center items-center cursor-pointer" onClick={scrollRight}>
                             <MdOutlineKeyboardArrowRight className="text-white text-2xl " />
                         </div>
-                        <button className="h-10 cursor-pointer font-light text-white border-[2px] hover:bg-white hover:text-black border-white flex justify-center items-center w-28 lg:w-32 rounded-3xl transform hover:scale-105 duration-300">
-    <p>Calender</p>
-</button>
+                        <button 
+                            className="h-10 cursor-pointer font-light text-white border-[2px] hover:bg-white hover:text-black border-white flex justify-center items-center w-28 lg:w-32 rounded-3xl transform hover:scale-105 duration-300"
+                            onClick={navigateToCalendar}
+                        >
+                            <p>Calendar</p>
+                        </button>
                     </div>
                 </div>
 
@@ -76,13 +82,18 @@ function Festivalsection() {
                         className="w-full h-[400px] flex gap-[2vw] lg:gap-4 overflow-x-auto scroll-smooth snap-x snap-mandatory"
                         style={{ scrollSnapType: 'x mandatory' }}
                     >
-                        <Card img={event7} name={"GeetabenRavai"} place={"Kansas City, MO, USA"} date={"29 Sep, Friday"} text={"Kutch Ni koyal Geeta Ravai - Live"} link={''} />
-                        <Card img={event6} name={"PurvaMantri"} place={"Seattle, WA, USA"} date={"29 Sep, Friday"} text={"Garba Dhamaal with Purva Mantri - Live"} link={''} />
-                        <Card img={event4} name={"krinjaldave"} place={"Boston, MA, USA"} date={"18 Oct, Friday"} text={"Garba Queen Kinjal Dave - Live"} link={''} />
-                        <Card img={event2} name={"GeetabenRavai"} place={"Scranton, PA, USA"} date={"19 Oct, Friday"} text={"Kutch Ni koyal Geeta Ravai - Live"} link={''} />
-                        <Card img={event1} name={"krinjaldave"} place={"London, ON, Canada"} date={"19 Oct, Friday"} text={"Kutch Ni koyal Geeta Ravai - Live"} link={''} />
-                        <Card img={event7} name={"GeetabenRavai"} place={"Chicago, IL, USA"} date={"27 Oct, Sunday"} text={"Kutch Ni koyal Geeta Ravai - Live"} link={''} />
-                        <Card img={event9} name={"krinjaldave"} place={"Elkhart, IN, USA"} date={"27 Oct, Sunday"} text={"Kutch Ni koyal Geeta Ravai - Live"} link={''} />
+                        {upcomingEvents.map((event) => (
+                            <Card 
+                                key={event.id}
+                                id={event.id}
+                                img={event.image} 
+                                name={event.artist} 
+                                place={event.place} 
+                                date={new Date(event.date).toLocaleDateString('en-US', { day: 'numeric', month: 'short', weekday: 'long' })} 
+                                text={event.name} 
+                                link={getEventLink(event.id)}
+                            />
+                        ))}
                     </div>
                 </div>
             </div>

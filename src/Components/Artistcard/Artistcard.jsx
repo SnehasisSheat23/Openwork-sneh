@@ -1,13 +1,14 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useNavigate } from "react-router-dom";
+import { getArtistById } from '../../../Database/database';
 
-function Artistcard({ img, name, description }) {
+function Artistcard({ img, id, name }) {
     const navigate = useNavigate();
     const cardRef = useRef(null);
     const [isVisible, setIsVisible] = useState(false);
-
+    const [artist, setArtist] = useState(null);
     function Handler() {
-        navigate(`/info/${name}`);
+        navigate(`/info/${id}`); // Use id for URL
     }
 
     useEffect(() => {
@@ -54,7 +55,7 @@ function Artistcard({ img, name, description }) {
             </div>
 
             <div className="relative z-10 top-[67%] w-full px-7">
-                <h1 className="text-white font-semibold leading-none text-3xl">{description}</h1>
+                <h1 className="text-white font-semibold leading-none text-3xl">{name}</h1>
             </div>
 
             <div className="absolute z-10 bottom-3 w-full flex justify-left px-7 py-5">

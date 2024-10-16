@@ -1,141 +1,17 @@
 import React, { useEffect, useState, useRef } from 'react';
+import { useParams, Link } from 'react-router-dom';
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
-import GeetabenRavai from '../../../assets/Artist/Artist1.png'
-import PurvaMantri from '../../../assets/InfoPurvaMantri.jpg'
-import krinjaldave from '../../../assets/Artist/Artist3.png'
-import { useParams, Link } from 'react-router-dom';
-import {  FaCalendarAlt, FaPlay, FaSpotify, FaMusic, FaDrum, FaGuitar, FaMicrophone } from 'react-icons/fa';
+import { FaCalendarAlt, FaPlay, FaSpotify, FaMusic, FaDrum, FaGuitar, FaMicrophone } from 'react-icons/fa';
+
+
+
 import Footer_only_links from "../../Footer/Footer_only_links";
 import Navbar from "../../Navbar/Navbar";
 import './Infopage.css';
+import { getArtistById, getEventsByArtist } from '../../../../Database/database';
 
-const timelineData = [
-    {
-        date: 'October 12, 2023',
-        events: [
-            {
-                title: 'Countdown to LIVE',
-                description: 'A new chapter awaits...',
-                time: '00:00 - 01:05',
-                isToday: true,
-            },
-            {
-                title: 'DJ Nebula',
-                description: 'MainStage',
-                time: '01:05 - 02:10',
-            },
-            {
-                title: 'Electro Pulse',
-                description: 'MainStage',
-                time: '02:10 - 03:10',
-            },
-            {
-                title: 'Sonic Waves',
-                description: 'MainStage',
-                time: '03:10 - 04:15',
-            },
-            {
-                title: 'Beat Maestro',
-                description: 'MainStage',
-                time: '04:15 - 05:20',
-            },
-        ]
-    },
-    {
-        date: 'October 13, 2023',
-        events: [
-            {
-                title: 'Rhythm Rogue',
-                description: 'MainStage',
-                time: '00:00 - 01:30',
-            },
-            {
-                title: 'Synth Siren',
-                description: 'MainStage',
-                time: '01:30 - 03:00',
-            },
-            {
-                title: 'Bass Bandit',
-                description: 'MainStage',
-                time: '03:00 - 04:30',
-            },
-        ]
-    },
-    {
-        date: 'October 14, 2023',
-        events: [
-            {
-                title: 'Tempo Titan',
-                description: 'MainStage',
-                time: '00:00 - 01:30',
-            },
-            {
-                title: 'Groove Galaxy',
-                description: 'MainStage',
-                time: '01:30 - 03:00',
-            },
-            {
-                title: 'Decibel Duo',
-                description: 'MainStage',
-                time: '03:00 - 04:30',
-            },
-        ]
-    },
-];
-
-const features = [
-  {
-    type: "spotifyPlayer",
-    name: "Save your files",
-    description: "We automatically save your files as you type.",
-    className: "col-span-1 h-[300px]",
-    song: {
-      title: "Autosave",
-      artist: "The Coders",
-      album: "Developer's Playlist",
-      coverUrl: "https://via.placeholder.com/400x400.png?text=Autosave+Cover",
-      spotifyUrl: "https://open.spotify.com/track/example",
-    },
-  },
-  {
-    type: "notification",
-    name: "Latest Events",
-    events: [
-      { icon: FaMusic, text: "New album released!", color: "text-purple-400" },
-      { icon: FaDrum, text: "Drum workshop tomorrow", color: "text-yellow-400" },
-      { icon: FaGuitar, text: "Guitar strings sale!", color: "text-green-400" },
-      { icon: FaMicrophone, text: "Open mic night tonight", color: "text-red-400" },
-    ],
-    className: "col-span-1 sm:col-span-2 h-[300px]",
-  },
-  {
-    type: "integrations",
-    name: "Gallery",
-    className: "col-span-1 sm:col-span-2 h-[300px]",
-    photos: [
-      { id: 1, url: 'https://picsum.photos/200/300' },
-      { id: 2, url: 'https://picsum.photos/200/301' },
-      { id: 3, url: 'https://picsum.photos/200/302' },
-      { id: 4, url: 'https://picsum.photos/200/303' },
-      { id: 5, url: 'https://picsum.photos/200/304' },
-      { id: 6, url: 'https://picsum.photos/200/305' },
-    ],
-  },
-  {
-    type: "calendar",
-    name: "Event Calendar",
-    description: "",
-    className: "col-span-1 h-[300px]",
-    events: [
-      { date: new Date(2023, 1, 15), title: "Music Festival" },
-      { date: new Date(2023, 5, 22), title: "Album Launch" },
-      { date: new Date(2023, 6, 3), title: "Open Mic Night" },
-      { date: new Date(2023, 6, 17), title: "Concert in the Park" },
-    ],
-  },
-];
-
+// Component definitions
 const SpotifyPlayer = ({ song, name, description }) => (
   <div 
     className="flex flex-col h-full bg-gradient-to-br from-blue-400 to-blue-600 p-4 rounded-xl " 
@@ -145,7 +21,7 @@ const SpotifyPlayer = ({ song, name, description }) => (
       <img src={song.coverUrl} alt={`${song.album} cover`} className="w-16 h-16 sm:w-20 sm:h-20 rounded-lg shadow-lg mr-4" />
       <div>
         <h3 className="text-lg sm:text-xl font-bold text-white">{song.title}</h3>
-        <p className="text-xs sm:text-sm text-white/80">{song.artist}</p>
+        <p className="text-xs sm:text-sm text-white/80">{song.album}</p>
       </div>
     </div>
     <div className="flex-grow">
@@ -286,29 +162,99 @@ const BentoGrid = ({ children }) => (
   </div>
 );
 
+// Main Timeline component
 const Timeline = () => {
     let { artist } = useParams();
-    const artistImages = {
-        krinjaldave: krinjaldave,
-        geetabenravai: GeetabenRavai,
-        purvamantri: PurvaMantri,
-    };
-
-    const artistImage = artistImages[artist.toLowerCase()] || '';
-
-    const [currentDate, setCurrentDate] = useState(timelineData[0].date);
+    const [currentDate, setCurrentDate] = useState('');
+    const [visibleItems, setVisibleItems] = useState([]);
+    
     const timelineRef = useRef(null);
     const scrollbarRef = useRef(null);
     const thumbRef = useRef(null);
-    const [visibleItems, setVisibleItems] = useState([]);
-
-    const isLargeScreen = window.matchMedia("(min-width: 1024px)").matches;
-
-    const containerRef = useRef(null);
-
     const timelineContainerRef = useRef(null);
-
     const highlightRefs = useRef([]);
+
+    // Fetch and process artist data
+    const artistData = getArtistById(artist);
+    const artistEvents = getEventsByArtist(artist);
+    const sortedEvents = artistEvents.sort((a, b) => new Date(a.date) - new Date(b.date));
+    const groupedEvents = sortedEvents.reduce((acc, event) => {
+        const date = event.date;
+        if (!acc[date]) {
+            acc[date] = [];
+        }
+        acc[date].push(event);
+        return acc;
+    }, {});
+    const timelineData = Object.entries(groupedEvents).map(([date, events]) => ({
+        date,
+        events: events.map(event => ({
+            title: event.name,
+            description: event.place,
+            time: `${event.time.start}`,
+            isToday: new Date(date).toDateString() === new Date().toDateString(),
+            isPast: new Date(date) < new Date(),
+            isFuture: new Date(date) > new Date()
+        }))
+    }));
+
+    const [features, setFeatures] = useState([]);
+
+    useEffect(() => {
+        if (artistData) {
+            setFeatures([
+                {
+                    type: "spotifyPlayer",
+                    name: "Popular Song",
+                    description: "Listen to one of the artist's popular songs on Spotify.",
+                    className: "col-span-1 h-[300px]",
+                    song: artistData.spotify.popularSongs[0],
+                },
+                {
+                    type: "notification",
+                    name: "Latest Events",
+                    events: [
+                        { icon: FaMusic, text: "New album released!", color: "text-purple-400" },
+                        { icon: FaDrum, text: "Drum workshop tomorrow", color: "text-yellow-400" },
+                        { icon: FaGuitar, text: "Guitar strings sale!", color: "text-green-400" },
+                        { icon: FaMicrophone, text: "Open mic night tonight", color: "text-red-400" },
+                    ],
+                    className: "col-span-1 sm:col-span-2 h-[300px]",
+                },
+                {
+                    type: "integrations",
+                    name: "Gallery",
+                    className: "col-span-1 sm:col-span-2 h-[300px]",
+                    photos: artistData.instagramImages ? 
+                        artistData.instagramImages.slice(0, 6).map((url, index) => ({
+                            id: index + 1,
+                            url: url
+                        })) : 
+                        // Fallback to placeholder images if instagramImages is not available
+                        [
+                            { id: 1, url: 'https://picsum.photos/200/300' },
+                            { id: 2, url: 'https://picsum.photos/200/301' },
+                            { id: 3, url: 'https://picsum.photos/200/302' },
+                            { id: 4, url: 'https://picsum.photos/200/303' },
+                            { id: 5, url: 'https://picsum.photos/200/304' },
+                            { id: 6, url: 'https://picsum.photos/200/305' },
+                        ],
+                },
+                {
+                    type: "calendar",
+                    name: "Event Calendar",
+                    description: "",
+                    className: "col-span-1 h-[300px]",
+                    events: [
+                        { date: new Date(2023, 1, 15), title: "Music Festival" },
+                        { date: new Date(2023, 5, 22), title: "Album Launch" },
+                        { date: new Date(2023, 6, 3), title: "Open Mic Night" },
+                        { date: new Date(2023, 6, 17), title: "Concert in the Park" },
+                    ],
+                },
+            ]);
+        }
+    }, [artistData]);
 
     useEffect(() => {
         const handleScroll = (e) => {
@@ -354,6 +300,7 @@ const Timeline = () => {
             timelineRef.current.scrollTop = scrollPercentage * (timelineRef.current.scrollHeight - timelineRef.current.clientHeight);
         };
 
+        // Setup observers and event listeners
         const timelineContainer = timelineRef.current;
         const scrollbarThumb = thumbRef.current;
 
@@ -422,18 +369,40 @@ const Timeline = () => {
         const timelineElement = timelineRef.current;
         timelineElement.addEventListener('wheel', preventScroll, { passive: false });
 
+        const updateCurrentDate = () => {
+            const { scrollTop } = timelineRef.current;
+            const dateElements = timelineRef.current.querySelectorAll('.date-section');
+            let currentDateElement = null;
+
+            for (let i = 0; i < dateElements.length; i++) {
+                if (dateElements[i].offsetTop > scrollTop) {
+                    currentDateElement = dateElements[i === 0 ? 0 : i - 1];
+                    break;
+                }
+            }
+
+            if (currentDateElement) {
+                setCurrentDate(currentDateElement.dataset.date);
+            }
+        };
+
+        timelineRef.current.addEventListener('scroll', updateCurrentDate);
+
         return () => {
             document.removeEventListener('wheel', handleScroll);
-            if (timelineContainer) {
-                timelineContainer.removeEventListener('scroll', updateScrollbarThumb);
+            if (timelineRef.current) {
+              timelineRef.current.removeEventListener('scroll', updateScrollbarThumb);
+              timelineRef.current.removeEventListener('scroll', updateCurrentDate);
             }
             items.forEach(item => observer.unobserve(item));
             highlightRefs.current.forEach((ref) => {
-                if (ref) {
-                    highlightObserver.unobserve(ref);
-                }
+              if (ref) {
+                highlightObserver.unobserve(ref);
+              }
             });
-            timelineElement.removeEventListener('wheel', preventScroll);
+            if (timelineElement) {
+              timelineElement.removeEventListener('wheel', preventScroll);
+            }
         };
     }, []);
 
@@ -441,6 +410,7 @@ const Timeline = () => {
         <>
             <Navbar />
             <div className='min-h-screen'>
+                {/* Artist header section */}
                 <div className="w-full h-auto min-h-[450px] bg-no-repeat bg-cover bg-center relative overflow-hidden flex flex-col lg:flex-row items-center justify-center lg:justify-between p-8 lg:p-16">
                     {/* Dark live gradient background */}
                     <div className="absolute inset-0 bg-gradient-to-r from-gray-900 via-purple-900 to-violet-950 animate-gradient-x"></div>
@@ -452,8 +422,8 @@ const Timeline = () => {
                     <div className="relative z-10 mb-8 lg:mb-0 lg:order-2">
                         <div className="w-48 h-48 lg:w-64 lg:h-64 rounded-full overflow-hidden border-2 border-white shadow-lg">
                             <img
-                                src={artistImage}
-                                alt={artist}
+                                src={artistData.image}
+                                alt={artistData.name}
                                 className="w-full h-full object-cover transition-all duration-300 ease-in-out transform hover:scale-105"
                             />
                         </div>
@@ -461,27 +431,28 @@ const Timeline = () => {
                     
                     {/* Artist name and social icons */}
                     <div className="relative z-10 text-center lg:text-left lg:order-1">
-                        <h1 className="text-4xl sm:text-5xl lg:text-7xl xl:text-8xl font-bold text-white uppercase tracking-wider mb-4">{artist}</h1>
+                        <h1 className="text-4xl sm:text-5xl lg:text-7xl xl:text-8xl font-bold text-white uppercase tracking-wider mb-4">{artistData.name}</h1>
                         <div className="flex justify-center lg:justify-start space-x-8 mt-4 lg:mt-8 sm:mt-9">
-                            <a href="#" className="text-white">
+                            <a href={artistData.socialMedia.facebook} target="_blank" rel="noopener noreferrer" className="text-white">
                                 <i className="fab fa-facebook text-3xl lg:text-4xl sm:text-2xl"></i>
                             </a>
-                            <a href="#" className="text-white">
+                            <a href={artistData.socialMedia.instagram} target="_blank" rel="noopener noreferrer" className="text-white">
                                 <i className="fab fa-instagram text-3xl lg:text-4xl sm:text-2xl"></i>
                             </a>
-                            <a href="#" className="text-white">
+                            <a href={artistData.socialMedia.youtube} target="_blank" rel="noopener noreferrer" className="text-white">
                                 <i className="fab fa-youtube text-3xl lg:text-4xl sm:text-2xl"></i>
                             </a>
                         </div>
                     </div>
                 </div>
 
+                {/* Main content section */}
                 <div className="bg-black w-full relative">
                     <div className="container mx-auto p-4 sm:p-8 relative">
                         <div className="flex flex-col lg:flex-row">
-                            {/* Timeline */}
+                            {/* Timeline section */}
                             <div className="w-full lg:w-1/3 lg:sticky lg:top-0 lg:h-[calc(80vh-80px)] mb-8 lg:mb-0">
-                                <div ref={timelineContainerRef} className="h-[400px] lg:h-full flex flex-col  rounded-lg p-4">
+                                <div ref={timelineContainerRef} className="h-[400px] lg:h-full flex flex-col  rounded-lg p-4  ">
                                     {/* Date display card */}
                                     <div className="bg-white/10 backdrop-blur-md text-white p-4 rounded-lg shadow-md mb-4">
                                         <h2 className="text-2xl font-bold">{currentDate}</h2>
@@ -490,9 +461,9 @@ const Timeline = () => {
                                     {/* Scrollable timeline */}
                                     <div 
                                         ref={timelineRef}
-                                        className="flex-grow overflow-y-auto pr-4"
+                                        className="flex-grow overflow-y-auto pr-4 "
                                         style={{
-                                            maxHeight: 'calc(100% - 80px)', // Adjust this value as needed
+                                            maxHeight: 'calc(100% - 80px)',
                                             overflowY: 'auto',
                                             overflowX: 'hidden',
                                         }}
@@ -512,7 +483,7 @@ const Timeline = () => {
                                                             
                                                             <div className="ml-12 bg-white/10 backdrop-blur-md text-white p-4 rounded-lg shadow-md w-full">
                                                                 <span className="text-sm text-green-400 mb-1 block">
-                                                                    {item.isToday ? 'Today' : 'Previously'}
+                                                                    {item.isToday ? 'Today' : item.isPast ? 'Previously' : 'Upcoming'}
                                                                 </span>
                                                                 <h2 className="text-xl font-semibold mb-1">{item.title}</h2>
                                                                 <p className="text-sm mb-1">{item.description}</p>
@@ -528,19 +499,19 @@ const Timeline = () => {
                                     {/* Custom scrollbar */}
                                     <div 
                                         ref={scrollbarRef}
-                                        className="absolute right-0 top-0 w-2 bg-gray-300 rounded"
+                                        className="absolute right-0 top-0 w-2 bg-transparent lg:bg-gray-300 rounded"
                                         style={{ top: '80px', height: 'calc(100% - 80px)' }}
                                     >
                                         <div 
                                             ref={thumbRef}
-                                            className="w-full bg-gray-600 rounded"
+                                            className="w-full bg-transparent lg:bg-gray-600 rounded"
                                             style={{ cursor: 'pointer' }}
                                         ></div>
                                     </div>
                                 </div>
                             </div>
 
-                            {/* Bento Grid Highlights */}
+                            {/* Bento Grid Highlights section */}
                             <div className="w-full lg:w-2/3 lg:ml-8">
                                 <div className="flex justify-between items-center mb-6 px-4 sm:px-0">
                                     <h2 className="text-2xl sm:text-3xl font-bold text-white">Highlights</h2>

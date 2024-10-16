@@ -79,7 +79,7 @@ function Navbar() {
                                         transition={{ duration: 0.3 }}
                                         className="absolute top-full left-0 w-full bg-black/25 backdrop-blur-md overflow-hidden"
                                     >
-                                        <div className="container mx-auto px-4 py-4">
+                                        <div className="container mx-auto px-4 py-4 ">
                                             {menuItems[item].map((subItem, subIndex) => (
                                                 <motion.div
                                                     key={subIndex}

@@ -1,24 +1,65 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect, useState, useMemo } from 'react';
 import Footer_only_links from "../../Footer/Footer_only_links";
 import Navbar from "../../Navbar/Navbar";
+import { events } from '../../../../Database/database';
+
+// Function to generate random aesthetic color
+const generateRandomColor = () => {
+  const hue = Math.floor(Math.random() * 360);
+  const saturation = 70 + Math.random() * 10; // 70-80%
+  const lightness = 80 + Math.random() * 10; // 80-90%
+  return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
+};
+
+// Function to get day name from date
+const getDayName = (dateString) => {
+  const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+  const date = new Date(dateString);
+  return days[date.getDay()];
+};
 
 const EventCalendar = () => {
-  const days = [
-    { date: 9, day: 'Mon', events: [{ title: 'Gitaravai show', time: '2 PM - 5 PM', start: 'start-2', end: 'end-5', class: 'bg-green-100' }] },
-    { date: 10, day: 'Tues', events: [
-      { title: 'Kinjal Dave show', time: '10 AM - 12 PM', start: 'start-10', end: 'end-12', class: 'bg-red-100' },
-      { title: 'Gitaravai show', time: '1PM - 4PM', start: 'start-1', end: 'end-4', class: 'bg-yellow-100' }
-    ]},
-    { date: 11, day: 'Wed', events: [
-      { title: 'Purva mantri show', time: '11 AM - 12 PM', start: 'start-12', end: 'end-1', class: 'bg-blue-100' },
-      { title: 'Kinjal Dave show', time: '2 PM - 5 PM', start: 'start-2', end: 'end-5', class: 'bg-green-100' }
-    ]},
-    { date: 12, day: 'Thurs', events: [
-      { title: 'Kinjal Dave show', time: '10 AM - 12 PM', start: 'start-10', end: 'end-12', class: 'bg-red-100' },
-      { title: 'Purva mantri show', time: '1PM - 4PM', start: 'start-1', end: 'end-4', class: 'bg-yellow-100' }
-    ]},
-    { date: 13, day: 'Fri', events: [] },
-  ];
+  const [eventColors, setEventColors] = useState({});
+
+  // Generate colors once when component mounts
+  useEffect(() => {
+    const colors = {};
+    events.forEach(event => {
+      colors[event.id] = generateRandomColor();
+    });
+    setEventColors(colors);
+  }, []);
+
+  // Modify this function to return the position instead of height
+  const calculateEventPosition = (start) => {
+    const startHour = parseInt(start.split(':')[0]);
+    const startMinute = parseInt(start.split(':')[1]);
+    return (startHour - 9) * 60 + startMinute; // 9 AM is the start of our calendar
+  };
+
+  // Process events from database
+  const processedDays = useMemo(() => {
+    return events.reduce((acc, event) => {
+      const date = new Date(event.date);
+      const dayIndex = date.getDate();
+      const dayName = getDayName(event.date);
+      
+      if (!acc[dayIndex]) {
+        acc[dayIndex] = { date: dayIndex, day: dayName, events: [] };
+      }
+
+      acc[dayIndex].events.push({
+        id: event.id,
+        title: event.name,
+        time: event.time.start,
+        position: calculateEventPosition(event.time.start),
+      });
+
+      return acc;
+    }, {});
+  }, []);
+
+  const days = Object.values(processedDays);
 
   const timeMarkers = ['9 AM', '10 AM', '11 AM', '12 PM', '1 PM', '2 PM', '3 PM', '4 PM', '5 PM', '6 PM'];
   const containerRef = useRef(null);
@@ -140,13 +181,20 @@ const EventCalendar = () => {
                       <p className="text-3xl font-semibold">{day.date}</p>
                       <p className="text-3xl font-thin">{day.day}</p>
                     </div>
-                    <div className="grid grid-rows-[repeat(10,60px)] bg-[#c59999]/30 rounded-lg overflow-hidden p-2">
+                    <div className="relative h-[600px] bg-[#c59999]/30 rounded-lg overflow-hidden p-2">
                       {day.events.map((event, eventIndex) => (
                         <div 
-                          key={eventIndex} 
-                          className={`border border-[#c59999] rounded p-2 ${event.class} ${event.start} ${event.end} overflow-hidden`}
+                          key={event.id} 
+                          className={`rounded p-2 m-1 ${event.start} overflow-hidden`}
+                          style={{ 
+                            backgroundColor: eventColors[event.id],
+                            height: '80px',
+                            top: `${event.position}px`,
+                            left: `${(eventIndex % 3) * 4}px`, // Offset events with same time
+                            right: `${((2 - (eventIndex % 3)) * 4) + 4}px`, // Adjust width for offset
+                          }}
                         >
-                          <p className="font-semibold mb-1 text-sm truncate">{event.title}</p>
+                          <p className="font-semibold text-xs truncate">{event.title}</p>
                           <p className="text-xs">{event.time}</p>
                         </div>
                       ))}

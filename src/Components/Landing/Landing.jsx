@@ -1,7 +1,13 @@
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import TypewriterEffect from './TypewriterEffect';
 
 function Landing() {
+    const navigate = useNavigate();
+
+    const handleNavigateToCalendar = () => {
+        navigate('/calendar');
+    };
+
     return (
         <>
             <div
@@ -19,11 +25,12 @@ function Landing() {
                         <p>Garba event Chicago - October 11 - 13, 2024.</p>
                     </div>
                     <div className="mt-8 animate-fade-up animation-delay-400"> 
-                        <div className="h-10 cursor-pointer font-light text-white border-[2px] hover:bg-white hover:text-black border-white flex justify-center items-center w-28 sm:w-32 rounded-3xl mb-20 transform hover:scale-105 duration-300">
-                            <Link to="/calendar">
-                                <div>Timetable</div>
-                            </Link>
-                        </div>
+                        <button 
+                            onClick={handleNavigateToCalendar}
+                            className="h-10 cursor-pointer font-light text-white border-[2px] hover:bg-white hover:text-black border-white flex justify-center items-center w-28 sm:w-32 rounded-3xl mb-20 transform hover:scale-105 duration-300"
+                        >
+                            Timetable
+                        </button>
                     </div>
                 </div>
             </div>

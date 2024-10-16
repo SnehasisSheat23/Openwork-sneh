@@ -1,8 +1,6 @@
 import React, { useRef, useEffect } from 'react';
-import GeetabenRavai from '../../assets/Artist/Artist1.png'
-import PurvaMantri from '../../assets/Artist/Artist2.png'
-import krinjaldave from '../../assets/Artist/Artist3.png'
-import Artistcard from '../Artistcard/Artistcard'
+import Artistcard from '../Artistcard/Artistcard';
+import { artists } from '../../../Database/database';
 
 function Artist() {
     const scrollRef = useRef(null);
@@ -53,9 +51,15 @@ function Artist() {
                         className="h-[400px] flex gap-3 px-3 overflow-x-auto scroll-smooth snap-x snap-mandatory"
                         style={{ scrollSnapType: 'x mandatory' }}
                     >
-                        <Artistcard img={krinjaldave} name={"krinjaldave"} description={"Kinjal Dave"} delay={0} />
-                        <Artistcard img={GeetabenRavai} name={"GeetabenRavai"} description={"Geeta Ravai"} delay={200} />
-                        <Artistcard img={PurvaMantri} name={"PurvaMantri"} description={"Purva Mantri"} delay={400} />
+                        {artists.map((artist, index) => (
+                            <Artistcard 
+                                key={artist.id}
+                                img={artist.image}
+                                id={artist.id} // Use id for URL creation
+                                name={artist.name} // Use name for display
+                                delay={index * 200}
+                            />
+                        ))}
                     </div>
                 </div>
             </div>
