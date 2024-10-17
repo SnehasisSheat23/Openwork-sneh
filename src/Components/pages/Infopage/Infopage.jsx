@@ -420,7 +420,7 @@ const Timeline = () => {
                     
                     {/* Artist image */}
                     <div className="relative z-10 pt-10 mb-8 lg:mb-0 lg:order-2">
-                        <div className="w-48 h-48 lg:w-64 lg:h-64  rounded-full overflow-hidden border-2 border-white shadow-lg">
+                        <div className="w-48 h-48 lg:w-64 lg:h-64 rounded-full overflow-hidden border-2 border-white shadow-lg">
                             <img
                                 src={artistData.image}
                                 alt={artistData.name}
