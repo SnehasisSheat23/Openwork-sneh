@@ -154,7 +154,7 @@ export const artists = [
 
 export const events = [
   {
-    id: 1,
+    id: 3,
     name: "Thangaat Raas Garba in Boston - Kinjal Dave",
     image: event9,
     artist: "krinjaldave",
@@ -163,46 +163,46 @@ export const events = [
     time: {
       start: "19:00",
       end: "23:00",
-      link: "https://events.sulekha.com/manpasand-inc-event-organizer-321",
+      link: "https://events.sulekha.com/thangaat-raas-garba-24-with-kinjal-dave_event-in_fitchburg-ma_377015?fbclid=IwY2xjawF9MtlleHRuA2FlbQIxMAABHTNhGp9nJHRbCrxEynSIU6YHa8YuSRC6EK5xMcwWSfv2VDaeHmpewB0iDA_aem_V3R4lYOWlPffZX5eOqyIxQ",
     },
   },
   {
     id: 2,
-    name: "Garba Dhamaal with Purva Mantri - Live",
-    image: event6,
-    artist: "purvamantri",
-    place: "Seattle, WA, USA",
-    date: "2023-09-29",
+    name: "Garba Dhamaal with Geeta Rabarai - Live",
+    image: event7,
+    artist: "geetabenravai",
+    place: "Denver, CO , USA",
+    date: "2024-10-18",
     time: {
-      start: "18:30",
+      start: "17:30",
       end: "22:30",
-      link: "https://events.sulekha.com/manpasand-inc-event-organizer-321",
-    },
-  },
-  {
-    id: 3,
-    name: "Garba Queen Kinjal Dave - Live",
-    image: event4,
-    artist: "krinjaldave",
-    place: "Boston, MA, USA",
-    date: "2023-10-18",
-    time: {
-      start: "20:00",
-      end: "00:00",
-      link: "https://events.sulekha.com/manpasand-inc-event-organizer-321",
+      link: "https://events.sulekha.com/maa-garba-2024-with-kairavi-buch_event-in_northglenn-co_377415?fbclid=IwY2xjawF9MoNleHRuA2FlbQIxMAABHd8VaLlwfRcLy0lrvqNjSUuUQYR0948ndgEzMzCBTFpfSkn3324C5Pv6aA_aem_4MHKzOHUOLe29yfdTg09_Q",
     },
   },
   {
     id: 4,
+    name: "Garba Queen Kinjal Dave - Live",
+    image: event4,
+    artist: "krinjaldave",
+    place: "London , Canada",
+    date: "2024-10-19",
+    time: {
+      start: "19:00",
+      end: "00:00",
+      link: "https://allevents.in/london/the-kinjal-dave-killol-in-london-2024/80001495612430?fbclid=IwY2xjawF9M8tleHRuA2FlbQIxMAABHezxNXuSjXBK2DoiLubJfEwEMsWZ0K1F_F3XfD7cxTMbqs7NDiYGUWbHdw_aem_b3C-bfH1J9uvO1vrYFRQyw",
+    },
+  },
+  {
+    id: 1,
     name: "Navratri Special with Geeta Rabari",
     image: event2,
     artist: "geetabenravai",
-    place: "New York, NY, USA",
-    date: "2023-10-15",
+    place: "Southhaven, MS , USA",
+    date: "2024-10-17",
     time: {
       start: "18:00",
       end: "22:00",
-      link: "https://events.sulekha.com/manpasand-inc-event-organizer-321",
+      link: "https://events.sulekha.com/garba-dhamaal-2024-geeta-rabari-live-in-memphis_event-in_southaven-ms_380955?fbclid=IwY2xjawF9NGRleHRuA2FlbQIxMAABHXaL3pcOX4FP8CCcLjditpeCmpC-JNBUlY080XXP8fPWULMwv-owzg6WSQ_aem_f9eawMOKIFvjpgl5OojmyQ",
     },
   },
   {
@@ -211,7 +211,7 @@ export const events = [
     image: event1,
     artist: "purvamantri",
     place: "San Francisco, CA, USA",
-    date: "2023-11-12",
+    date: "2025-11-12",
     time: {
       start: "19:30",
       end: "23:30",
@@ -224,7 +224,7 @@ export const events = [
     image: event9,
     artist: "krinjaldave",
     place: "Chicago, IL, USA",
-    date: "2023-12-20",
+    date: "2025-12-20",
     time: {
       start: "20:00",
       end: "23:00",
@@ -237,7 +237,7 @@ export const events = [
     image: event1,
     artist: "geetabenravai",
     place: "Houston, TX, USA",
-    date: "2024-03-15",
+    date: "2025-03-15",
     time: {
       start: "19:00",
       end: "23:00",
@@ -250,7 +250,7 @@ export const events = [
     image: event2,
     artist: "purvamantri",
     place: "Miami, FL, USA",
-    date: "2024-06-22",
+    date: "2025-06-22",
     time: {
       start: "20:00",
       end: "00:00",
@@ -263,7 +263,7 @@ export const events = [
     image: event4,
     artist: "krinjaldave",
     place: "Philadelphia, PA, USA",
-    date: "2024-09-10",
+    date: "2025-09-10",
     time: {
       start: "18:30",
       end: "22:30",
@@ -276,7 +276,7 @@ export const events = [
     image: event6,
     artist: "geetabenravai",
     place: "Denver, CO, USA",
-    date: "2024-12-05",
+    date: "2025-12-05",
     time: {
       start: "19:30",
       end: "23:30",

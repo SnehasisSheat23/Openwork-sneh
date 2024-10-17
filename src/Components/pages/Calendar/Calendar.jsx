@@ -3,7 +3,7 @@ import Footer_only_links from "../../Footer/Footer_only_links";
 import Navbar from "../../Navbar/Navbar";
 import { events } from '../../../../Database/database';
 
-// Function to generate random aesthetic color
+// aesthetic color generator
 const generateRandomColor = () => {
   const hue = Math.floor(Math.random() * 360);
   const saturation = 70 + Math.random() * 10; // 70-80%
@@ -21,7 +21,7 @@ const getDayName = (dateString) => {
 const EventCalendar = () => {
   const [eventColors, setEventColors] = useState({});
 
-  // Generate colors once when component mounts
+  // generate the color after the component mounts
   useEffect(() => {
     const colors = {};
     events.forEach(event => {
@@ -30,25 +30,39 @@ const EventCalendar = () => {
     setEventColors(colors);
   }, []);
 
-  // Modify this function to return the position instead of height
+  // position of card based on start time
   const calculateEventPosition = (start) => {
     const startHour = parseInt(start.split(':')[0]);
     const startMinute = parseInt(start.split(':')[1]);
     return (startHour - 9) * 60 + startMinute; // 9 AM is the start of our calendar
   };
 
-  // Process events from database
+  // Updated function to filter and sort events
+  const filterAndSortEvents = (events) => {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0); // Set to start of day for accurate comparison
+    
+    return events
+      .filter(event => new Date(event.date) >= today)
+      .sort((a, b) => new Date(a.date) - new Date(b.date));
+  };
+
+  //  events from database
   const processedDays = useMemo(() => {
-    return events.reduce((acc, event) => {
+    const filteredAndSortedEvents = filterAndSortEvents(events);
+    return filteredAndSortedEvents.reduce((acc, event) => {
       const date = new Date(event.date);
       const dayIndex = date.getDate();
+      const monthIndex = date.getMonth();
+      const year = date.getFullYear();
+      const dayKey = `${year}-${monthIndex + 1}-${dayIndex}`;
       const dayName = getDayName(event.date);
       
-      if (!acc[dayIndex]) {
-        acc[dayIndex] = { date: dayIndex, day: dayName, events: [] };
+      if (!acc[dayKey]) {
+        acc[dayKey] = { date: dayIndex, day: dayName, events: [] };
       }
 
-      acc[dayIndex].events.push({
+      acc[dayKey].events.push({
         id: event.id,
         title: event.name,
         time: event.time.start,
@@ -86,7 +100,7 @@ const EventCalendar = () => {
         const scrollIntoCard = (currentScrollPosition % cardWidth) / cardWidth;
 
         // Threshold for snapping
-        const threshold = 0.3;  // Snap when 30% into next/previous card
+        const threshold = 0.3;  
 
         if (Math.abs(scrollIntoCard - 0.5) > threshold) {
           container.scrollTo({
@@ -96,7 +110,7 @@ const EventCalendar = () => {
         }
 
         setLastScrollPosition(currentScrollPosition);
-      }, 150); // Adjust this delay as needed
+      }, 150); 
     };
 
     const handleIntersection = (entries) => {
@@ -195,7 +209,7 @@ const EventCalendar = () => {
                           }}
                         >
                           <p className="font-semibold text-xs truncate">{event.title}</p>
-                          <p className="text-xs">{event.time}</p>
+                          <p className="mt-1 text-xs ">{event.time}</p>
                         </div>
                       ))}
                     </div>

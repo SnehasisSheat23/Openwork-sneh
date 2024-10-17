@@ -3,13 +3,13 @@ import Footer_only_links from "../Footer/Footer_only_links";
 import Navbar from "../Navbar/Navbar";
 import { artists } from '../../../Database/database';
 
-// Function to get random items from an array
+// Function for random image selection
 const getRandomItems = (array, count) => {
   const shuffled = array.sort(() => 0.5 - Math.random());
   return shuffled.slice(0, count);
 };
 
-// Collect all Instagram images from all artists
+// Instagram images from all artists
 const allInstagramImages = artists.flatMap(artist => 
   artist.instagramImages.map(url => ({ id: Math.random(), url, artist: artist.name }))
 );
@@ -33,7 +33,7 @@ const PhotoGallery = () => {
           ]);
         }
       });
-    }, { threshold: 0.1 }); // Reduced threshold for earlier animation trigger
+    }, { threshold: 0.1 }); 
 
     const elements = document.querySelectorAll('.photo-container');
     elements.forEach((element) => observer.observe(element));
