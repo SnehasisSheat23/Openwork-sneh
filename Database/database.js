@@ -181,28 +181,28 @@ export const events = [
   },
   {
     id: 4,
-    name: "Garba Queen Kinjal Dave - Live",
-    image: event4,
-    artist: "krinjaldave",
-    place: "London , Canada",
-    date: "2024-10-19",
+    name: "Purnima Garba with the incredible Kutch Ni Koyal Geetaben Rabari ",
+    image: event1,
+    artist: "geetabenravai",
+    place: "San Mateo, CA , USA",
+    date: "2024-10-26",
     time: {
       start: "19:00",
       end: "00:00",
-      link: "https://allevents.in/london/the-kinjal-dave-killol-in-london-2024/80001495612430?fbclid=IwY2xjawF9M8tleHRuA2FlbQIxMAABHezxNXuSjXBK2DoiLubJfEwEMsWZ0K1F_F3XfD7cxTMbqs7NDiYGUWbHdw_aem_b3C-bfH1J9uvO1vrYFRQyw",
+      link: "https://events.sulekha.com/geeta-rabari-live-garba-in-bay-area-2024_event-in_san-mateo-ca_380902?fbclid=IwY2xjawGE1-9leHRuA2FlbQIxMAABHTytd4S6CMow5A40eJSz31pSZ0wT4Z3W1H7ZW8rinqGydwf6mnSHNTO6aw_aem_r05DVzm3_MHmlXfj8s9eQQ",
     },
   },
   {
     id: 1,
-    name: "Navratri Special with Geeta Rabari",
+    name: "Biggest Garba Dhamaal in Los Angeles with Geeta Rabari",
     image: event2,
     artist: "geetabenravai",
-    place: "Southhaven, MS , USA",
-    date: "2024-10-17",
+    place: "Los Angeles, CA , USA",
+    date: "2024-10-25",
     time: {
-      start: "18:00",
+      start: "20:00",
       end: "22:00",
-      link: "https://events.sulekha.com/garba-dhamaal-2024-geeta-rabari-live-in-memphis_event-in_southaven-ms_380955?fbclid=IwY2xjawF9NGRleHRuA2FlbQIxMAABHXaL3pcOX4FP8CCcLjditpeCmpC-JNBUlY080XXP8fPWULMwv-owzg6WSQ_aem_f9eawMOKIFvjpgl5OojmyQ",
+      link: "https://events.sulekha.com/garba-dhamaal-with-geetaben-rabari-live-in-los-angeles_event-in_buena-park-ca_381157?fbclid=IwY2xjawGE189leHRuA2FlbQIxMAABHX_LDpcMWNrGjxii2I3h3vi-7gexuKQbsXL3UlpXF8TvXMm2bLAx5yfWNA_aem_ky5S7HKW3cpQzkjjIr8u6Q",
     },
   },
   {
@@ -543,6 +543,19 @@ export const events = [
       link: "https://events.sulekha.com/manpasand-inc-event-organizer-321",
     },
   },
+  {
+    id: 31,
+    name: "Geeta Rabari's Summer Solstice Concert",
+    image: event1,
+    artist: "geetabenravai",
+    place: "Denver, CO, USA",
+    date: "2027-06-21",
+    time: {
+      start: "19:00",
+      end: "23:00",
+      link: "https://events.sulekha.com/manpasand-inc-event-organizer-321",
+    },
+  }
 ];
 
 export const getArtistById = (id) => artists.find(artist => artist.id === id);
