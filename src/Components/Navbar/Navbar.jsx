@@ -24,7 +24,7 @@ function Navbar() {
         "ARTISTS": [
             { name: "Purva Mantri", link: "/info/purvamantri" },
             { name: "Kinjal Dave", link: "/info/krinjaldave" },
-            { name: "Geeta Rabari", link: "/info/GeetabenRavai" }
+            { name: "Geeta Rabari", link: "/info/geetabenravai" }
         ],
         "TOUR": [
             { name: "Navratri Tour 2024", link: "/Calendar" }
