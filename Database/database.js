@@ -182,7 +182,7 @@ export const events = [
   {
     id: 4,
     name: "Purnima Garba with the incredible Kutch Ni Koyal Geetaben Rabari ",
-    image: event1,
+    image: geetaravaiinsta1,
     artist: "geetabenravai",
     place: "San Mateo, CA , USA",
     date: "2024-10-26",
@@ -234,7 +234,7 @@ export const events = [
   {
     id: 7,
     name: "Geeta Rabari's Spring Celebration",
-    image: event1,
+    image: geetaravaiinsta2,
     artist: "geetabenravai",
     place: "Houston, TX, USA",
     date: "2025-03-15",
