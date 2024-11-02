@@ -2,6 +2,7 @@ import React, { useRef, useEffect, useState, useMemo } from 'react';
 import Footer_only_links from "../../Footer/Footer_only_links";
 import Navbar from "../../Navbar/Navbar";
 import { events } from '../../../../Database/database';
+import { MdKeyboardArrowLeft, MdOutlineKeyboardArrowRight } from 'react-icons/md';
 
 // aesthetic color generator
 const generateRandomColor = () => {
@@ -151,6 +152,20 @@ const EventCalendar = () => {
     };
   }, [lastScrollPosition, opacities]);
 
+  const scrollLeft = () => {
+    containerRef.current.scrollBy({ 
+      left: -260, // Width of one calendar card
+      behavior: 'smooth' 
+    });
+  };
+
+  const scrollRight = () => {
+    containerRef.current.scrollBy({ 
+      left: 260, // Width of one calendar card
+      behavior: 'smooth' 
+    });
+  };
+
   return (
     <div className="bg-[#3d2c2c]">
       <Navbar/>
@@ -168,6 +183,17 @@ const EventCalendar = () => {
             <div className="text-white font-light tracking-tight text-xs sm:text-sm md:text-lg lg:text-xl">
               <p>Check out your upcoming events and schedule.</p>
             </div>
+          </div>
+        </div>
+
+        {/* Navigation Buttons */}
+        <div className="hidden md:flex justify-end p-4 px-20 pb-0 bg-black gap-7 ">
+          
+          <div className="h-9 w-9 bg-transparent border-[2px] border-white rounded-full flex justify-center items-center cursor-pointer " onClick={scrollLeft}>
+            <MdKeyboardArrowLeft className="text-white text-2xl" />
+          </div>
+          <div className="h-9 w-9 bg-transparent border-[2px] border-white rounded-full flex justify-center items-center cursor-pointer" onClick={scrollRight}>
+            <MdOutlineKeyboardArrowRight className="text-white text-2xl" />
           </div>
         </div>
 
