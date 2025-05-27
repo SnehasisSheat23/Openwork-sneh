@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
 // Sample local image imports – replace with correct relative paths
-import landing1Mobile from '../../assets/Landing1mobile.png';
+import landing1Mobile from '../../assets/landing1mobile.png';
 import landing1Tablet from '../../assets/landing1tablet.png';
 import landing1Desktop from '../../assets/landing1.png';
 import landing3Desktop from '../../assets/landing3.png';
