@@ -115,7 +115,7 @@ function Highlights() {
                     >
                         <div className="h-1/2 lg:h-full w-full lg:w-2/3 md:overflow-hidden">
                             <img
-                                src="https://sohampaithani.com/wp-content/uploads/2023/12/saree-colours-of-navratri.webp"
+                                src="https://www.greavesindia.com/wp-content/uploads/2016/07/navratri-festival-e1485258620622.jpeg"
                                 alt=""
                                 className="w-full h-full  object-cover md:hover:scale-110 md:transition-transform md:duration-300"
                             />
@@ -136,7 +136,7 @@ function Highlights() {
                     >
                         <div className="h-1/2 md:overflow-hidden">
                             <img
-                                src="https://static.wanderon.in/wp-content/uploads/2024/09/festivals-in-gujarat.jpg"
+                                src="https://english.cdn.zeenews.com/sites/default/files/2024/09/13/1509413-1.png"
                                 alt="DAB+ Radio"
                                 className="h-full w-full object-cover md:hover:scale-110 md:transition-transform md:duration-300"
                             />

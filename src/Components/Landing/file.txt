@@ -1,0 +1,22 @@
+const slides = [
+        {
+            image: "https://images.hindustantimes.com/img/2022/09/26/1600x900/20220924-KPT-SK-MN-54-0_1664180820199_1664180820199_1664180981399_1664180981399.JPG",
+            title: "Navratri Tour 2024",
+            description: "Prepare for a new Garba experience secure your tickets now. Garba event Chicago - October 11 - 13, 2024."
+        },
+        {
+            image: "https://www.tripsavvy.com/thmb/bZ7mFzV4Z8IfkiMcUwjciUj7faw=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-1047068040-e5857493f7a54c1f8065e8b1d04a6cdd.jpg", // Replace with actual image URLs
+            title: "Raas Garba Night",
+            description: "Experience authentic Gujarati folk dance with live music and professional choreography. Day 1 - October 11, 2024."
+        },
+        {
+            image: "https://m.economictimes.com/thumb/msid-104658661,width-1600,height-900,resizemode-4,imgsize-391144/gujarat-6-dead-of-heart-attacks-in-1-week-while-performing-garba-during-navratri-health-minister-chairs-experts-meet.jpg", // Replace with actual image URLs
+            title: "Cultural Celebration",
+            description: "Immerse yourself in Indian culture with traditional dances, food, and festivities. Day 2 - October 12, 2024."
+        },
+        {
+            image: "https://www.artidea.org/files/styles/large/public/landing-pages/webevent1180x700px2_0.png", // Replace with actual image URLs
+            title: "Grand Finale",
+            description: "Join us for the spectacular closing ceremony featuring special guest performances. Day 3 - October 13, 2024."
+        }
+    ];

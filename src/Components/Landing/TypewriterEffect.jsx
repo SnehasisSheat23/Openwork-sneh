@@ -13,12 +13,12 @@ function TypewriterEffect({ text, delay = 100 }) {
 
       return () => clearTimeout(timeout);
     }
-  }, [currentIndex, delay, text]);
+  }, [currentIndex, delay, text]); // Correct dependencies for re-mount scenario
 
   return (
-    <span className="inline-block">
+      <span className="inline-block">
       {currentText}
-      <span className="animate-blink font-light">|</span>
+        <span className="animate-blink font-light">|</span>
     </span>
   );
 }

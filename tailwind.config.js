@@ -36,6 +36,7 @@ export default {
             'background-position': 'right center',
           },
         },
+
       },
     },
   },

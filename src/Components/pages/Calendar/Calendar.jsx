@@ -76,9 +76,9 @@ const EventCalendar = () => {
 
   const days = Object.values(processedDays);
 
-  const timeMarkers = ['9 AM', '10 AM', '11 AM', '12 PM', '1 PM', '2 PM', '3 PM', '4 PM', '5 PM', '6 PM'];
+  //const timeMarkers = ['9 AM', '10 AM', '11 AM', '12 PM', '1 PM', '2 PM', '3 PM', '4 PM', '5 PM', '6 PM'];
   const containerRef = useRef(null);
-  const [isScrolling, setIsScrolling] = useState(false);
+  //const [isScrolling, setIsScrolling] = useState(false);
   const [lastScrollPosition, setLastScrollPosition] = useState(0);
   const [opacities, setOpacities] = useState(days.map(() => 0));
 
@@ -198,13 +198,9 @@ const EventCalendar = () => {
         </div>
 
         {/* Calendar Content */}
-        <div className="p-8 bg-gradient-to-b from-black via-[#1a0e0e] to-[#3d2c2c]">
+        <div className="p-8  pl-10 pr-10 bg-gradient-to-b from-black via-[#1a0e0e] to-[#3d2c2c]">
           <div className="grid gap-4 grid-cols-[auto_1fr]">
-            <div className="grid grid-rows-[repeat(10,60px)] pt-[60px]">
-              {timeMarkers.map((time, index) => (
-                <div key={index} className="h-[60px] text-white flex items-center">{time}</div>
-              ))}
-            </div>
+
             <div ref={containerRef} className="overflow-x-auto snap-x snap-mandatory">
               <div className="inline-flex space-x-4 pb-4">
                 {days.map((day, dayIndex) => (
