@@ -1,11 +1,5 @@
 import krinjaldave from '../src/assets/Artist/Artist3.jpg'
 import GeetabenRavai from '../src/assets/Artist/Artist1.png'
-import event1 from '../src/assets/Upcommingevents/Card1.png';
-import event2 from '../src/assets/Upcommingevents/Card2.png';
-import event4 from '../src/assets/Upcommingevents/Card4.png';
-import event6 from '../src/assets/Upcommingevents/Card6.png';
-import event7 from '../src/assets/Upcommingevents/Card7.png';
-import event9 from '../src/assets/Upcommingevents/Card9.png';
 //tour
 import kinjaaldaveTour from '../src/assets/Upcommingevents/kinjaaldaveTour.png';
 import GourpreetTour from '../src/assets/Upcommingevents/GourpreetTour.png';
@@ -32,7 +26,7 @@ import kinjalinsta7 from '../src/assets/Artist/Kinjalinsta7.jpg';
 
 
 
-import rex from '../src/assets/Artist/Rexinfo.jpeg';
+import rex from '../src/assets/Artist/RexInfo.jpeg';
 
 import Gurdeep from '../src/assets/Artist/Grdeepinfo.png';
 
