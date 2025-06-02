@@ -26,7 +26,7 @@ import kinjalinsta7 from '../src/assets/Artist/Kinjalinsta7.jpg';
 
 
 
-import rex from '../src/assets/Artist/RexInfo.jpeg';
+import rex from '../src/assets/Artist/Rexinfo.jpeg';
 
 import Gurdeep from '../src/assets/Artist/Grdeepinfo.png';
 
