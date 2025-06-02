@@ -40,7 +40,7 @@ import Artharvinfo from '../src/assets/Artist/Atharvinfo.png';
 
 import avirvhavinfo from '../src/assets/Artist/Avirvhavinfo.png';
 
-import Khushiinfo from '../src/assets/Artist/Khushiinfo.png';
+import khushiinfo from '../src/assets/Artist/khushiinfo.png';
 
 export const artists = [
   {
@@ -355,7 +355,7 @@ export const artists = [
   {
     id: 'Khushi',
     name: "Khushi",
-    image: Khushiinfo,
+    image: khushiinfo,
     description: "Kutch Ni Koyal",
     socialMedia: {
       facebook: "https://www.facebook.com/GeetaRabariOfficial/",
