@@ -22,9 +22,10 @@ function Navbar() {
             { name: "Purva Mantri Canada Tour", link: "/Calendar" }
         ],
         "ARTISTS": [
-            { name: "Purva Mantri", link: "/info/purvamantri" },
+
             { name: "Kinjal Dave", link: "/info/krinjaldave" },
-            { name: "Geeta Rabari", link: "/info/geetabenravai" }
+            { name: "Geeta Rabari", link: "/info/geetabenravai" },
+            { name: "Rex Dsouza", link: "info/rexdsouza"},
         ],
         "TOUR": [
             { name: "Navratri Tour 2024", link: "/Calendar" }

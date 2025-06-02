@@ -59,7 +59,7 @@ function Festivalsection() {
         <div className="relative w-full bg-gradient-to-b from-black via-black/50 to-transparent flex justify-center">
             <div className="w-full max-w-[1440px] flex flex-col">
                 <div className="heading w-full h-10 flex justify-between items-center px-6 md:px-18">
-                    <h1 className="text-white font-bold text-3xl md:text-4xl text-center md:text-left w-full md:w-auto">Upcoming events</h1>
+                    <h1 className="text-white font-bold text-3xl md:text-4xl text-center md:text-left w-full md:w-auto">Upcoming Tours</h1>
                     <div className="hidden md:flex h-full items-center gap-5">
                         <div className="h-9 w-9 bg-transparent border-[2px] border-white rounded-full flex justify-center items-center cursor-pointer" onClick={scrollLeft}>
                             <MdKeyboardArrowLeft className="text-white text-2xl " />
@@ -87,11 +87,11 @@ function Festivalsection() {
                                 key={event.id}
                                 id={event.id}
                                 img={event.image} 
-                                name={event.artist} 
-                                place={event.place} 
-                                date={new Date(event.date).toLocaleDateString('en-US', { day: 'numeric', month: 'short', weekday: 'long' })} 
-                                text={event.name} 
-                                link={getEventLink(event.id)}
+                                //name={event.artist}
+                                //place={event.place}
+                                //date={new Date(event.date).toLocaleDateString('en-US', { day: 'numeric', month: 'short', weekday: 'long' })}
+                                //text={event.name}
+                                //link={getEventLink(event.id)}
                             />
                         ))}
                     </div>

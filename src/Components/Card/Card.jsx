@@ -55,10 +55,10 @@ function Card({ name, img, text, place, date, link }) {
                 className="absolute inset-0 bg-cover bg-center rounded-lg md:hover:scale-110 md:transition-transform md:duration-300"
                 style={{ backgroundImage: `url(${img})`, backgroundPosition: 'top' }}
             >
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/50 to-black rounded-lg"></div>
+                {/*<div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/50 to-black rounded-lg"></div> */}
             </div>
 
-            <div className="relative z-10 top-[51%] w-full px-6">
+            {/*<div className="relative z-10 top-[51%] w-full px-6">
                 <h1 className="text-white font-semibold leading-none text-xl">{text}</h1>
                 <p className="text-white text-opacity-75 font-bold mt-3 tracking-tighter text-lg">
                     {date}
@@ -76,12 +76,12 @@ function Card({ name, img, text, place, date, link }) {
                 className="bg-transparent border border-white text-white text-sm px-4 py-1 rounded-full hover:bg-white hover:text-black transition duration-300">
                     Info
                 </button>
-                
-                
+
+                {/*
                 <button  onClick={Handler2} className="bg-transparent border border-white text-white text-sm px-4 py-1 rounded-full hover:bg-white hover:text-black transition duration-300">
                     Tickets
                 </button>
-            </div>
+            </div>*/}
         </div>
     );
 }

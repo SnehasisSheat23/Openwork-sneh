@@ -1,10 +1,12 @@
 import React, { useRef, useEffect, useState, useMemo } from 'react';
 import Footer_only_links from "../../Footer/Footer_only_links";
 import Navbar from "../../Navbar/Navbar";
-import { events } from '../../../../Database/database';
-import { MdKeyboardArrowLeft, MdOutlineKeyboardArrowRight } from 'react-icons/md';
 
-// aesthetic color generator
+//import landing1 from "../../../../assets/landing1.png"; // Adjust the path as necessary
+import { Timeline } from "./timeline";
+
+// aesthetic color generators
+{/*
 const generateRandomColor = () => {
   const hue = Math.floor(Math.random() * 360);
   const saturation = 70 + Math.random() * 10; // 70-80%
@@ -18,8 +20,9 @@ const getDayName = (dateString) => {
   const date = new Date(dateString);
   return days[date.getDay()];
 };
-
+*/}
 const EventCalendar = () => {
+  {/* State to hold event colors
   const [eventColors, setEventColors] = useState({});
 
   // generate the color after the component mounts
@@ -42,10 +45,10 @@ const EventCalendar = () => {
   const filterAndSortEvents = (events) => {
     const today = new Date();
     today.setHours(0, 0, 0, 0); // Set to start of day for accurate comparison
-    
+
     return events
-      .filter(event => new Date(event.date) >= today)
-      .sort((a, b) => new Date(a.date) - new Date(b.date));
+        .filter(event => new Date(event.date) >= today)
+        .sort((a, b) => new Date(a.date) - new Date(b.date));
   };
 
   //  events from database
@@ -58,9 +61,9 @@ const EventCalendar = () => {
       const year = date.getFullYear();
       const dayKey = `${year}-${monthIndex + 1}-${dayIndex}`;
       const dayName = getDayName(event.date);
-      
+
       if (!acc[dayKey]) {
-        acc[dayKey] = { date: dayIndex, day: dayName, events: [] };
+        acc[dayKey] = {date: dayIndex, day: dayName, events: []};
       }
 
       acc[dayKey].events.push({
@@ -101,7 +104,7 @@ const EventCalendar = () => {
         const scrollIntoCard = (currentScrollPosition % cardWidth) / cardWidth;
 
         // Threshold for snapping
-        const threshold = 0.3;  
+        const threshold = 0.3;
 
         if (Math.abs(scrollIntoCard - 0.5) > threshold) {
           container.scrollTo({
@@ -111,7 +114,7 @@ const EventCalendar = () => {
         }
 
         setLastScrollPosition(currentScrollPosition);
-      }, 150); 
+      }, 150);
     };
 
     const handleIntersection = (entries) => {
@@ -153,18 +156,75 @@ const EventCalendar = () => {
   }, [lastScrollPosition, opacities]);
 
   const scrollLeft = () => {
-    containerRef.current.scrollBy({ 
+    containerRef.current.scrollBy({
       left: -260, // Width of one calendar card
-      behavior: 'smooth' 
+      behavior: 'smooth'
     });
   };
 
   const scrollRight = () => {
-    containerRef.current.scrollBy({ 
+    containerRef.current.scrollBy({
       left: 260, // Width of one calendar card
-      behavior: 'smooth' 
+      behavior: 'smooth'
     });
   };
+*/}
+  const timelineData = [
+    {
+      title: "June-July 2025",
+      content: (
+          <div className="flex flex-col items-center">
+            <img
+                src={"src/assets/landing3.png"}
+                alt="Artist Image"
+                className="w-full h-auto rounded-md"
+            />
+
+          </div>
+      ),
+    },
+    {
+      title: "Aug 2025",
+      content: (
+          <div className="flex flex-col items-center">
+            <img
+                src={"src/assets/landing4.png"}
+                alt="Artist Image"
+                className="w-full h-auto rounded-md"
+            />
+
+          </div>
+      ),
+    },
+    {
+      title: "Aug-Sep 2025",
+      content: (
+          <div className="flex flex-col items-center">
+            <img
+                src={"src/assets/landing1.png"}
+                alt="Artist Image"
+                className="w-full h-auto rounded-md"
+            />
+
+          </div>
+      ),
+    },
+    {
+      title: "Aug-Sep 2025",
+      content: (
+          <div className="flex flex-col items-center">
+            <img
+                src={"src/assets/landing5.png"}
+                alt="Artist Image"
+                className="w-full h-auto rounded-md"
+            />
+
+          </div>
+      ),
+    },
+
+
+  ];
 
   return (
     <div className="bg-[#3d2c2c]">
@@ -185,8 +245,9 @@ const EventCalendar = () => {
             </div>
           </div>
         </div>
-
-        {/* Navigation Buttons */}
+        <Timeline data={timelineData} />
+      </div>
+        {/* Navigation Buttons
         <div className="hidden md:flex justify-end p-4 px-20 pb-0 bg-black gap-7 ">
           
           <div className="h-9 w-9 bg-transparent border-[2px] border-white rounded-full flex justify-center items-center cursor-pointer " onClick={scrollLeft}>
@@ -195,9 +256,9 @@ const EventCalendar = () => {
           <div className="h-9 w-9 bg-transparent border-[2px] border-white rounded-full flex justify-center items-center cursor-pointer" onClick={scrollRight}>
             <MdOutlineKeyboardArrowRight className="text-white text-2xl" />
           </div>
-        </div>
+        </div>*/}
 
-        {/* Calendar Content */}
+        {/* Calendar Content
         <div className="p-8  pl-10 pr-10 bg-gradient-to-b from-black via-[#1a0e0e] to-[#3d2c2c]">
           <div className="grid gap-4 grid-cols-[auto_1fr]">
 
@@ -242,7 +303,12 @@ const EventCalendar = () => {
           </div>
         </div>
       </div>
-      <Footer_only_links/>
+      */}
+
+
+      <div className="bg-black">
+        <Footer_only_links/>
+      </div>
     </div>
   );
 };
