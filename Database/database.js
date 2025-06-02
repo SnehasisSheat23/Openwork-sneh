@@ -47,6 +47,7 @@ import Artharvinfo from '../src/assets/Artist/Atharvinfo.png';
 import avirvhavinfo from '../src/assets/Artist/Avirvhavinfo.png';
 
 import khushiinfo from '../src/assets/Artist/Khushiinfo.png';
+
 export const artists = [
   {
     id: 'krinjaldave',
