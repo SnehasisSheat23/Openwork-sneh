@@ -44,7 +44,7 @@ import khushiinfo from '../src/assets/Artist/Khushiinfo.png';
 
 export const artists = [
   {
-    id: 'krinjaldave',
+    id: 'KrinjalDave',
     name: "Kinjal Dave",
     image: krinjaldave,
     description: "Garba Queen",
@@ -122,7 +122,7 @@ export const artists = [
     ],
   },
   {
-    id: 'Gurdeep_Mehndi',
+    id: 'GurdeepMehndi',
     name: "Gurdeep Mehndi",
     image: Gurdeep,
     description: "Garba Queen",
@@ -161,7 +161,7 @@ export const artists = [
     ],
   },
   {
-    id: 'Parth_Doshi',
+    id: 'ParthDoshi',
     name: "Parth Doshi",
     image: Parthinfo,
     description: "Garba Queen",
@@ -200,7 +200,7 @@ export const artists = [
     ],
   },
   {
-    id: 'geetabenravai',
+    id: 'GeetabenRabari',
     name: "Geeta Rabari",
     image: GeetabenRavai,
     description: "Kutch Ni Koyal",
@@ -238,7 +238,7 @@ export const artists = [
     ],
   },
   {
-    id: 'Sharman_joshi',
+    id: 'SharmanJoshi',
     name: "Sharman Joshi",
     image: Sharmaninfo,
     description: "Garba Queen",
@@ -277,7 +277,7 @@ export const artists = [
     ],
   },
   {
-    id: 'Sunny_Jadhav',
+    id: 'SunnyJadhav',
     name: "Sunny Jadhav",
     image: Sunnyinfo,
     description: "Kutch Ni Koyal",
