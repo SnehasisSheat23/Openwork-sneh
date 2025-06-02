@@ -26,7 +26,7 @@ import kinjalinsta7 from '../src/assets/Artist/Kinjalinsta7.jpg';
 
 
 
-import rex from '../src/assets/Artist/Rexinfo.jpeg';
+import rexinfo from '../src/assets/Artist/Rexinfo.jpeg';
 
 import Gurdeep from '../src/assets/Artist/Grdeepinfo.png';
 
@@ -85,7 +85,7 @@ export const artists = [
   {
     id: 'rex',
     name: "Rex Dsouza",
-    image: rex,
+    image: rexinfo,
     description: "Garba Queen",
     socialMedia: {
       facebook: "https://www.facebook.com/kinjaldavemusic",
