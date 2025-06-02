@@ -4,6 +4,10 @@ import Navbar from "../../Navbar/Navbar";
 
 //import landing1 from "../../../../assets/landing1.png"; // Adjust the path as necessary
 import { Timeline } from "./timeline";
+import landing3 from "../../../assets/landing3.png";
+import landing4 from "../../../assets/landing4.png";
+import landing5 from "../../../assets/landing5.png";
+import landing1 from "../../../assets/landing1.png";
 
 // aesthetic color generators
 {/*
@@ -175,7 +179,7 @@ const EventCalendar = () => {
       content: (
           <div className="flex flex-col items-center">
             <img
-                src={"src/assets/landing3.png"}
+                src={landing3}
                 alt="Artist Image"
                 className="w-full h-auto rounded-md"
             />
@@ -188,7 +192,7 @@ const EventCalendar = () => {
       content: (
           <div className="flex flex-col items-center">
             <img
-                src={"src/assets/landing4.png"}
+                src={landing4}
                 alt="Artist Image"
                 className="w-full h-auto rounded-md"
             />
@@ -201,7 +205,7 @@ const EventCalendar = () => {
       content: (
           <div className="flex flex-col items-center">
             <img
-                src={"src/assets/landing1.png"}
+                src={landing1}
                 alt="Artist Image"
                 className="w-full h-auto rounded-md"
             />
@@ -214,7 +218,7 @@ const EventCalendar = () => {
       content: (
           <div className="flex flex-col items-center">
             <img
-                src={"src/assets/landing5.png"}
+                src={landing5}
                 alt="Artist Image"
                 className="w-full h-auto rounded-md"
             />
