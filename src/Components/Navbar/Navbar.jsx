@@ -17,9 +17,13 @@ function Navbar() {
 
     const menuItems = {
         "FESTIVALS & EVENTS": [
-            { name: "Navratri 2024", link: "/Calendar" },
-            { name: "Kinjal Dave in Chicago", link: "/Calendar" },
-            { name: "Purva Mantri Canada Tour", link: "/Calendar" }
+            { name: "Ketki Dave Naatak ", link: "/Calendar" },
+            { name: "Mannubhai Mindblowing Naatak ", link: "/Calendar" },
+            { name: "Superstar Singer Tour ", link: "/Calendar" },
+            { name: "Kinjal Dave Navratri Tour ", link: "/Calendar" },
+            { name: "Geeta Rabari Navratri Tour ", link: "/Calendar" },
+            { name: "Gurdeep Mehndi Tour ", link: "/Calendar" },
+
         ],
         "ARTISTS": [
 

@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import Artistcard from '../Artistcard/Artistcard';
 import { artists } from '../../../Database/database';
+import {MdKeyboardArrowLeft, MdOutlineKeyboardArrowRight} from "react-icons/md";
 
 function Artist() {
     const scrollRef = useRef(null);
@@ -38,12 +39,44 @@ function Artist() {
         };
     }, []);
 
+    const scrollLeft = () => {
+        scrollRef.current.scrollBy({ left: -288, behavior: 'smooth' });
+    };
+
+    const scrollRight = () => {
+        scrollRef.current.scrollBy({ left: 288, behavior: 'smooth' });
+
+    };
+
+
     return (
         <>
-            <div className="relative w-full bg-transparent">
-                <div className="w-full flex justify-center text-white">
-                    <h1 className="text-white font-bold text-3xl md:text-4xl text-center md:text-left w-full md:w-auto pt-8">Our Artists</h1>
+            <div className="relative  w-full bg-transparent">
+                <div className="w-full flex justify-center">
+                    <div className="w-full max-w-[1440px] flex justify-between items-center px-4 py-4 lg:px-32 lg:py-8">
+                        {/* Centered heading */}
+                        <h1 className="flex-1 text-center font-bold text-3xl md:text-4xl text-white">
+                            Our Artists
+                        </h1>
+
+                        {/* Buttons on the right */}
+                        <div className="hidden md:flex gap-5">
+                            <div
+                                className="h-9 w-9 bg-transparent border-2 border-white rounded-full flex justify-center items-center cursor-pointer"
+                                onClick={scrollLeft}
+                            >
+                                <MdKeyboardArrowLeft className="text-white text-2xl" />
+                            </div>
+                            <div
+                                className="h-9 w-9 bg-transparent border-2 border-white rounded-full flex justify-center items-center cursor-pointer"
+                                onClick={scrollRight}
+                            >
+                                <MdOutlineKeyboardArrowRight className="text-white text-2xl" />
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
 
                 <div className="w-full h-[480px] px-10 lg:px-48 md:px-10 sm:px-1 flex box-border lg:justify-center items-center">
                     <div 
