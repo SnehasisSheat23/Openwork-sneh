@@ -39,7 +39,7 @@ function Highlights() {
         <>
             {/* Header Section */}
             <div className="w-full h-auto flex flex-col bg-transparent py-8 ">
-                <div className="w-full max-w-screen-2xl h-[80px] box-border flex justify-between px-6 xl:px-32 lg:px-20 items-center mx-auto">
+                <div className="w-full max-w-[1440px] h-[80px] box-border flex justify-between px-6 xl:px-32 lg:px-20 items-center mx-auto">
                     <div className="text-white font-bold text-3xl lg:text-4xl  ">Highlights</div>
                     <div className="flex-grow"></div>
                     <Link to="/gallery">
