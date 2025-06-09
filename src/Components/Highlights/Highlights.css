@@ -12,3 +12,29 @@
 .slide-up {
     animation: slideUp 0.5s ease-out forwards;
 }
+/* Highlights.css */
+
+.highlight-bg {
+    background: linear-gradient(
+            var(--hue-angle, 30deg),
+            hsl(var(--hue1, 10), 80%, 6%) 0%,
+            hsl(var(--hue2, 15), 75%, 8%) 20%,
+            hsl(var(--hue3, 20), 70%, 10%) 40%,
+            hsl(var(--hue4, 25), 65%, 9%) 60%,
+            hsl(var(--hue5, 20), 60%, 7%) 80%,
+            hsl(var(--hue6, 15), 55%, 6%) 90%,
+            hsl(var(--hue7, 0), 0%, 5%) 100%
+    );
+    color: white;
+}
+
+/* Responsive typography for highlight content */
+@media (max-width: 640px) {
+    .highlight-bg h3 {
+        font-size: 1.125rem; /* ~text-lg */
+    }
+
+    .highlight-bg p {
+        font-size: 0.9rem; /* ~text-sm */
+    }
+}
