@@ -109,12 +109,12 @@ const CalendarCard = ({ name, description, events, className }) => {
 };
 
 const GalleryCard = ({ name, photos, className }) => (
-  <div className={`bg-white/10 backdrop-blur-md p-4 rounded-xl shadow-lg ${className} flex flex-col`}>
-    <h3 className="text-lg sm:text-xl font-bold text-white mb-2">{name}</h3>
-    <div className="flex-grow overflow-hidden">
-      <div className="h-full grid grid-cols-3 gap-2">
+  <div className={`bg-white/10 backdrop-blur-md p-3 rounded-xl shadow-lg ${className} flex flex-col`}>
+
+    <div className="flex-grow overflow-hidden ">
+      <div className="h-full grid grid-cols-3 gap-3">
         {photos.slice(0, 9).map((photo) => (
-          <div key={photo.id} className="relative overflow-hidden rounded-lg">
+          <div key={photo.id} className="relative overflow-hidden rounded-lg shadow-lg group">
             <img 
               src={photo.url} 
               alt={`Gallery image ${photo.id}`}

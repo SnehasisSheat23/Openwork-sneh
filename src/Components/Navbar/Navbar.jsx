@@ -26,13 +26,22 @@ function Navbar() {
 
         ],
         "ARTISTS": [
-
-            { name: "Kinjal Dave", link: "/info/krinjaldave" },
-            { name: "Geeta Rabari", link: "/info/geetabenravai" },
-            { name: "Rex Dsouza", link: "info/rexdsouza"},
+            { name: "Kinjal Dave", link: "/info/KrinjalDave" },
+            { name: "Rex Dsouza", link: "/info/rex" },
+            { name: "Gurdeep Mehndi", link: "/info/GurdeepMehndi" },
+            { name: "Parth Doshi", link: "/info/ParthDoshi" },
+            { name: "Geeta Rabari", link: "/info/GeetabenRabari" },
+            { name: "Sharman Joshi", link: "/info/SharmanJoshi" },
+            { name: "Sunny Jadhav", link: "/info/SunnyJadhav" },
+            { name: "Atharv", link: "/info/Atharv" },
+            { name: "Khushi", link: "/info/Khushi" },
+            { name: "Avirbhav", link: "/info/Avirbhav" }
         ],
         "TOUR": [
-            { name: "Navratri Tour 2024", link: "/Calendar" }
+            { name: "Superstar Singer Tour", link: "/Calendar" },
+            { name: "Kinjal Dave Navratri Tour", link: "/Calendar" },
+            { name: "Geeta Rabari Navratri Tour", link: "/Calendar" },
+            { name: "Gurdeep Mehndi Tour", link: "/Calendar" }
         ],
         "MORE": [
             { name: "About Us", link: "/About" },

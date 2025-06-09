@@ -13,26 +13,31 @@ function FAQ() {
 
     const faqData = [
         {
-            question: "What types of events does Manpasand Inc. organize?",
-            answer: "Manpasand Inc. specializes in organizing events featuring Indian artists, including concerts, cultural shows, and festivals. We host events in India, USA, and Canada."
+            question: "Where is MANPASAND, INC. located?",
+            answer: "MANPASAND, INC. is based in the USA and primarily serves the Indian population in America."
         },
         {
-            question: "How can I purchase tickets for your events?",
-            answer: "Tickets for our events can be purchased through our official website or authorized ticketing partners. We'll announce ticket sales on our social media channels and website."
+            question: "What is MANPASAND, INC.'s industry?",
+            answer: "MANPASAND, INC. is in the event management industry, promoting Indian culture through stage shows and music events."
         },
         {
-            question: "Do you offer refunds if an event is cancelled?",
-            answer: "Yes, if an event is cancelled, we provide full refunds to ticket holders. The refund process and timeline will be communicated via email and our website."
+            question: "What is MANPASAND, INC.'s phone number?",
+            answer: "The phone number for MANPASAND, INC. is not provided here. Please visit their website for up-to-date contact details."
         },
         {
-            question: "Can I book Manpasand Inc. for a private event?",
-            answer: "Absolutely! We offer event planning services for private functions. Please contact us through our website or email for more information on custom event packages."
+            question: "What is MANPASAND, INC.'s website?",
+            answer: "The official website of MANPASAND, INC. is www.manpasand.us."
         },
         {
-            question: "How can artists collaborate with Manpasand Inc.?",
-            answer: "We're always looking to work with talented Indian artists. If you're an artist or represent one, please send your portfolio and performance details to our artist relations team at artists@manpasandinc.com."
+            question: "What year was MANPASAND, INC. started?",
+            answer: "MANPASAND, INC. was started in the year 1999."
+        },
+        {
+            question: "What year was MANPASAND, INC. incorporated?",
+            answer: "MANPASAND, INC. was formed in 1999 and has been scaling to new heights year after year."
         }
     ];
+
 
     const toggleQuestion = (index) => {
         setOpenIndex(openIndex === index ? null : index);
@@ -42,7 +47,7 @@ function FAQ() {
         <div className="relative">
             <Navbar />
             <div
-                className="relative flex justify-center items-end h-[30vh] sm:h-[25vh] md:h-[40vh] lg:h-[50vh] w-full bg-no-repeat bg-cover bg-center"
+                className="relative flex flex-col justify-center items-center h-[35vh] md:h-[50vh] w-full bg-cover bg-center"
                 style={{ backgroundImage: `url("https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80")` }}
             >
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent"></div>

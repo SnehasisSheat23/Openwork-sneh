@@ -34,16 +34,14 @@ const Footer = () => {
                     </div>
                     <img src={profile} alt="" className="w-52 h-52 mb-5 relative z-10" />
 
-                    <div className="flex justify-center space-x-6 mb-8">
+                    <div className="flex justify-center space-x-8 mb-8">
                         <a href="#" className="text-white" onClick={Handler3}>
                             <i className="fab fa-facebook text-2xl"></i>
                         </a>
                         <a href="#" className="text-white" onClick={Handler4}>
                             <i className="fab fa-instagram text-2xl"></i>
                         </a>
-                        <a href="#" className="text-white" onClick={Handler5}>
-                            <i className="fa-brands fa-linkedin text-2xl"></i>
-                        </a>
+
                     </div>
                 </div>
                 <hr className="border-gray-600 mb-8" />
@@ -66,8 +64,6 @@ const Footer = () => {
                     <div>
                         <h3 className="text-lg font-semibold mb-4">Legal</h3>
                         <ul>
-                            <li><Link to="/PrivatePolicies" className="hover:underline font-light">Privacy Policy</Link></li>
-                            <li><Link to="/TermOfService" className="hover:underline font-light">Terms of Service</Link></li>
                             <li><Link to="/Cookies" className="hover:underline font-light">Cookies</Link></li>
                         </ul>
                     </div>

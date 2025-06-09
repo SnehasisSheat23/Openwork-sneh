@@ -181,7 +181,7 @@ const EventCalendar = () => {
             <img
                 src={landing3}
                 alt="Artist Image"
-                className="w-full h-auto rounded-md"
+                className="w-full h-auto rounded-lg"
             />
 
           </div>
@@ -194,7 +194,7 @@ const EventCalendar = () => {
             <img
                 src={landing4}
                 alt="Artist Image"
-                className="w-full h-auto rounded-md"
+                className="w-full h-auto rounded-lg"
             />
 
           </div>
@@ -207,7 +207,7 @@ const EventCalendar = () => {
             <img
                 src={landing1}
                 alt="Artist Image"
-                className="w-full h-auto rounded-md"
+                className="w-full h-auto rounded-lg"
             />
 
           </div>
@@ -220,7 +220,7 @@ const EventCalendar = () => {
             <img
                 src={landing5}
                 alt="Artist Image"
-                className="w-full h-auto rounded-md"
+                className="w-full h-auto rounded-lg"
             />
 
           </div>

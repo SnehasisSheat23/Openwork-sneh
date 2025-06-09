@@ -56,7 +56,7 @@ function Cookies() {
         <div className="relative">
             <Navbar />
             <div
-                className="relative flex justify-center items-end h-[30vh] sm:h-[25vh] md:h-[40vh] lg:h-[50vh] w-full bg-no-repeat bg-cover bg-center"
+                className="relative flex flex-col justify-center items-center h-[35vh] md:h-[50vh] w-full bg-cover bg-center"
                 style={{ backgroundImage: `url("https://t4.ftcdn.net/jpg/03/16/49/45/360_F_316494556_zSy5wKaJgXnpQsSvf63uTz9wJN4xjQ0Y.jpg")` }}
             >
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent"></div>
