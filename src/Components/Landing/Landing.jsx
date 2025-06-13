@@ -14,7 +14,7 @@ import landing4Mobile from '../../assets/landing4mobile.png';
 import landing5Desktop from '../../assets/landing5.png';
 import landing5Mobile from '../../assets/landing5mobile.png';
 import landing6 from '../../assets/landing6.png';
-import landing6Mobile from '../../assets/landing6mobile.png';
+import landing6Mobile from '../../assets/landing6Mobile.png';
 
 function Landing() {
     const navigate = useNavigate();
