@@ -1,47 +1,47 @@
-import krinjaldave from '../src/assets/Artist/Artist3.jpg'
-import GeetabenRavai from '../src/assets/Artist/Artist1.png'
-//tour
-import kinjaaldaveTour from '../src/assets/Upcommingevents/kinjaaldaveTour.png';
-import GourpreetTour from '../src/assets/Upcommingevents/GourpreetTour.png';
-import GeetarabaiTour from '../src/assets/Upcommingevents/GeetarabaiTour.png';
-import SuperStarTour from '../src/assets/Upcommingevents/SuperStarTour.png';
-import geetaravaispotify from '../src/assets/Spotify/Tetudo2.png';
-import superstarSingerTour from '../src/assets/Upcommingevents/superstarSingerTour.png';
+// Artists
+// Artist Images
+import krinjaldave from './optimisedAssets/Artist/Artist3.webp';
+import GeetabenRavai from './optimisedAssets/Artist/Artist1.webp';
 
-import kinjaldavespotify from '../src/assets/Spotify/VichodoKinjalDave.png';
-// Insta images 
-import geetaravaiinsta1 from '../src/assets/Artist/Geetagal1.jpg';
-import geetaravaiinsta2 from '../src/assets/Artist/Geetagal2.jpg';
-import geetaravaiinsta3 from '../src/assets/Artist/Geetagal3.jpg';
-import geetaravaiinsta4 from '../src/assets/Artist/Geetagal4.jpg';
-import geetaravaiinsta5 from '../src/assets/Artist/Geetagal5.jpg';
-import geetaravaiinsta6 from '../src/assets/Artist/Geetagal6.jpg';
+// Tour
+import kinjaaldaveTour from './optimisedAssets/Upcommingevents/kinjaaldaveTour.webp';
+import GourpreetTour from './optimisedAssets/Upcommingevents/GourpreetTour.webp';
+import GeetarabaiTour from './optimisedAssets/Upcommingevents/GeetarabaiTour.webp';
+import SuperStarTour from './optimisedAssets/Upcommingevents/SuperStarTour.webp';
+import superstarSingerTour from './optimisedAssets/Upcommingevents/superstarSingerTour.webp';
 
-import kinjalinsta1 from '../src/assets/Artist/Kinjalinsta1.jpg';
-import kinjalinsta2 from '../src/assets/Artist/Kinjalinsta2.jpg';
-import kinjalinsta3 from '../src/assets/Artist/Kinjalinsta3.jpg';
-import kinjalinsta4 from '../src/assets/Artist/Kinjalinsta4.jpg';
-import kinjalinsta5 from '../src/assets/Artist/Kinjalinsta5.jpg';
-import kinjalinsta6 from '../src/assets/Artist/Kinjalinsta6.jpg';
-import kinjalinsta7 from '../src/assets/Artist/Kinjalinsta7.jpg';
+// Spotify
+import geetaravaispotify from './optimisedAssets/Spotify/Tetudo2.webp';
+import kinjaldavespotify from './optimisedAssets/Spotify/VichodoKinjalDave.webp';
+
+// Geeta Instagram
+import geetaravaiinsta1 from './optimisedAssets/Artist/Geetagal1.webp';
+import geetaravaiinsta2 from './optimisedAssets/Artist/Geetagal2.webp';
+import geetaravaiinsta3 from './optimisedAssets/Artist/Geetagal3.webp';
+import geetaravaiinsta4 from './optimisedAssets/Artist/Geetagal4.webp';
+import geetaravaiinsta5 from './optimisedAssets/Artist/Geetagal5.webp';
+import geetaravaiinsta6 from './optimisedAssets/Artist/Geetagal6.webp';
+
+// Kinjal Instagram
+import kinjalinsta1 from './optimisedAssets/Artist/Kinjalinsta1.webp';
+import kinjalinsta2 from './optimisedAssets/Artist/Kinjalinsta2.webp';
+import kinjalinsta3 from './optimisedAssets/Artist/Kinjalinsta3.webp';
+import kinjalinsta4 from './optimisedAssets/Artist/Kinjalinsta4.webp';
+import kinjalinsta5 from './optimisedAssets/Artist/Kinjalinsta5.webp';
+import kinjalinsta6 from './optimisedAssets/Artist/Kinjalinsta6.webp';
+import kinjalinsta7 from './optimisedAssets/Artist/Kinjalinsta7.webp';
+
+// Info Images
+import rexinfo from './optimisedAssets/Artist/Rexinfo.webp';
+import Gurdeep from './optimisedAssets/Artist/Grdeepinfo.webp';
+import Parthinfo from './optimisedAssets/Artist/Parthininfo.webp';
+import Sharmaninfo from './optimisedAssets/Artist/Sharmaninfo.webp';
+import Sunnyinfo from './optimisedAssets/Artist/Sunnyinfo.webp';
+import Artharvinfo from './optimisedAssets/Artist/Atharvinfo.webp';
+import avirvhavinfo from './optimisedAssets/Artist/Avirvhavinfo.webp';
+import khushiinfo from './optimisedAssets/Artist/khushiinfo.webp';
 
 
-
-import rexinfo from '../src/assets/Artist/Rexinfo.jpeg';
-
-import Gurdeep from '../src/assets/Artist/Grdeepinfo.png';
-
-import Parthinfo from '../src/assets/Artist/Parthininfo.png';
-
-import Sharmaninfo from '../src/assets/Artist/Sharmaninfo.png';
-
-import Sunnyinfo from '../src/assets/Artist/Sunnyinfo.jpeg';
-
-import Artharvinfo from '../src/assets/Artist/Atharvinfo.png';
-
-import avirvhavinfo from '../src/assets/Artist/Avirvhavinfo.png';
-
-import khushiinfo from '../src/assets/Artist/khushiinfo.png';
 
 export const artists = [
   {

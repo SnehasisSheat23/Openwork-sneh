@@ -2,19 +2,20 @@ import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
 
-import landing1Mobile from '../../assets/landing1mobile.png';
-import landing1Tablet from '../../assets/landing1tablet.png';
-import landing1Desktop from '../../assets/landing1.png';
-import landing3Desktop from '../../assets/landing3.png';
-import landing3Mobile from '../../assets/landing3mobile.png';
-import landing2Desktop from '../../assets/landing2.png';
-import landing2Mobile from '../../assets/landing2mobile.png';
-import landing4Desktop from '../../assets/landing4.png';
-import landing4Mobile from '../../assets/landing4mobile.png';
-import landing5Desktop from '../../assets/landing5.png';
-import landing5Mobile from '../../assets/landing5mobile.png';
-import landing6 from '../../assets/landing6.png';
-import landing6Mobile from '../../assets/landing6Mobile.png';
+import landing1Mobile from '../../optimisedAssets/landing1mobile.webp';
+import landing1Tablet from '../../optimisedAssets/landing1tablet.webp';
+import landing1Desktop from '../../optimisedAssets/landing1.webp';
+import landing3Desktop from '../../optimisedAssets/landing3.webp';
+import landing3Mobile from '../../optimisedAssets/landing3mobile.webp';
+import landing2Desktop from '../../optimisedAssets/landing2.webp';
+import landing2Mobile from '../../optimisedAssets/landing2mobile.webp';
+import landing4Desktop from '../../optimisedAssets/landing4.webp';
+import landing4Mobile from '../../optimisedAssets/landing4mobile.webp';
+import landing5Desktop from '../../optimisedAssets/landing5.webp';
+import landing5Mobile from '../../optimisedAssets/landing5mobile.webp';
+import landing6 from '../../optimisedAssets/landing6.webp';
+import landing6Mobile from '../../optimisedAssets/landing6Mobile.webp';
+
 
 function Landing() {
     const navigate = useNavigate();

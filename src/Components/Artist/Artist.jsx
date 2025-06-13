@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
 import Artistcard from '../Artistcard/Artistcard';
-import { artists } from '../../../Database/database';
+import { artists } from '../../database.js';
 import { MdKeyboardArrowLeft, MdOutlineKeyboardArrowRight } from 'react-icons/md';
 
 function Artist() {

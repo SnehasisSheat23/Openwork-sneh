@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import Footer_only_links from "../Footer/Footer_only_links";
 import Navbar from "../Navbar/Navbar";
-import { artists } from '../../../Database/database';
+import { artists } from '../../database.js';
 
 // Function for random image selection
 const getRandomItems = (array, count) => {

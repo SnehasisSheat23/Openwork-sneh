@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { MdKeyboardArrowLeft, MdOutlineKeyboardArrowRight } from "react-icons/md";
 import Card from "../Card/Card";
-import { getUpcomingEvents, getEventLink } from '../../../Database/database';
+import { getUpcomingEvents, getEventLink } from '../../database.js';
 
 function Festivalsection() {
     const scrollRef = useRef(null);

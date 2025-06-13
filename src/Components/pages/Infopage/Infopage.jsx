@@ -9,7 +9,7 @@ import { FaCalendarAlt, FaPlay, FaSpotify, FaMusic, FaDrum, FaGuitar, FaMicropho
 import Footer_only_links from "../../Footer/Footer_only_links";
 import Navbar from "../../Navbar/Navbar";
 import './Infopage.css';
-import { getArtistById, getEventsByArtist } from '../../../../Database/database';
+import { getArtistById, getEventsByArtist } from '../../../database.js';
 
 // Component definitions
 const SpotifyPlayer = ({ song, name, description }) => (

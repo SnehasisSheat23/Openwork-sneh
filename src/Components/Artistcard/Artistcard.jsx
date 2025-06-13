@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useNavigate } from "react-router-dom";
-import { getArtistById } from '../../../Database/database';
+import { getArtistById } from '../../database.js';
 
 function Artistcard({ img, id, name }) {
     const navigate = useNavigate();
