@@ -13,6 +13,8 @@ import landing4Desktop from '../../assets/landing4.png';
 import landing4Mobile from '../../assets/landing4mobile.png';
 import landing5Desktop from '../../assets/landing5.png';
 import landing5Mobile from '../../assets/landing5mobile.png';
+import landing6 from '../../assets/landing6.png';
+import landing6Mobile from '../../assets/landing6mobile.png';
 
 function Landing() {
     const navigate = useNavigate();
@@ -60,6 +62,13 @@ function Landing() {
             imageMobile: landing5Mobile,
             imageTablet: landing5Desktop,
             imageDesktop: landing5Desktop,
+            title: "Grand Finale",
+            description: "Join us for the spectacular closing ceremony featuring special guest performances. Day 3 - October 13, 2024."
+        },
+        {
+            imageMobile: landing6Mobile,
+            imageTablet: landing6,
+            imageDesktop: landing6,
             title: "Grand Finale",
             description: "Join us for the spectacular closing ceremony featuring special guest performances. Day 3 - October 13, 2024."
         }

@@ -6,7 +6,8 @@ import GourpreetTour from '../src/assets/Upcommingevents/GourpreetTour.png';
 import GeetarabaiTour from '../src/assets/Upcommingevents/GeetarabaiTour.png';
 import SuperStarTour from '../src/assets/Upcommingevents/SuperStarTour.png';
 import geetaravaispotify from '../src/assets/Spotify/Tetudo2.png';
-import landing1Mobile from '../src/assets/landing1mobile.png';
+import superstarSingerTour from '../src/assets/Upcommingevents/superstarSingerTour.png';
+
 import kinjaldavespotify from '../src/assets/Spotify/VichodoKinjalDave.png';
 // Insta images 
 import geetaravaiinsta1 from '../src/assets/Artist/Geetagal1.jpg';
@@ -456,7 +457,12 @@ export const events = [
     image: SuperStarTour,
 
 
+  },
+  {
+    id: 35,
+    image: superstarSingerTour,
   }
+
 ];
 
 export const getArtistById = (id) => artists.find(artist => artist.id === id);

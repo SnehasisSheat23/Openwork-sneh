@@ -8,6 +8,7 @@ import landing3 from "../../../assets/landing3.png";
 import landing4 from "../../../assets/landing4.png";
 import landing5 from "../../../assets/landing5.png";
 import landing1 from "../../../assets/landing1.png";
+import landing6 from "../../../assets/landing6.png";
 
 // aesthetic color generators
 {/*
@@ -200,6 +201,19 @@ const EventCalendar = () => {
           </div>
       ),
     },
+      {
+          title: "Aug-Sep 2025",
+          content: (
+              <div className="flex flex-col items-center">
+                  <img
+                      src={landing6}
+                      alt="Artist Image"
+                      className="w-full h-auto rounded-lg"
+                  />
+
+              </div>
+          ),
+      },
     {
       title: "Aug-Sep 2025",
       content: (
