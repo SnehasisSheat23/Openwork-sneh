@@ -1,34 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import './About.css';
 import Navbar from "../../Navbar/Navbar";
 import Footer_only_links from "../../Footer/Footer_only_links";
-import { FaGlobe, FaFacebookF, FaInstagram } from 'react-icons/fa';
+import { FaGlobe, FaFacebookF, FaInstagram, FaYoutube } from 'react-icons/fa';
 
 function About() {
-    const [isModalOpen, setIsModalOpen] = useState(false);
-    const [isClosing, setIsClosing] = useState(false);
-
-    const openModal = () => {
-        setIsModalOpen(true);
-        setIsClosing(false);
-    };
-
-    const closeModal = () => {
-        setIsClosing(true);
-        setTimeout(() => {
-            setIsModalOpen(false);
-            setIsClosing(false);
-        }, 300);
-    };
-
-    useEffect(() => {
-        if (isModalOpen) {
-            document.body.style.overflow = 'hidden';
-        } else {
-            document.body.style.overflow = 'unset';
-        }
-    }, [isModalOpen]);
-
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
@@ -44,16 +20,18 @@ function About() {
             >
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent"></div>
                 <div className="relative z-10 text-center px-4 animate-fade-in">
+                    <div className="flex justify-center mb-4">
+                        <img src="/image.svg" alt="Manpasand Logo" className="h-16 md:h-24 w-auto" />
+                    </div>
                     <h1 className="text-4xl md:text-6xl font-extrabold mb-2">About Us</h1>
-                    <p className="text-xs md:text-lg font-light tracking-tight">
+                    <p className="text-xs md:text-lg font-light tracking-tight mb-4">
                         Manpasand Inc. - Your Gateway to Indian Entertainment
                     </p>
-                    <button
-                        className="mt-6 h-10 border-2 border-white text-white rounded-3xl px-6 hover:bg-white hover:text-black transition-transform transform hover:scale-105"
-                        onClick={openModal}
-                    >
-                        Socials
-                    </button>
+                    <div className="flex justify-center gap-6 text-3xl">
+                        <a href="#" className="hover:text-[#1877F2] transition-colors"><FaFacebookF /></a>
+                        <a href="#" className="hover:text-[#E1306C] transition-colors"><FaInstagram /></a>
+                        <a href="#" className="hover:text-[#FF0000] transition-colors"><FaYoutube /></a>
+                    </div>
                 </div>
             </header>
 
@@ -72,28 +50,6 @@ function About() {
                     </div>
                 </div>
             </section>
-
-            {isModalOpen && (
-                <div className={`fixed inset-0 z-50 flex justify-center items-center transition-opacity duration-300 ${isClosing ? 'opacity-0' : 'opacity-100'}`}>
-                    <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={closeModal}></div>
-                    <div className={`relative bg-[#1a0e0e] p-6 rounded-2xl shadow-2xl border border-white/20 transition-all duration-300 ${isClosing ? 'scale-95 opacity-0' : 'scale-100 opacity-100'}`}>
-                        <h2 className="text-xl font-semibold mb-2">Follow Us</h2>
-                        <p className="text-sm font-light mb-4">Connect with us on social media:</p>
-                        <div className="flex justify-center gap-6 text-xl">
-                            <a href="#" className="hover:text-[#1877F2] transition-colors"><FaFacebookF /></a>
-                            <a href="#" className="hover:text-[#E1306C] transition-colors"><FaInstagram /></a>
-                        </div>
-                        <div className="mt-6 flex justify-center">
-                            <button
-                                className="h-10 border-2 border-white text-white rounded-3xl px-6 hover:bg-white hover:text-black transition-transform transform hover:scale-105"
-                                onClick={closeModal}
-                            >
-                                Close
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            )}
             <div className="bg-[#3d2c2c] text-white p-4">
                 {/* Footer content */}
                 <Footer_only_links />

@@ -5,6 +5,7 @@ import Footer from "../Footer/Footer";
 import Highlights from "../Highlights/Highlights";
 import Landing from "../Landing/Landing";
 import Navbar from "../Navbar/Navbar";
+import FloatingCallButton from "../FloatingCallButton/FloatingCallButton";
 
 function Home() {
     const [gradient, setGradient] = useState('');
@@ -58,6 +59,7 @@ function Home() {
             <Highlights />
             <Artist />
             <Footer />
+            <FloatingCallButton />
         </div>
     );
 }

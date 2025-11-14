@@ -9,6 +9,7 @@ function Navbar() {
     const [activeMenu, setActiveMenu] = useState(null);
     const [activeMobileMenu, setActiveMobileMenu] = useState(null);
     const menuRef = useRef(null);
+    const timeoutRef = useRef(null);
 
     const toggleMenu = () => {
         setIsOpen(!isOpen);
@@ -17,12 +18,8 @@ function Navbar() {
 
     const menuItems = {
         "FESTIVALS & EVENTS": [
-            { name: "Ketki Dave Naatak ", link: "/Calendar" },
-            { name: "Mannubhai Mindblowing Naatak ", link: "/Calendar" },
-            { name: "Superstar Singer Tour ", link: "/Calendar" },
-            { name: "Kinjal Dave Navratri Tour ", link: "/Calendar" },
-            { name: "Geeta Rabari Navratri Tour ", link: "/Calendar" },
-            { name: "Gurdeep Mehndi Tour ", link: "/Calendar" },
+            { name: "No Events Scheduled", link: "" },
+            
 
         ],
         "ARTISTS": [
@@ -35,19 +32,33 @@ function Navbar() {
             { name: "Sunny Jadhav", link: "/info/SunnyJadhav" },
             { name: "Atharv", link: "/info/Atharv" },
             { name: "Khushi", link: "/info/Khushi" },
-            { name: "Avirbhav", link: "/info/Avirbhav" }
+            { name: "Avirbhav", link: "/info/Avirbhav" },
+            { name: "Kosha Pandya", link: "/info/Kosha" },
+            { name: "Anuska Pandit", link: "/info/Anushka" },
         ],
         "TOUR": [
-            { name: "Superstar Singer Tour", link: "/Calendar" },
-            { name: "Kinjal Dave Navratri Tour", link: "/Calendar" },
-            { name: "Geeta Rabari Navratri Tour", link: "/Calendar" },
-            { name: "Gurdeep Mehndi Tour", link: "/Calendar" }
+            { name: "No Tours Scheduled", link: "" },
         ],
         "MORE": [
             { name: "About Us", link: "/About" },
             { name: "Contact", link: "/ContactUs" },
             { name: "FAQ", link: "/FAQ" }
         ]
+    };
+
+    const handleMouseEnter = (item) => {
+        // Clear any existing timeout
+        if (timeoutRef.current) {
+            clearTimeout(timeoutRef.current);
+        }
+        setActiveMenu(item);
+    };
+
+    const handleMouseLeave = () => {
+        // Add a small delay before closing to allow moving to dropdown
+        timeoutRef.current = setTimeout(() => {
+            setActiveMenu(null);
+        }, 150);
     };
 
     useEffect(() => {
@@ -60,6 +71,10 @@ function Navbar() {
         document.addEventListener("mousedown", handleClickOutside);
         return () => {
             document.removeEventListener("mousedown", handleClickOutside);
+            // Cleanup timeout on unmount
+            if (timeoutRef.current) {
+                clearTimeout(timeoutRef.current);
+            }
         };
     }, []);
 
@@ -76,46 +91,58 @@ function Navbar() {
                 </Link>
 
                 <div className="hidden md:flex space-x-5 lg:space-x-10 text-sm lg:text-lg" ref={menuRef}>
-                    {Object.keys(menuItems).map((item, index) => (
-                        <div
-                            className={`cursor-pointer font-light flex items-center text-white ${index === 0 ? "ml-[5vw]" : ""}`}
-                            key={index}
-                            onMouseEnter={() => setActiveMenu(item)}
-                            onMouseLeave={() => setActiveMenu(null)}
-                        >
-                            {item} <RiArrowDropDownLine size={24} />
-                            <AnimatePresence>
-                                {activeMenu === item && (
-                                    <motion.div
-                                        initial={{ opacity: 0, height: 0 }}
-                                        animate={{ opacity: 1, height: "auto" }}
-                                        exit={{ opacity: 0, height: 0 }}
-                                        transition={{ duration: 0.3 }}
-                                        className="absolute top-full left-0 w-full bg-black/25 backdrop-blur-md overflow-hidden"
-                                    >
-                                        <div className="container mx-auto px-4 py-4 ">
-                                            {menuItems[item].map((subItem, subIndex) => (
-                                                <motion.div
-                                                    key={subIndex}
-                                                    initial={{ opacity: 0, y: 10 }}
-                                                    animate={{ opacity: 1, y: 0 }}
-                                                    transition={{ delay: subIndex * 0.1 }}
-                                                    className="text-white py-2 hover:bg-white/10 transition-colors duration-300"
-                                                >
-                                                    <Link 
-                                                        to={subItem.link}
-                                                        className="block w-full h-full"
+                    {Object.keys(menuItems).map((item, index) => {
+                        const isLastMenuItem = index === Object.keys(menuItems).length - 1;
+                        const isSecondLastMenuItem = index === Object.keys(menuItems).length - 2;
+                        const shouldAlignRight = isLastMenuItem || isSecondLastMenuItem;
+                        
+                        return (
+                            <div
+                                key={index}
+                                className={`relative cursor-pointer font-light flex items-center text-white ${index === 0 ? "ml-[5vw]" : ""}`}
+                                onMouseEnter={() => handleMouseEnter(item)}
+                                onMouseLeave={handleMouseLeave}
+                            >
+                                <span>{item}</span>
+                                <RiArrowDropDownLine size={24} />
+                                <AnimatePresence>
+                                    {activeMenu === item && (
+                                        <motion.div
+                                            initial={{ opacity: 0, y: 10 }}
+                                            animate={{ opacity: 1, y: 0 }}
+                                            exit={{ opacity: 0, y: 10 }}
+                                            transition={{ duration: 0.2, ease: "easeOut" }}
+                                            className={`absolute top-full bg-black/30 backdrop-blur-md rounded-lg shadow-2xl overflow-hidden border border-white/10 min-w-[280px] pt-2 ${shouldAlignRight ? 'right-0' : 'left-0'}`}
+                                            onMouseEnter={() => handleMouseEnter(item)}
+                                            onMouseLeave={handleMouseLeave}
+                                            style={{ marginTop: '0.5rem' }}
+                                        >
+                                            <div className="py-2">
+                                                {menuItems[item].map((subItem, subIndex) => (
+                                                    <motion.div
+                                                        key={subIndex}
+                                                        initial={{ opacity: 0, x: -10 }}
+                                                        animate={{ opacity: 1, x: 0 }}
+                                                        transition={{ delay: subIndex * 0.03 }}
                                                     >
-                                                        {subItem.name}
-                                                    </Link>
-                                                </motion.div>
-                                            ))}
-                                        </div>
-                                    </motion.div>
-                                )}
-                            </AnimatePresence>
-                        </div>
-                    ))}
+                                                        <Link 
+                                                            to={subItem.link}
+                                                            className="block text-white py-3 px-4 hover:bg-white/10 transition-all duration-200 text-sm font-light"
+                                                        >
+                                                            {subItem.name}
+                                                        </Link>
+                                                        {subIndex < menuItems[item].length - 1 && (
+                                                            <div className="h-px bg-white/10"></div>
+                                                        )}
+                                                    </motion.div>
+                                                ))}
+                                            </div>
+                                        </motion.div>
+                                    )}
+                                </AnimatePresence>
+                            </div>
+                        );
+                    })}
                 </div>
 
                 <div className="md:hidden flex items-center mr-6">

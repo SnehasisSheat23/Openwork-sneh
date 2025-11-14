@@ -2,9 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
 
-import landing1Mobile from '../../optimisedAssets/landing1mobile.webp';
-import landing1Tablet from '../../optimisedAssets/landing1tablet.webp';
-import landing1Desktop from '../../optimisedAssets/landing1.webp';
+
 import landing3Desktop from '../../optimisedAssets/landing3.webp';
 import landing3Mobile from '../../optimisedAssets/landing3mobile.webp';
 import landing2Desktop from '../../optimisedAssets/landing2.webp';
@@ -31,13 +29,7 @@ function Landing() {
 
     // Slideshow data with responsive images
     const slides = [
-        {
-            imageMobile: landing1Mobile,
-            imageTablet: landing1Tablet,
-            imageDesktop: landing1Desktop,
-            title: "Navratri Tour 2024",
-            description: "Prepare for a new Garba experience. Secure your tickets now. Garba event Chicago - October 11 - 13, 2024."
-        },
+        
         {
             imageMobile: landing2Mobile,
             imageTablet: landing2Desktop,
@@ -52,13 +44,7 @@ function Landing() {
             title: "Cultural Celebration",
             description: "Immerse yourself in Indian culture with traditional dances, food, and festivities. Day 2 - October 12, 2024."
         },
-        {
-            imageMobile: landing4Mobile,
-            imageTablet: landing4Desktop,
-            imageDesktop: landing4Desktop,
-            title: "Grand Finale",
-            description: "Join us for the spectacular closing ceremony featuring special guest performances. Day 3 - October 13, 2024."
-        },
+        
         {
             imageMobile: landing5Mobile,
             imageTablet: landing5Desktop,
@@ -66,13 +52,7 @@ function Landing() {
             title: "Grand Finale",
             description: "Join us for the spectacular closing ceremony featuring special guest performances. Day 3 - October 13, 2024."
         },
-        {
-            imageMobile: landing6Mobile,
-            imageTablet: landing6,
-            imageDesktop: landing6,
-            title: "Grand Finale",
-            description: "Join us for the spectacular closing ceremony featuring special guest performances. Day 3 - October 13, 2024."
-        }
+        
     ];
 
     // Determine which image to use
