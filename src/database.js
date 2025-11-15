@@ -229,8 +229,8 @@ In 2020, she received the Feelings Pride of India Award in the music category.`,
     image: Sunnyinfo,
     description: "Kutch Ni Koyal",
     socialMedia: {
-      facebook: null,
-      instagram: null,
+      facebook: "https://www.facebook.com/singersunnyjadhav/",
+      instagram: "https://www.instagram.com/sunnyjadhavmusic/?hl=en",
       youtube: null,
     },
     spotify: {

@@ -1,4 +1,3 @@
-import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
 
@@ -16,7 +15,6 @@ import landing6Mobile from '../../optimisedAssets/landing6Mobile.webp';
 
 
 function Landing() {
-    const navigate = useNavigate();
     const [currentSlide, setCurrentSlide] = useState(0);
     const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
@@ -69,10 +67,6 @@ function Landing() {
         }, 7000);
         return () => clearInterval(interval);
     }, [slides.length]);
-
-    const handleNavigateToCalendar = () => {
-        navigate('/calendar');
-    };
 
     const goToSlide = (index) => setCurrentSlide(index);
     const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % slides.length);
@@ -128,16 +122,6 @@ function Landing() {
                     <p className="text-sm md:text-lg max-w-xl drop-shadow-md">
                         {slides[currentSlide].description}
                     </p>
-
-                    {/* Timetable Button */}
-                    <div className="mt-4 md:mt-8 animate-fade-up animation-delay-400">
-                        <button
-                            onClick={handleNavigateToCalendar}
-                            className="h-10 cursor-pointer font-light text-white border-[2px] hover:bg-white hover:text-black border-white flex justify-center items-center w-28 sm:w-32 rounded-3xl transform hover:scale-105 duration-300"
-                        >
-                            Timetable
-                        </button>
-                    </div>
 
                     {/* Dot Navigation */}
                     <div className="flex space-x-2 mt-4">

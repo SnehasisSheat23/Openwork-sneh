@@ -78,15 +78,18 @@ function FloatingCallButton() {
                     aria-label="Contact us"
                 >
                     <div className="flex items-center space-x-3">
-                        <div className="flex-shrink-0">
-                            <FaPhone className="text-white text-lg" />
+                        <div className="flex-shrink-0 relative flex items-center justify-center w-6 h-6">
+                            {/* Animated rings on hover */}
+                            <span className="absolute inset-0 rounded-full border-2 border-white/40 group-hover:animate-ping opacity-0 group-hover:opacity-100" style={{ animationDuration: '2s', animationIterationCount: 'infinite' }}></span>
+                            <span className="absolute inset-0 rounded-full border-2 border-white/30 group-hover:animate-ping opacity-0 group-hover:opacity-100" style={{ animationDuration: '2s', animationDelay: '0.7s', animationIterationCount: 'infinite' }}></span>
+                            <FaPhone className="text-white text-lg relative z-10" />
                         </div>
                         <p className="text-white font-light text-sm sm:text-base whitespace-nowrap">
                              Contact us
                         </p>
                     </div>
-                    {/* Chat bubble tail */}
-                    <div className="absolute -bottom-2 left-6 w-4 h-4 bg-black/30 backdrop-blur-md border-l border-b border-white/10 transform rotate-45"></div>
+                    
+                    
                 </motion.button>
             </motion.div>
 

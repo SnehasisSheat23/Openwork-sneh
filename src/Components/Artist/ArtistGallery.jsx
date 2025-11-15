@@ -14,25 +14,28 @@ const ArtistGallery = ({ images = [], artistName = '', compact = false }) => {
   // Compact mode for the split layout
   if (compact) {
     return (
-      <div className="w-full h-full bg-black">
+      <div className="w-full h-full bg-transparent">
         {/* Mobile View - Compact */}
         <div className="lg:hidden space-y-4 h-full overflow-y-auto">
-          <img
-            src={mainImage}
-            alt={`${artistName} - Gallery Image 1`}
-            className="w-full h-auto max-h-[250px] rounded-lg object-cover"
-            loading="lazy"
-          />
+          <div className="w-full h-[250px] overflow-hidden rounded-lg">
+            <img
+              src={mainImage}
+              alt={`${artistName} - Gallery Image 1`}
+              className="w-full h-full rounded-lg object-cover"
+              loading="lazy"
+            />
+          </div>
           {sideImages.length > 0 && (
             <div className="grid grid-cols-2 gap-3">
               {sideImages.map((img, index) => (
-                <img
-                  key={index}
-                  src={img}
-                  alt={`${artistName} - Gallery Image ${index + 2}`}
-                  className="w-full h-auto max-h-[150px] rounded-lg object-cover"
-                  loading="lazy"
-                />
+                <div key={index} className="w-full h-[150px] overflow-hidden rounded-lg">
+                  <img
+                    src={img}
+                    alt={`${artistName} - Gallery Image ${index + 2}`}
+                    className="w-full h-full rounded-lg object-cover"
+                    loading="lazy"
+                  />
+                </div>
               ))}
             </div>
           )}
@@ -41,7 +44,7 @@ const ArtistGallery = ({ images = [], artistName = '', compact = false }) => {
         {/* Desktop View - Compact */}
         <div className="hidden lg:grid lg:grid-cols-3 gap-3 h-full min-h-0">
           {/* Large Main Image */}
-          <div className="col-span-2 min-h-0">
+          <div className="col-span-2 min-h-0 overflow-hidden">
             <img
               src={mainImage}
               alt={`${artistName} - Gallery Image 1`}
@@ -54,7 +57,7 @@ const ArtistGallery = ({ images = [], artistName = '', compact = false }) => {
           {sideImages.length > 0 && (
             <div className="col-span-1 flex flex-col gap-3 min-h-0">
               {sideImages.map((img, index) => (
-                <div key={index} className="flex-1 min-h-0">
+                <div key={index} className="flex-1 min-h-0 overflow-hidden">
                   <img
                     src={img}
                     alt={`${artistName} - Gallery Image ${index + 2}`}
@@ -72,26 +75,29 @@ const ArtistGallery = ({ images = [], artistName = '', compact = false }) => {
 
   // Full mode (original layout)
   return (
-    <div className="w-full bg-black pt-6 sm:pt-8 lg:pt-12 pb-8 sm:pb-12 lg:pb-16">
+    <div className="w-full bg-transparent pt-6 sm:pt-8 lg:pt-12 pb-8 sm:pb-12 lg:pb-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Mobile View */}
         <div className="lg:hidden space-y-6">
-          <img
-            src={mainImage}
-            alt={`${artistName} - Gallery Image 1`}
-            className="w-full h-auto max-h-[400px] rounded-lg object-cover"
-            loading="lazy"
-          />
+          <div className="w-full h-[400px] overflow-hidden rounded-lg">
+            <img
+              src={mainImage}
+              alt={`${artistName} - Gallery Image 1`}
+              className="w-full h-full rounded-lg object-cover"
+              loading="lazy"
+            />
+          </div>
           {sideImages.length > 0 && (
             <div className="grid grid-cols-2 gap-4">
               {sideImages.map((img, index) => (
-                <img
-                  key={index}
-                  src={img}
-                  alt={`${artistName} - Gallery Image ${index + 2}`}
-                  className="w-full h-auto max-h-[200px] rounded-lg object-cover"
-                  loading="lazy"
-                />
+                <div key={index} className="w-full h-[200px] overflow-hidden rounded-lg">
+                  <img
+                    src={img}
+                    alt={`${artistName} - Gallery Image ${index + 2}`}
+                    className="w-full h-full rounded-lg object-cover"
+                    loading="lazy"
+                  />
+                </div>
               ))}
             </div>
           )}
@@ -100,7 +106,7 @@ const ArtistGallery = ({ images = [], artistName = '', compact = false }) => {
         {/* Desktop View - 3 images layout */}
         <div className="hidden lg:grid lg:grid-cols-3 gap-4 h-[400px]">
           {/* Large Main Image */}
-          <div className="col-span-2">
+          <div className="col-span-2 overflow-hidden">
             <img
               src={mainImage}
               alt={`${artistName} - Gallery Image 1`}
@@ -111,9 +117,9 @@ const ArtistGallery = ({ images = [], artistName = '', compact = false }) => {
           
           {/* Stacked Side Images */}
           {sideImages.length > 0 && (
-            <div className="col-span-1 flex flex-col gap-4">
+            <div className="col-span-1 flex flex-col gap-4 min-h-0">
               {sideImages.map((img, index) => (
-                <div key={index} className="flex-1">
+                <div key={index} className="flex-1 min-h-0 overflow-hidden">
                   <img
                     src={img}
                     alt={`${artistName} - Gallery Image ${index + 2}`}
