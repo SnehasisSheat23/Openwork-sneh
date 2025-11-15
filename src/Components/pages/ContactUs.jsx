@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Navbar from "../Navbar/Navbar";
 import Footer_only_links from "../Footer/Footer_only_links";
 import { FaPhone, FaEnvelope, FaFacebook, FaInstagram } from 'react-icons/fa';
+import SEO from "../SEO/SEO";
 
 function ContactUs() {
     const [formData, setFormData] = useState({
@@ -22,6 +23,12 @@ function ContactUs() {
 
     return (
         <div className="relative  bg-black text-white">
+            <SEO 
+                title="Contact Us"
+                description="Get in touch with Manpasand Inc. Contact us for event bookings, artist inquiries, or general information about our Indian entertainment and cultural events."
+                keywords="contact Manpasand, event booking, Indian entertainment contact, artist booking, cultural events contact, Manpasand phone number"
+                url="/ContactUs"
+            />
             <Navbar />
 
             {/* Banner Section */}

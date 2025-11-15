@@ -1,0 +1,21 @@
+{
+  "name": "Manpasand Inc. - Indian Entertainment & Event Management",
+  "short_name": "Manpasand",
+  "description": "USA-based event management organization promoting Indian culture through stage performances, music events, and artist tours since 1999.",
+  "icons": [
+    {
+      "src": "/image.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "theme_color": "#001b2d",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "start_url": "/",
+  "scope": "/",
+  "orientation": "portrait-primary",
+  "categories": ["entertainment", "events", "music"]
+}
+

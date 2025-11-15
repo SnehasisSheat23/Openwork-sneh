@@ -5,6 +5,7 @@ import Footer_only_links from "../../Footer/Footer_only_links";
 import ArtistGallery from "../../Artist/ArtistGallery";
 import { FaGlobe, FaFacebookF, FaInstagram, FaYoutube } from 'react-icons/fa';
 import { artists } from '../../../database.js';
+import SEO from "../../SEO/SEO";
 
 // Function for random image selection (same as Gallery.jsx)
 const getRandomItems = (array, count) => {
@@ -30,6 +31,12 @@ function About() {
 
     return (
         <div className="relative">
+            <SEO 
+                title="About Us"
+                description="Learn about Manpasand Inc. - Founded in 1999, we are a USA-based event management organization dedicated to promoting Indian culture through stage performances and music. Bridging generations through entertainment."
+                keywords="Manpasand about, Indian event management, Indian culture promotion, USA Indian events, Indian entertainment company, cultural heritage events"
+                url="/About"
+            />
             <Navbar />
             {/* Header section similar to Cookies.jsx */}
             <div

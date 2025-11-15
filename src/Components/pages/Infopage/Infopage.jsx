@@ -6,6 +6,7 @@ import Footer_only_links from "../../Footer/Footer_only_links";
 import Navbar from "../../Navbar/Navbar";
 import ArtistGallery from "../../Artist/ArtistGallery";
 import { getArtistById } from '../../../database.js';
+import SEO from "../../SEO/SEO";
 import './Infopage.css';
 
 // Main Timeline component
@@ -15,6 +16,13 @@ const Timeline = () => {
 
     return (
         <>
+            <SEO 
+                title={artistData.name}
+                description={artistData.bio || `Learn more about ${artistData.name}, featured artist at Manpasand Inc. Indian entertainment events.`}
+                keywords={`${artistData.name}, Indian artist, Gujarati artist, Manpasand artist, ${artistData.name} tour, Indian entertainment`}
+                url={`/info/${artist}`}
+                image={artistData.image}
+            />
             <Navbar />
             <div className='min-h-screen bg-black'>
                 {/* Artist header section */}

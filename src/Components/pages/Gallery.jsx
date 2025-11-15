@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import Footer_only_links from "../Footer/Footer_only_links";
 import Navbar from "../Navbar/Navbar";
 import { artists } from '../../database.js';
+import SEO from "../SEO/SEO";
 
 // Function for random image selection
 const getRandomItems = (array, count) => {
@@ -45,6 +46,12 @@ const PhotoGallery = () => {
 
   return (
     <div className="min-h-screen bg-[#3d2c2c]">
+      <SEO 
+        title="Gallery"
+        description="Explore our gallery of Indian entertainment events, artist performances, and cultural celebrations. Experience the vibrant moments captured from Manpasand Inc. events."
+        keywords="Indian event gallery, cultural event photos, artist performances, Indian entertainment photos, Manpasand gallery, event photography"
+        url="/Gallery"
+      />
       <Navbar />
       <div
                 className="relative flex justify-center items-end h-[30vh] sm:h-[25vh] md:h-[40vh] lg:h-[50vh] w-full bg-no-repeat bg-cover bg-center"

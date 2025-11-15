@@ -6,6 +6,7 @@ import Highlights from "../Highlights/Highlights";
 import Landing from "../Landing/Landing";
 import Navbar from "../Navbar/Navbar";
 import FloatingCallButton from "../FloatingCallButton/FloatingCallButton";
+import SEO from "../SEO/SEO";
 
 function Home() {
     const [gradient, setGradient] = useState('');
@@ -53,6 +54,12 @@ function Home() {
             backgroundSize: 'cover',
             minHeight: '100vh',
         }}>
+            <SEO 
+                title="Home"
+                description="Welcome to Manpasand Inc. - Experience the best of Indian entertainment, cultural events, and artist performances. Your gateway to Indian culture in America since 1999."
+                keywords="Indian entertainment, cultural events, Indian artists, stage performances, music events, Gujarati entertainment, Indian community events USA"
+                url="/"
+            />
             <Navbar />
             <Landing />
             <Festivalsection />
