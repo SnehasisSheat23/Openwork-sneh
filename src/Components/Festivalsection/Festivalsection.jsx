@@ -101,10 +101,10 @@ function Festivalsection() {
                     )}
                 </div>
 
-                <div className="w-full h-[480px]  flex items-center justify-center">
+                <div className="w-full h-[580px]  flex items-center justify-center">
                     <div
                         ref={scrollRef}
-                        className={`flex h-[400px] gap-3 overflow-x-auto snap-x snap-mandatory scroll-smooth scrollbar-hide w-full max-w-full box-border ${!isScrollable ? 'justify-center' : ''}`}
+                        className={`flex h-[500px] gap-3 overflow-x-auto snap-x snap-mandatory scroll-smooth scrollbar-hide w-full max-w-full box-border ${!isScrollable ? 'justify-center' : ''}`}
                     >
                         {isScrollable && <div className="shrink-0 w-2 sm:w-4 md:w-6 lg:w-10" />}
                         {upcomingEvents.map((event, index) => (

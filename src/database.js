@@ -9,7 +9,12 @@ import GourpreetTour from './optimisedAssets/Upcommingevents/GourpreetTour.webp'
 import GeetarabaiTour from './optimisedAssets/Upcommingevents/GeetarabaiTour.webp';
 import SuperStarTour from './optimisedAssets/Upcommingevents/SuperStarTour.webp';
 import superstarSingerTour from './optimisedAssets/Upcommingevents/superstarSingerTour.webp';
-import RexTour from './optimisedAssets/landing2mobile.webp';
+import geetaMobile from './optimisedAssets/geeta_mobile.webp';
+import gujjubhaiMobile from './optimisedAssets/gujjubhai_mobile.webp';
+import kinjalMobile from './optimisedAssets/kinjal_mobile.webp';
+import ojasMobile from './optimisedAssets/ojas_mobile.webp';
+import rashmidesaiMobile from './optimisedAssets/rashmidesai_mobile.webp';
+import superstarMobile from './optimisedAssets/superstar_mobile.webp';
 // Spotify
 import geetaravaispotify from './optimisedAssets/Spotify/Tetudo2.webp';
 import kinjaldavespotify from './optimisedAssets/Spotify/VichodoKinjalDave.webp';
@@ -341,28 +346,36 @@ In 2020, she received the Feelings Pride of India Award in the music category.`,
 ];
 
 export const events = [
-
-  
-  
   {
-    id: 33,
-    image: GeetarabaiTour,
-    artist: "geetabenravai",
-
+    id: 1,
+    image: geetaMobile,
+    artist: "GeetabenRabari",
   },
   {
-    id:35,
-  image: RexTour,
-  artist: "rex",
+    id: 2,
+    image: gujjubhaiMobile,
+    artist: "gujjubhai",
   },
   {
-    id: 34,
-    image: SuperStarTour,
-
-
+    id: 3,
+    image: kinjalMobile,
+    artist: "KrinjalDave",
   },
-  
-
+  {
+    id: 4,
+    image: ojasMobile,
+    artist: "ojas",
+  },
+  {
+    id: 5,
+    image: rashmidesaiMobile,
+    artist: "rashmidesai",
+  },
+  {
+    id: 6,
+    image: superstarMobile,
+    artist: "superstar",
+  },
 ];
 
 export const getArtistById = (id) => artists.find(artist => artist.id === id);

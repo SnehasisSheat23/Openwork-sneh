@@ -2,16 +2,22 @@ import { useState, useEffect } from 'react';
 
 
 
+import geetaMobile from '../../optimisedAssets/geeta_mobile.webp';
 import geetaTablet from '../../optimisedAssets/geeta_tablet.webp';
 import geetaDesktop from '../../optimisedAssets/geeta_desktop.webp';
+import gujjubhaiMobile from '../../optimisedAssets/gujjubhai_mobile.webp';
 import gujjubhaiTablet from '../../optimisedAssets/gujjubhai_tablet.webp';
 import gujjubhaiDesktop from '../../optimisedAssets/gujjubhai_desktop.webp';
+import kinjalMobile from '../../optimisedAssets/kinjal_mobile.webp';
 import kinjalTablet from '../../optimisedAssets/kinjal_tablet.webp';
 import kinjalDesktop from '../../optimisedAssets/kinjal_desktop.webp';
+import ojasMobile from '../../optimisedAssets/ojas_mobile.webp';
 import ojasTablet from '../../optimisedAssets/ojas_tablet.webp';
 import ojasDesktop from '../../optimisedAssets/ojas_desktop.webp';
+import rashmidesaiMobile from '../../optimisedAssets/rashmidesai_mobile.webp';
 import rashmidesaiTablet from '../../optimisedAssets/rashmidesai_tablet.webp';
 import rashmidesaiDesktop from '../../optimisedAssets/rashmidesai_desktop.webp';
+import superstarMobile from '../../optimisedAssets/superstar_mobile.webp';
 import superstarTablet from '../../optimisedAssets/superstar_tablet.webp';
 import superstarDesktop from '../../optimisedAssets/superstar_desktop.webp';
 
@@ -30,42 +36,42 @@ function Landing() {
     // Slideshow data with responsive images
     const slides = [
         {
-            imageMobile: geetaTablet,
+            imageMobile: geetaMobile,
             imageTablet: geetaTablet,
             imageDesktop: geetaDesktop,
             title: "Geeta Event",
             description: "Join us for an evening of spectacular performances."
         },
         {
-            imageMobile: gujjubhaiTablet,
+            imageMobile: gujjubhaiMobile,
             imageTablet: gujjubhaiTablet,
             imageDesktop: gujjubhaiDesktop,
             title: "Gujjubhai Event",
             description: "Experience the best of traditional comedy and drama."
         },
         {
-            imageMobile: kinjalTablet,
+            imageMobile: kinjalMobile,
             imageTablet: kinjalTablet,
             imageDesktop: kinjalDesktop,
             title: "Kinjal Event",
             description: "A night filled with music and energy."
         },
         {
-            imageMobile: ojasTablet,
+            imageMobile: ojasMobile,
             imageTablet: ojasTablet,
             imageDesktop: ojasDesktop,
             title: "Ojas Event",
             description: "Captivating performances that will leave you spellbound."
         },
         {
-            imageMobile: rashmidesaiTablet,
+            imageMobile: rashmidesaiMobile,
             imageTablet: rashmidesaiTablet,
             imageDesktop: rashmidesaiDesktop,
             title: "Rashmi Desai Event",
             description: "An exclusive performance by the renowned artist."
         },
         {
-            imageMobile: superstarTablet,
+            imageMobile: superstarMobile,
             imageTablet: superstarTablet,
             imageDesktop: superstarDesktop,
             title: "Superstar Event",

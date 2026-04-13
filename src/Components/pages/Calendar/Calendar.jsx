@@ -4,11 +4,11 @@ import Navbar from "../../Navbar/Navbar";
 
 //import landing1 from "../../../../assets/landing1.png"; // Adjust the path as necessary
 import { Timeline } from "./timeline";
-import landing3 from "../../../assets/landing3.png";
-import landing4 from "../../../assets/landing4.png";
-import landing5 from "../../../assets/landing5.png";
-import landing1 from "../../../assets/landing1.png";
-import landing6 from "../../../assets/landing6.png";
+import landing3 from "../../../optimisedAssets/landing3.webp";
+import landing4 from "../../../optimisedAssets/landing4.webp";
+import landing5 from "../../../optimisedAssets/landing5.webp";
+import landing1 from "../../../optimisedAssets/landing1.webp";
+import landing6 from "../../../optimisedAssets/landing6.webp";
 
 // aesthetic color generators
 {/*
