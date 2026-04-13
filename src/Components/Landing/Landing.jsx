@@ -2,16 +2,18 @@ import { useState, useEffect } from 'react';
 
 
 
-import landing3Desktop from '../../optimisedAssets/landing3.webp';
-import landing3Mobile from '../../optimisedAssets/landing3mobile.webp';
-import landing2Desktop from '../../optimisedAssets/landing2.webp';
-import landing2Mobile from '../../optimisedAssets/landing2mobile.webp';
-import landing4Desktop from '../../optimisedAssets/landing4.webp';
-import landing4Mobile from '../../optimisedAssets/landing4mobile.webp';
-import landing5Desktop from '../../optimisedAssets/landing5.webp';
-import landing5Mobile from '../../optimisedAssets/landing5mobile.webp';
-import landing6 from '../../optimisedAssets/landing6.webp';
-import landing6Mobile from '../../optimisedAssets/landing6Mobile.webp';
+import geetaTablet from '../../optimisedAssets/geeta_tablet.webp';
+import geetaDesktop from '../../optimisedAssets/geeta_desktop.webp';
+import gujjubhaiTablet from '../../optimisedAssets/gujjubhai_tablet.webp';
+import gujjubhaiDesktop from '../../optimisedAssets/gujjubhai_desktop.webp';
+import kinjalTablet from '../../optimisedAssets/kinjal_tablet.webp';
+import kinjalDesktop from '../../optimisedAssets/kinjal_desktop.webp';
+import ojasTablet from '../../optimisedAssets/ojas_tablet.webp';
+import ojasDesktop from '../../optimisedAssets/ojas_desktop.webp';
+import rashmidesaiTablet from '../../optimisedAssets/rashmidesai_tablet.webp';
+import rashmidesaiDesktop from '../../optimisedAssets/rashmidesai_desktop.webp';
+import superstarTablet from '../../optimisedAssets/superstar_tablet.webp';
+import superstarDesktop from '../../optimisedAssets/superstar_desktop.webp';
 
 
 function Landing() {
@@ -27,30 +29,48 @@ function Landing() {
 
     // Slideshow data with responsive images
     const slides = [
-        
         {
-            imageMobile: landing2Mobile,
-            imageTablet: landing2Desktop,
-            imageDesktop: landing2Desktop,
-            title: "Raas Garba Night",
-            description: "Experience authentic Gujarati folk dance with live music and professional choreography. Day 1 - October 11, 2024."
+            imageMobile: geetaTablet,
+            imageTablet: geetaTablet,
+            imageDesktop: geetaDesktop,
+            title: "Geeta Event",
+            description: "Join us for an evening of spectacular performances."
         },
         {
-            imageMobile: landing3Mobile,
-            imageTablet: landing3Desktop,
-            imageDesktop: landing3Desktop,
-            title: "Cultural Celebration",
-            description: "Immerse yourself in Indian culture with traditional dances, food, and festivities. Day 2 - October 12, 2024."
+            imageMobile: gujjubhaiTablet,
+            imageTablet: gujjubhaiTablet,
+            imageDesktop: gujjubhaiDesktop,
+            title: "Gujjubhai Event",
+            description: "Experience the best of traditional comedy and drama."
         },
-        
         {
-            imageMobile: landing5Mobile,
-            imageTablet: landing5Desktop,
-            imageDesktop: landing5Desktop,
-            title: "Grand Finale",
-            description: "Join us for the spectacular closing ceremony featuring special guest performances. Day 3 - October 13, 2024."
+            imageMobile: kinjalTablet,
+            imageTablet: kinjalTablet,
+            imageDesktop: kinjalDesktop,
+            title: "Kinjal Event",
+            description: "A night filled with music and energy."
         },
-        
+        {
+            imageMobile: ojasTablet,
+            imageTablet: ojasTablet,
+            imageDesktop: ojasDesktop,
+            title: "Ojas Event",
+            description: "Captivating performances that will leave you spellbound."
+        },
+        {
+            imageMobile: rashmidesaiTablet,
+            imageTablet: rashmidesaiTablet,
+            imageDesktop: rashmidesaiDesktop,
+            title: "Rashmi Desai Event",
+            description: "An exclusive performance by the renowned artist."
+        },
+        {
+            imageMobile: superstarTablet,
+            imageTablet: superstarTablet,
+            imageDesktop: superstarDesktop,
+            title: "Superstar Event",
+            description: "The grand finale featuring top-tier entertainment."
+        },
     ];
 
     // Determine which image to use
