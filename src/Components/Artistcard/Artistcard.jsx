@@ -55,7 +55,7 @@ function Artistcard({ img, id, name }) {
             </div>
 
             <div className="relative z-10 top-[67%] w-full px-7">
-                <h1 className="text-white font-semibold leading-none text-3xl">{name}</h1>
+                <h1 className="text-white font-semibold leading-none text-3xl truncate">{name}</h1>
             </div>
 
             <div className="absolute z-10 bottom-3 w-full flex justify-left px-7 py-5">

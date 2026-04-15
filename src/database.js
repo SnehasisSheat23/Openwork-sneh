@@ -1,7 +1,15 @@
 // Artists
 // Artist Images
-import krinjaldave from './optimisedAssets/Artist/Artist3.webp';
-import GeetabenRavai from './optimisedAssets/Artist/Artist1.webp';
+import KinjalDaveImg from './optimisedAssets/Artist/KinjalDave.webp';
+import GeetabenRabariImg from './optimisedAssets/Artist/GeetabenRabari.webp';
+import SiddharthRanderiaImg from './optimisedAssets/Artist/SiddharthRanderia.webp';
+import RashmiDesaiImg from './optimisedAssets/Artist/RashmiDesai.webp';
+import OjasRavalImg from './optimisedAssets/Artist/OjasRaval.webp';
+import RexImg from './optimisedAssets/Artist/Rex.webp';
+import KoshaImg from './optimisedAssets/Artist/Kosha.webp';
+import ParthDoshiImg from './optimisedAssets/Artist/ParthDoshi.webp';
+import GiteshIyerImg from './optimisedAssets/Artist/GiteshIyer.webp';
+import BhumiAhirImg from './optimisedAssets/Artist/BhumiAhir.webp';
 
 // Tour
 import kinjaaldaveTour from './optimisedAssets/Upcommingevents/kinjaaldaveTour.webp';
@@ -37,28 +45,52 @@ import kinjalinsta6 from './optimisedAssets/Artist/Kinjalinsta6.webp';
 import kinjalinsta7 from './optimisedAssets/Artist/Kinjalinsta7.webp';
 
 // Info Images
-import rexinfo from './optimisedAssets/Artist/Rexinfo.webp';
-import Gurdeep from './optimisedAssets/Artist/Grdeepinfo.webp';
-import Parthinfo from './optimisedAssets/Artist/Parthininfo.webp';
-import Sharmaninfo from './optimisedAssets/Artist/Sharmaninfo.webp';
-import Sunnyinfo from './optimisedAssets/Artist/Sunnyinfo.webp';
-import Artharvinfo from './optimisedAssets/Artist/Atharvinfo.webp';
-import avirvhavinfo from './optimisedAssets/Artist/Avirvhavinfo.webp';
-import khushiinfo from './optimisedAssets/Artist/khushiinfo.webp';
-
-import koshainfo from './assets/KoshaImage1.jpg';
-import koshainfo2 from './assets/KoshaImage2.jpg';
-import koshainfo3 from './assets/KoshaImage3.jpg';
-
-import anushkainfo from './assets/AnuskhaImage1.jpg';
-import anushkainfo2 from './assets/AnuskhaImage2.jpg';
-import anushkainfo3 from './assets/AnuskhaImage3.jpg';
+// Previously imported info images have been replaced by optimized versions above
 
 export const artists = [
   {
+    id: 'GeetabenRabari',
+    name: "Geetben Rabari",
+    image: GeetabenRabariImg,
+    description: "Kutch Ni Koyal",
+    socialMedia: {
+      facebook: "https://www.facebook.com/GeetaRabariOfficial/",
+      instagram: "https://instagram.com/geetabenravai",
+      youtube: "https://www.youtube.com/channel/UCxEjIcW9n0JsTSCGQDufi9A",
+    },
+    spotify: {
+      artistUrl: "https://open.spotify.com/artist/1X9zWi58Hl9oZ5OXJuzAHs",
+      popularSongs: [
+        {
+          title: "Tetudo 2",
+          album: "Tetudo 2",
+          coverUrl: geetaravaispotify,
+          description:"Song description",
+          spotifyUrl: "https://open.spotify.com/track/6EBnRH4lW1mMMyVoBreG6K",
+        },
+        {
+          title: "Char Bangdi Vadi Gadi",
+          album: "Char Bangdi Vadi Gadi",
+          coverUrl: "https://i.scdn.co/image/ab67616d0000b273b7f51c8d7a5f3ebe26379f4c",
+          description:"Song description",
+          spotifyUrl: "https://open.spotify.com/track/4XjrfHzSX4ZXQKVKPqjlNZ",
+        },
+      ],
+    },
+    instagramImages: [
+      geetaravaiinsta1,
+      geetaravaiinsta2,
+      geetaravaiinsta3,
+      geetaravaiinsta4,
+      geetaravaiinsta5,
+      geetaravaiinsta6,
+    ],
+    bio: "Geeta Ben Rabari is a Gujarati folk singer. She came into the spotlight by singing the Gujarati song \"Roma Ser Ma.\" She is referred to as the \"Kutchi Koyal,\" which means the songbird of Kutch. She sings bhajans, folklore, santvani, and dayra, and by the age of 20, she established herself as a well-known singer of Gujarat.",
+  },
+  {
     id: 'KrinjalDave',
     name: "Kinjal Dave",
-    image: krinjaldave,
+    image: KinjalDaveImg,
     description: "Garba Queen",
     socialMedia: {
       facebook: "https://www.facebook.com/kinjaldavemusic",
@@ -101,10 +133,62 @@ Kinjal is known for her traditional Gujarati folk music. In 2019, she received t
 In 2020, she received the Feelings Pride of India Award in the music category.`,
   },
   {
+    id: 'gujjubhai',
+    name: "Siddharth Randeria",
+    image: SiddharthRanderiaImg,
+    description: "King of Comedy",
+    socialMedia: {
+      facebook: "https://www.facebook.com/SiddharthRanderiaOfficial",
+      instagram: "https://www.instagram.com/siddharthranderia",
+      youtube: null,
+    },
+    spotify: {
+      artistUrl: null,
+      popularSongs: [],
+    },
+    bio: "Siddharth Randeria is a legendary Gujarati actor, director, and writer, best known for his 'Gujjubhai' series of plays and movies. He has been a dominant figure in Gujarati theatre for decades.",
+    instagramImages: [SiddharthRanderiaImg],
+  },
+  {
+    id: 'rashmidesai',
+    name: "Rashmi Desai",
+    image: RashmiDesaiImg,
+    description: "Popular Actress",
+    socialMedia: {
+      facebook: "https://www.facebook.com/RashmiDesai",
+      instagram: "https://www.instagram.com/imrashamidesai",
+      youtube: null,
+    },
+    spotify: {
+      artistUrl: null,
+      popularSongs: [],
+    },
+    bio: "Rashmi Desai is a well-known Indian television and film actress, known for her versatile roles and participation in popular reality shows.",
+    instagramImages: [RashmiDesaiImg],
+  },
+  {
+    id: 'ojas',
+    name: "Ojas Raval",
+    image: OjasRavalImg,
+    description: "Versatile Actor",
+    socialMedia: {
+      facebook: "https://www.facebook.com/ojasravalofficial",
+      instagram: "https://www.instagram.com/ojasraval",
+      youtube: null,
+    },
+    spotify: {
+      artistUrl: null,
+      popularSongs: [],
+    },
+    bio: "Ojas Raval is a talented Indian actor known for his work in Gujarati cinema and television, bringing charm and depth to every character he portrays.",
+    instagramImages: [OjasRavalImg],
+  },
+  // Tier Artists
+  {
     id: 'rex',
-    name: "Rex Dsouza",
-    image: rexinfo,
-    description: "Garba Queen",
+    name: "Rex",
+    image: RexImg,
+    description: "Dynamic Performer",
     socialMedia: {
       facebook: "https://www.facebook.com/Rdsouzaofficial/",
       instagram: "https://www.instagram.com/rexysexyd/",
@@ -114,200 +198,14 @@ In 2020, she received the Feelings Pride of India Award in the music category.`,
       artistUrl: null,
       popularSongs: [],
     },
-    bio: "Rex Dsouza is a dynamic Indian singer, live performer, and entertainer who rose to national fame as a finalist in the iconic reality show Fame Gurukul (2005). Known for his rich vocals, vibrant stage presence, and soulful musical expression, Rex has carved a niche for himself in the Indian and international music scene over the past two decades.",
-    instagramImages: [
-      rexinfo,
-      "https://cdn.canvasrebel.com/wp-content/uploads/2023/10/c-RexDsouza__IMG2801_1696927326013.jpeg",
-      "https://m.media-amazon.com/images/M/MV5BMTQwNGMyOTktZjg5Mi00NmIzLTg1OTQtYjVkMjcyNmQ4ZDJkXkEyXkFqcGc@._V1_.jpg"
-      // Note: Use direct image URLs (ending in .jpg, .png, .webp, etc.)
-      // Google search URLs won't work. You need the direct image URL.
-    ],
+    bio: "Rex Dsouza is a dynamic Indian singer, live performer, and entertainer who rose to national fame as a finalist in the iconic reality show Fame Gurukul (2005).",
+    instagramImages: [RexImg],
   },
-
-/*
-  {
-    id: 'GurdeepMehndi',
-    name: "Gurdeep Mehndi",
-    image: Gurdeep,
-    description: "Garba Queen",
-    socialMedia: {
-      facebook: "https://www.facebook.com/GurdeepSinghMehndi/",
-      instagram: "https://www.instagram.com/gurdeepmehndi/",
-      youtube: "https://www.youtube.com/channel/UCtQdmJLSu8fqfZgPSFq8IXw",
-    },
-    spotify: {
-      artistUrl: null,
-      popularSongs: [],
-    },
-    instagramImages: [
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbkDdNehT_DJlLFz137lryAJBa42XCaZWSV1NLxQXaIZwBP8XcOv37ayojbDGmd9DMcI13YQ&s=10",
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQJsMJ23XKNtnth7AjAm22vkiSU_lMN4UyX9OkSImV653Z0LUg3fePpuDo547XW6QvsyZoJQ&s=10",
-      "https://sosimg.sgp1.cdn.digitaloceanspaces.com/artist-gallery/5649555_1702450282.webp"
-    ],
-    bio: "Bio information will be added soon.",
-  },
-*/
-  {
-    id: 'ParthDoshi',
-    name: "Parth Doshi",
-    image: Parthinfo,
-    description: "Garba Queen",
-    socialMedia: {
-      facebook: "https://www.facebook.com/ParthDoshiLive/",
-      instagram: "https://www.instagram.com/parthdoshilive",
-      youtube: "https://www.youtube.com/@ParthDoshiOfficial",
-    },
-    spotify: {
-      artistUrl: null,
-      popularSongs: [],
-    },
-    instagramImages: [
-      
-      "https://content3.jdmagicbox.com/comp/vadodara/d4/0265px265.x265.140105211554.p6d4/catalogue/parth-doshi-manjalpur-vadodara-playback-singers-9mk12s54ft.jpg",
-      "https://content3.jdmagicbox.com/comp/vadodara/d4/0265px265.x265.140105211554.p6d4/catalogue/parth-doshi-manjalpur-vadodara-playback-singers-448y3n8.jpg",
-      "https://pbs.twimg.com/media/ElY_40JWMAU-44H?format=jpg&name=large"
-    ],
-    bio: "Bio information will be added soon.",
-  },
-  {
-    id: 'GeetabenRabari',
-    name: "Geeta Rabari",
-    image: GeetabenRavai,
-    description: "Kutch Ni Koyal",
-    socialMedia: {
-      facebook: "https://www.facebook.com/GeetaRabariOfficial/",
-      instagram: "https://instagram.com/geetabenravai",
-      youtube: "https://www.youtube.com/channel/UCxEjIcW9n0JsTSCGQDufi9A",
-    },
-    spotify: {
-      artistUrl: "https://open.spotify.com/artist/1X9zWi58Hl9oZ5OXJuzAHs",
-      popularSongs: [
-        {
-          title: "Tetudo 2",
-          album: "Tetudo 2",
-          coverUrl: geetaravaispotify,
-          description:"Song description",
-          spotifyUrl: "https://open.spotify.com/track/6EBnRH4lW1mMMyVoBreG6K",
-        },
-        {
-          title: "Char Bangdi Vadi Gadi",
-          album: "Char Bangdi Vadi Gadi",
-          coverUrl: "https://i.scdn.co/image/ab67616d0000b273b7f51c8d7a5f3ebe26379f4c",
-          description:"Song description",
-          spotifyUrl: "https://open.spotify.com/track/4XjrfHzSX4ZXQKVKPqjlNZ",
-        },
-      ],
-    },
-    instagramImages: [
-      geetaravaiinsta1,
-      geetaravaiinsta2,
-      geetaravaiinsta3,
-      geetaravaiinsta4,
-      geetaravaiinsta5,
-      geetaravaiinsta6,
-    ],
-    bio: "Geeta Ben Rabari is a Gujarati folk singer. She came into the spotlight by singing the Gujarati song \"Roma Ser Ma.\" She is referred to as the \"Kutchi Koyal,\" which means the songbird of Kutch. She sings bhajans, folklore, santvani, and dayra, and by the age of 20, she established herself as a well-known singer of Gujarat.",
-  },
-/*
-  {
-    id: 'SharmanJoshi',
-    name: "Sharman Joshi",
-    image: Sharmaninfo,
-    description: "Garba Queen",
-    socialMedia: {
-      facebook: "https://www.facebook.com/TheSharmanJoshi/",
-      instagram: "https://www.instagram.com/sharmanjoshi/",
-      youtube: null,
-    },
-    spotify: {
-      artistUrl: null,
-      popularSongs: [],
-    },
-    instagramImages: [
-      "https://www.bizasialive.com/wp-content/uploads/2019/02/Sharman-Joshi-The-Lease-of-These-1100x.jpg",
-      "https://static.theprint.in/wp-content/uploads/2023/08/ANI-20230823091228.jpg",
-      "https://www.hindustantimes.com/ht-img/img/2024/05/06/1600x900/Sharman_Joshi_1715018171159_1715018197355.jpg"
-
-    ],
-    bio: "Bio information will be added soon.",
-  },
-  {
-    id: 'SunnyJadhav',
-    name: "Sunny Jadhav",
-    image: Sunnyinfo,
-    description: "Kutch Ni Koyal",
-    socialMedia: {
-      facebook: "https://www.facebook.com/singersunnyjadhav/",
-      instagram: "https://www.instagram.com/sunnyjadhavmusic/?hl=en",
-      youtube: null,
-    },
-    spotify: {
-      artistUrl: null,
-      popularSongs: [],
-    },
-    instagramImages: [
-       Sunnyinfo,
-       "https://static.wixstatic.com/media/fba758_f1f8b9ac29134de3b356630681ff368d~mv2.jpg/v1/fill/w_640,h_1296,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/fba758_f1f8b9ac29134de3b356630681ff368d~mv2.jpg"
-    ],
-    bio: "A musical maestro whose voice echoes legends like Kishore Kumar, Rafi, and Arijit Singh ! He has captivated audiences across India and abroad with soulful performances spanning Bollywood, Garba, Ghazals, and Bhajans. Having shared the stage with icons like Suresh Wadkar and Hariharan, and performed for The Art of Living, this versatile playback singer continues to enchant hearts with his timeless voice.",
-  },
-  {
-    id: 'Atharv',
-    name: "Atharv",
-    image: Artharvinfo,
-    description: "Kutch Ni Koyal",
-    socialMedia: {
-      facebook: null,
-      instagram: null,
-      youtube: null,
-    },
-    spotify: {
-      artistUrl: null,
-      popularSongs: [],
-    },
-    instagramImages: [],
-    bio: "Bio information will be added soon.",
-  },
-  {
-    id: 'Khushi',
-    name: "Khushi",
-    image: khushiinfo,
-    description: "Kutch Ni Koyal",
-    socialMedia: {
-      facebook: null,
-      instagram: null,
-      youtube: null,
-    },
-    spotify: {
-      artistUrl: null,
-      popularSongs: [],
-    },
-    instagramImages: [],
-    bio: "Bio information will be added soon.",
-  },
-  {
-    id: 'Avirbhav',
-    name: "Avirbhav",
-    image: avirvhavinfo,
-    description: "Kutch Ni Koyal",
-    socialMedia: {
-      facebook: null,
-      instagram: null,
-      youtube: null,
-    },
-    spotify: {
-      artistUrl: null,
-      popularSongs: [],
-    },
-    instagramImages: [],
-    bio: "Bio information will be added soon.",
-  },
-*/
   {
     id: 'Kosha',
-    name: "Kosha Pandya",
-    image: koshainfo,
-    description: "Kutch Ni Koyal",
+    name: "Kosha",
+    image: KoshaImg,
+    description: "Versatile Vocalist",
     socialMedia: {
       facebook: "https://www.facebook.com/koshapandyakp/",
       instagram: "https://www.instagram.com/koshapandyatrivedi/",
@@ -317,38 +215,60 @@ In 2020, she received the Feelings Pride of India Award in the music category.`,
       artistUrl: null,
       popularSongs: [],
     },
-    instagramImages: [
-      koshainfo,
-      koshainfo2,
-      koshainfo3,
-    ],
-    bio: "Kosha Pandya, a gifted singer with over 17 years of experience, began her musical journey at the age of 16 and continues to captivate audiences worldwide at 33. Hailing from Gujarat, India, she has made a lasting impact on the music industry with her versatile vocals that transcend genres.",
+    bio: "Kosha Pandya is a gifted singer with over 17 years of experience, known for her versatile vocals that transcend genres.",
+    instagramImages: [KoshaImg],
   },
-/*
   {
-    id: 'Anushka',
-    name: "Anuska Pandit",
-    image: anushkainfo,
-    description: "Kutch Ni Koyal",
+    id: 'ParthDoshi',
+    name: "Parth Doshi",
+    image: ParthDoshiImg,
+    description: "Soulful Singer",
     socialMedia: {
-      facebook: "https://www.facebook.com/koshapandyakp/",
-      instagram: "https://www.instagram.com/anushka_pandit",
+      facebook: "https://www.facebook.com/ParthDoshiLive/",
+      instagram: "https://www.instagram.com/parthdoshilive",
+      youtube: "https://www.youtube.com/@ParthDoshiOfficial",
+    },
+    spotify: {
+      artistUrl: null,
+      popularSongs: [],
+    },
+    bio: "Parth Doshi is a talented singer known for his soulful performances and contribution to the music industry.",
+    instagramImages: [ParthDoshiImg],
+  },
+  {
+    id: 'GiteshIyer',
+    name: "Gitesh Iyer",
+    image: GiteshIyerImg,
+    description: "Musical Artist",
+    socialMedia: {
+      facebook: null,
+      instagram: "https://www.instagram.com/giteshiyer",
       youtube: null,
     },
     spotify: {
       artistUrl: null,
       popularSongs: [],
     },
-    instagramImages: [
-      anushkainfo,
-      anushkainfo2,
-      anushkainfo3,
-    ],
-    bio: "Kosha Pandya, a gifted singer with over 17 years of experience, began her musical journey at the age of 16 and continues to captivate audiences worldwide at 33. Hailing from Gujarat, India, she has made a lasting impact on the music industry with her versatile vocals that transcend genres.",
+    bio: "Gitesh Iyer is an upcoming musical artist dedicated to creating memorable musical experiences.",
+    instagramImages: [GiteshIyerImg],
   },
-*/
-
-
+  {
+    id: 'BhumiAhir',
+    name: "Bhumi Ahir",
+    image: BhumiAhirImg,
+    description: "Folk Singer",
+    socialMedia: {
+      facebook: null,
+      instagram: "https://www.instagram.com/bhumiahir",
+      youtube: null,
+    },
+    spotify: {
+      artistUrl: null,
+      popularSongs: [],
+    },
+    bio: "Bhumi Ahir is a talented folk singer known for her traditional style and powerful voice.",
+    instagramImages: [BhumiAhirImg],
+  },
 ];
 
 export const events = [

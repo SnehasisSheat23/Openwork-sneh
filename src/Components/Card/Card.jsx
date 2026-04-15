@@ -59,7 +59,7 @@ function Card({ name, img, text, place, date, link }) {
             </div>
 
             {/*<div className="relative z-10 top-[51%] w-full px-6">
-                <h1 className="text-white font-semibold leading-none text-xl">{text}</h1>
+                <h1 className="text-white font-semibold leading-none text-xl truncate">{text}</h1>
                 <p className="text-white text-opacity-75 font-bold mt-3 tracking-tighter text-lg">
                     {date}
                 </p>
