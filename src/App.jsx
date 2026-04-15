@@ -1,17 +1,23 @@
 import LocomotiveScroll from 'locomotive-scroll';
 import './App.css'
-import React from 'react';
+import React, { useEffect } from 'react';
 import Routing from "./Components/Routes/Routing";
 import Favicon from 'react-favicon';
 
-function App(){
-  const locomotiveScroll = new LocomotiveScroll();
+function App() {
+  useEffect(() => {
+    const locomotiveScroll = new LocomotiveScroll();
+    return () => {
+      if (locomotiveScroll) locomotiveScroll.destroy();
+    };
+  }, []);
+
   return (
     <>
       <Favicon url="/image.svg" />
-      <Routing/>
+      <Routing />
     </>
-  )
+  );
 }
 
 export default App

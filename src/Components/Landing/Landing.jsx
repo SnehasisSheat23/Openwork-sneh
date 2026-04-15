@@ -2,19 +2,19 @@ import { useState, useEffect } from 'react';
 
 
 
-import geetaMobile from '../../optimisedAssets/geeta_mobile.webp';
+import geetaMobile from '../../optimisedAssets/Upcommingevents/geeta_mobile.webp';
 import geetaTablet from '../../optimisedAssets/geeta_tablet.webp';
 import geetaDesktop from '../../optimisedAssets/geeta_desktop.webp';
-import gujjubhaiMobile from '../../optimisedAssets/gujjubhai_mobile.webp';
+import gujjubhaiMobile from '../../optimisedAssets/Upcommingevents/gujjubhai_mobile.webp';
 import gujjubhaiTablet from '../../optimisedAssets/gujjubhai_tablet.webp';
 import gujjubhaiDesktop from '../../optimisedAssets/gujjubhai_desktop.webp';
-import kinjalMobile from '../../optimisedAssets/kinjal_mobile.webp';
+import kinjalMobile from '../../optimisedAssets/Upcommingevents/kinjal_mobile.webp';
 import kinjalTablet from '../../optimisedAssets/kinjal_tablet.webp';
 import kinjalDesktop from '../../optimisedAssets/kinjal_desktop.webp';
-import ojasMobile from '../../optimisedAssets/ojas_mobile.webp';
+import ojasMobile from '../../optimisedAssets/Upcommingevents/ojas_mobile.webp';
 import ojasTablet from '../../optimisedAssets/ojas_tablet.webp';
 import ojasDesktop from '../../optimisedAssets/ojas_desktop.webp';
-import rashmidesaiMobile from '../../optimisedAssets/rashmidesai_mobile.webp';
+import rashmidesaiMobile from '../../optimisedAssets/Upcommingevents/rashmidesai_mobile.webp';
 import rashmidesaiTablet from '../../optimisedAssets/rashmidesai_tablet.webp';
 import rashmidesaiDesktop from '../../optimisedAssets/rashmidesai_desktop.webp';
 import superstarMobile from '../../optimisedAssets/superstar_mobile.webp';

@@ -44,7 +44,7 @@ function Card({ name, img, text, place, date, link }) {
     return (
         <div 
             ref={cardRef} 
-            className={`h-[460px] w-72 min-w-72 rounded-lg relative mt-3 cursor-pointer bg-black border-none
+            className={`h-[440px] w-72 min-w-72 rounded-lg relative mt-3 cursor-pointer bg-black border-none
              transition-all duration-200 ease-in-out
              shadow-md
              md:hover:shadow-xl
@@ -53,7 +53,7 @@ function Card({ name, img, text, place, date, link }) {
         >
             <div
                 className="absolute inset-0 bg-cover bg-center rounded-lg md:hover:scale-110 md:transition-transform md:duration-300"
-                style={{ backgroundImage: `url(${img})`, backgroundPosition: 'top' }}
+                style={{ backgroundImage: `url(${img})`, backgroundPosition: 'center' }}
             >
                 {/*<div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/50 to-black rounded-lg"></div> */}
             </div>

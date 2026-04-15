@@ -9,11 +9,11 @@ import GourpreetTour from './optimisedAssets/Upcommingevents/GourpreetTour.webp'
 import GeetarabaiTour from './optimisedAssets/Upcommingevents/GeetarabaiTour.webp';
 import SuperStarTour from './optimisedAssets/Upcommingevents/SuperStarTour.webp';
 import superstarSingerTour from './optimisedAssets/Upcommingevents/superstarSingerTour.webp';
-import geetaMobile from './optimisedAssets/geeta_mobile.webp';
-import gujjubhaiMobile from './optimisedAssets/gujjubhai_mobile.webp';
-import kinjalMobile from './optimisedAssets/kinjal_mobile.webp';
-import ojasMobile from './optimisedAssets/ojas_mobile.webp';
-import rashmidesaiMobile from './optimisedAssets/rashmidesai_mobile.webp';
+import geetaMobile from './optimisedAssets/Upcommingevents/geeta_mobile.webp';
+import gujjubhaiMobile from './optimisedAssets/Upcommingevents/gujjubhai_mobile.webp';
+import kinjalMobile from './optimisedAssets/Upcommingevents/kinjal_mobile.webp';
+import ojasMobile from './optimisedAssets/Upcommingevents/ojas_mobile.webp';
+import rashmidesaiMobile from './optimisedAssets/Upcommingevents/rashmidesai_mobile.webp';
 import superstarMobile from './optimisedAssets/superstar_mobile.webp';
 // Spotify
 import geetaravaispotify from './optimisedAssets/Spotify/Tetudo2.webp';
@@ -124,6 +124,7 @@ In 2020, she received the Feelings Pride of India Award in the music category.`,
     ],
   },
 
+/*
   {
     id: 'GurdeepMehndi',
     name: "Gurdeep Mehndi",
@@ -145,6 +146,7 @@ In 2020, she received the Feelings Pride of India Award in the music category.`,
     ],
     bio: "Bio information will be added soon.",
   },
+*/
   {
     id: 'ParthDoshi',
     name: "Parth Doshi",
@@ -206,6 +208,7 @@ In 2020, she received the Feelings Pride of India Award in the music category.`,
     ],
     bio: "Geeta Ben Rabari is a Gujarati folk singer. She came into the spotlight by singing the Gujarati song \"Roma Ser Ma.\" She is referred to as the \"Kutchi Koyal,\" which means the songbird of Kutch. She sings bhajans, folklore, santvani, and dayra, and by the age of 20, she established herself as a well-known singer of Gujarat.",
   },
+/*
   {
     id: 'SharmanJoshi',
     name: "Sharman Joshi",
@@ -299,6 +302,7 @@ In 2020, she received the Feelings Pride of India Award in the music category.`,
     instagramImages: [],
     bio: "Bio information will be added soon.",
   },
+*/
   {
     id: 'Kosha',
     name: "Kosha Pandya",
@@ -320,6 +324,7 @@ In 2020, she received the Feelings Pride of India Award in the music category.`,
     ],
     bio: "Kosha Pandya, a gifted singer with over 17 years of experience, began her musical journey at the age of 16 and continues to captivate audiences worldwide at 33. Hailing from Gujarat, India, she has made a lasting impact on the music industry with her versatile vocals that transcend genres.",
   },
+/*
   {
     id: 'Anushka',
     name: "Anuska Pandit",
@@ -341,6 +346,7 @@ In 2020, she received the Feelings Pride of India Award in the music category.`,
     ],
     bio: "Kosha Pandya, a gifted singer with over 17 years of experience, began her musical journey at the age of 16 and continues to captivate audiences worldwide at 33. Hailing from Gujarat, India, she has made a lasting impact on the music industry with her versatile vocals that transcend genres.",
   },
+*/
 
 
 ];
